@@ -11,16 +11,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    <!-- 7. FAVICON (SVG Embedded) -->
+    <!-- FAVICON (SVG Embedded) -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧺</text></svg>">
 
-    <!-- 8. SCHEMA MARKUP (Technical SEO) -->
+    <!-- SCHEMA MARKUP (Technical SEO) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "Bali Express Laundry",
-      "image": "https://images.unsplash.com/photo-1556228578-0d85b1a4d571",
+      "image": "https://images.unsplash.com/photo-1565538810643-b5bdb714032a",
       "telephone": "+62 851-9850-4914",
       "address": {
         "@type": "PostalAddress",
@@ -52,7 +52,7 @@
         :root {
             --primary-blue: #0066CC;
             --primary-dark: #004C99;
-            --accent-green: #25D366; /* WhatsApp Green */
+            --accent-green: #25D366;
             --accent-green-dark: #1DA851;
             --text-dark: #1F2937;
             --text-light: #6B7280;
@@ -172,6 +172,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
         }
 
         .logo {
@@ -183,13 +184,31 @@
             gap: 8px;
             text-decoration: none;
         }
-
         .logo span { color: var(--accent-green); }
 
+        /* Navigation Menu Styles */
+        .nav-menu {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-blue);
+        }
+
         /* --- HERO SECTION --- */
-        /* 2. FOTO ASLI - Hero Interior */
         .hero {
-            background: linear-gradient(rgba(0, 38, 102, 0.7), rgba(0, 102, 204, 0.8)), url('https://images.unsplash.com/photo-1556228578-0d85b1a4d571?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            /* 2. GAMBAR HERO DIUPDATE - Menggunakan ID Unsplash yang stabil */
+            background: linear-gradient(rgba(0, 38, 102, 0.7), rgba(0, 102, 204, 0.8)), url('https://images.unsplash.com/photo-1565538810643-b5bdb714032a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
             color: var(--white);
             padding: 120px 0 100px;
             text-align: center;
@@ -290,7 +309,7 @@
         .card-features li { margin-bottom: 10px; font-size: 0.95rem; color: var(--text-light); padding-left: 25px; position: relative; }
         .card-features li::before { content: "✓"; color: var(--accent-green); position: absolute; left: 0; font-weight: 700; }
 
-        /* --- PAYMENT METHODS (New) --- */
+        /* --- PAYMENT METHODS --- */
         .payment-section {
             background-color: var(--white);
             border-top: 1px solid #eee;
@@ -316,7 +335,6 @@
         .payment-icon { font-size: 1.5rem; }
 
         /* --- ABOUT & PROCESS --- */
-        /* 2. FOTO ASLI - Process Images */
         .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -330,7 +348,10 @@
             object-fit: cover;
             height: 400px;
         }
-        @media (max-width: 768px) { .about-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 768px) { 
+            .about-grid { grid-template-columns: 1fr; } 
+            .about-img { height: 300px; }
+        }
 
         /* --- HOW IT WORKS --- */
         .how-it-works { background-color: var(--bg-light); }
@@ -350,7 +371,7 @@
             margin: 0 auto 20px;
         }
 
-        /* --- FAQ SECTION (New) --- */
+        /* --- FAQ SECTION --- */
         .faq-item {
             background: white;
             border-radius: 8px;
@@ -370,45 +391,11 @@
         .faq-answer {
             padding: 0 20px 20px;
             color: var(--text-light);
-            display: none; /* JS will toggle this */
+            display: none; 
         }
         .faq-item.active .faq-answer { display: block; }
         .faq-item.active .faq-question { background-color: #f0f7ff; color: var(--primary-blue); }
         .faq-toggle { font-size: 1.5rem; line-height: 1; }
-
-        /* --- INSTAGRAM FEED (New) --- */
-        .insta-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-        }
-        .insta-item {
-            position: relative;
-            height: 200px;
-            overflow: hidden;
-            border-radius: 8px;
-            cursor: pointer;
-        }
-        .insta-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s;
-        }
-        .insta-item:hover img { transform: scale(1.05); }
-        .insta-overlay {
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0,0,0,0.3);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.3s;
-            color: white;
-            font-size: 2rem;
-        }
-        .insta-item:hover .insta-overlay { opacity: 1; }
 
         /* --- TESTIMONIALS --- */
         .testimonials-grid {
@@ -536,6 +523,16 @@
             .pricing-grid { grid-template-columns: 1fr; }
             .trust-grid { grid-template-columns: 1fr 1fr; }
             .map-container { min-height: 300px; }
+            .nav-menu {
+                display: none; /* Hide nav on small mobile if not implementing hamburger, or keep simple */
+                width: 100%;
+                flex-direction: column;
+                margin-top: 10px;
+                background: white;
+            }
+            /* Simple mobile menu handling via script or toggle */
+            .nav-wrapper { flex-direction: column; }
+            .nav-menu.active { display: flex; }
         }
     </style>
 </head>
@@ -548,11 +545,24 @@
 
     <header>
         <div class="container nav-wrapper">
-            <a href="#" class="logo">
-                <!-- 7. LOGO ICON -->
+            <a href="#home" class="logo">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>
                 Bali<span>Express</span>
             </a>
+            
+            <!-- 3. MENU NAVIGASI BARU (Header) -->
+            <nav class="nav-menu">
+                <a href="#home" class="nav-link lang-en-content">Home</a>
+                <a href="#pricing" class="nav-link lang-en-content">Pricing</a>
+                <a href="#about" class="nav-link lang-en-content">About</a>
+                <a href="#contact" class="nav-link lang-en-content">Contact</a>
+                
+                <a href="#home" class="nav-link lang-id-content hidden">Beranda</a>
+                <a href="#pricing" class="nav-link lang-id-content hidden">Harga</a>
+                <a href="#about" class="nav-link lang-id-content hidden">Tentang</a>
+                <a href="#contact" class="nav-link lang-id-content hidden">Kontak</a>
+            </nav>
+
             <div class="lang-switch-container">
                 <button class="lang-btn active" onclick="switchLang('en')">EN</button>
                 <button class="lang-btn" onclick="switchLang('id')">ID</button>
@@ -568,7 +578,7 @@
                     <h1>24 Hour Express Laundry in Bali</h1>
                     <p>Fast, clean, and reliable laundry service with free pickup & delivery. Perfect for tourists, villas, and busy guests.</p>
                     <div class="hero-buttons">
-                        <a href="https://wa.me/6285198504914?text=Welcome%20to%20Bali%20Express%20Laundry%20-%20BALI%20(Open%2024%20Hours)%0A%0APlease%20kindly%20fill%20in%20the%20following%20details%3A%0AName%3A%0APhone%20Number%3A%0AHotel%20Name%20%2F%20Location%3A%0ARoom%20Number%3A%0AService%3A%20Express%20Laundry%20(please%20fill%20in%20...%20hours)%0A%0AKindly%20share%20your%20location%20to%20facilitate%20the%20laundry%20pickup%20%E2%9C%8D" class="btn btn-whatsapp">Order via WhatsApp</a>
+                        <a href="https://wa.me/6285198504914" class="btn btn-whatsapp">Order via WhatsApp</a>
                         <a href="#pricing" class="btn btn-secondary">Free Pickup Now</a>
                     </div>
                 </div>
@@ -576,7 +586,7 @@
                     <h1>Laundry Express 24 Jam di Bali</h1>
                     <p>Layanan laundry cepat, bersih, dan terpercaya dengan antar jemput gratis.</p>
                     <div class="hero-buttons">
-                        <a href="https://wa.me/6285198504914?text=Welcome%20to%20Bali%20Express%20Laundry%20-%20BALI%20(Open%2024%20Hours)%0A%0APlease%20kindly%20fill%20in%20the%20following%20details%3A%0AName%3A%0APhone%20Number%3A%0AHotel%20Name%20%2F%20Location%3A%0ARoom%20Number%3A%0AService%3A%20Express%20Laundry%20(please%20fill%20in%20...%20hours)%0A%0AKindly%20share%20your%20location%20to%20facilitate%20the%20laundry%20pickup%20%E2%9C%8D" class="btn btn-whatsapp">Pesan via WhatsApp</a>
+                        <a href="https://wa.me/6285198504914" class="btn btn-whatsapp">Pesan via WhatsApp</a>
                         <a href="#pricing" class="btn btn-secondary">Jemput Gratis Sekarang</a>
                     </div>
                 </div>
@@ -607,7 +617,7 @@
             <div class="container">
                 <div class="text-center">
                     <h2 class="lang-en-content">Express Packages</h2>
-                    <p class="pricing-subtitle lang-en-content">Choose the speed that fits your schedule.</p>
+                    <p class="pricing-subtitle lang-en-content">Choose a speed that fits your schedule.</p>
                     <h2 class="lang-id-content hidden">Paket Express</h2>
                     <p class="pricing-subtitle lang-id-content hidden">Pilih kecepatan sesuai jadwal Anda.</p>
                 </div>
@@ -678,7 +688,7 @@
             </div>
         </section>
 
-        <!-- 1. PAYMENT METHODS (New) -->
+        <!-- PAYMENT METHODS -->
         <section class="payment-section">
             <div class="container text-center">
                 <h3 class="lang-en-content mb-20">Accepted Payment Methods</h3>
@@ -692,13 +702,13 @@
             </div>
         </section>
 
-        <!-- ABOUT US (With Real Photos) -->
-        <section class="section-padding" style="background-color: var(--white);">
+        <!-- ABOUT US (WITH UPDATED IMAGE) -->
+        <section id="about" class="section-padding" style="background-color: var(--white);">
             <div class="container">
                 <div class="about-grid">
-                    <!-- 2. FOTO ASLI - About Image (Ironing) -->
+                    <!-- 2. GAMBAR ABOUT US DIUPDATE -->
                     <div>
-                        <img src="https://images.unsplash.com/photo-1585832779296-5554b4e6212f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Ironing Process" class="about-img">
+                        <img src="https://images.unsplash.com/photo-1615630204731-1a7726735291?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Laundry Delivery" class="about-img">
                     </div>
                     <div>
                         <h2 class="lang-en-content">About Us</h2>
@@ -752,7 +762,7 @@
             </div>
         </section>
 
-        <!-- 4. FAQ SECTION (New) -->
+        <!-- FAQ SECTION -->
         <section class="section-padding">
             <div class="container" style="max-width: 800px;">
                 <div class="text-center">
@@ -801,36 +811,7 @@
             </div>
         </section>
 
-        <!-- 3. INSTAGRAM FEED (New) -->
-        <section class="section-padding" style="background-color: var(--bg-light);">
-            <div class="container text-center">
-                <h2 class="lang-en-content mb-20">Follow Our Instagram</h2>
-                <h2 class="lang-id-content hidden mb-20">Ikuti Instagram Kami</h2>
-                
-                <!-- Update href="#" with your Instagram link later -->
-                <div class="insta-grid">
-                    <!-- 2. FOTO ASLI - Social Grid -->
-                    <div class="insta-item" onclick="window.open('#', '_blank');">
-                        <img src="https://images.unsplash.com/photo-1612423284934-2850a4ea6b0f?auto=format&fit=crop&w=400&q=80" alt="Insta 1">
-                        <div class="insta-overlay">📸</div>
-                    </div>
-                    <div class="insta-item" onclick="window.open('#', '_blank');">
-                        <img src="https://images.unsplash.com/photo-1524850011238-e3d235c7d4c9?auto=format&fit=crop&w=400&q=80" alt="Insta 2">
-                        <div class="insta-overlay">📸</div>
-                    </div>
-                    <div class="insta-item" onclick="window.open('#', '_blank');">
-                        <img src="https://images.unsplash.com/photo-1584204524092-8f73727264a6?auto=format&fit=crop&w=400&q=80" alt="Insta 3">
-                        <div class="insta-overlay">📸</div>
-                    </div>
-                    <div class="insta-item" onclick="window.open('#', '_blank');">
-                        <img src="https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=400&q=80" alt="Insta 4">
-                        <div class="insta-overlay">📸</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 5. TESTIMONIALS (With Specific Google Links) -->
+        <!-- TESTIMONIALS -->
         <section class="section-padding">
             <div class="container">
                 <div class="text-center">
@@ -841,16 +822,15 @@
                     <!-- Review 1 -->
                     <div class="testimonial-card">
                         <div class="stars">★★★★★</div>
-                        <p class="testimonial-text lang-en-content">"Excellent service! Very fast and the clothes smell great. The driver was also very polite."</p>
+                        <p class="testimonial-text lang-en-content">"Excellent service! Very fast and clothes smell great. The driver was also very polite."</p>
                         <p class="testimonial-text lang-id-content hidden">"Pelayanan luar biasa! Sangat cepat dan baju harum segar. Pengemudinya juga sangat sopan."</p>
                         <p class="customer-name">— Google User</p>
-                        <!-- 5. SPECIFIC LINK -->
                         <a href="https://share.google/szxZuHqUDsn6TGDjj" target="_blank" class="review-link">Read Full Review on Google</a>
                     </div>
                     <!-- Review 2 -->
                     <div class="testimonial-card">
                         <div class="stars">★★★★★</div>
-                        <p class="testimonial-text lang-en-content">"Lifesaver for our holiday. Used the 6 hour service and it was perfect."</p>
+                        <p class="testimonial-text lang-en-content">"Lifesaver for our holiday. Used 6 hour service and it was perfect."</p>
                         <p class="testimonial-text lang-id-content hidden">"Penyelamat liburan kami. Pakai layanan 6 jam dan hasilnya sempurna."</p>
                         <p class="customer-name">— Google User</p>
                         <a href="https://share.google/OdbjlhVIkOxI3c3CL" target="_blank" class="review-link">Read Full Review on Google</a>
@@ -862,22 +842,6 @@
                         <p class="testimonial-text lang-id-content hidden">"Harga dan kualitas bagus. Sangat direkomendasikan jika ada di Canggu."</p>
                         <p class="customer-name">— Google User</p>
                         <a href="https://share.google/tW69M4GGOb4k5g7Zf" target="_blank" class="review-link">Read Full Review on Google</a>
-                    </div>
-                    <!-- Review 4 -->
-                    <div class="testimonial-card">
-                        <div class="stars">★★★★★</div>
-                        <p class="testimonial-text lang-en-content">"Super fast delivery. Clothes folded neatly. Will use again!"</p>
-                        <p class="testimonial-text lang-id-content hidden">"Pengantaran super cepat. Pakaian dilipat rapi. Akan dipakai lagi!"</p>
-                        <p class="customer-name">— Google User</p>
-                        <a href="https://share.google/odldXWl6wYXi7uGfB" target="_blank" class="review-link">Read Full Review on Google</a>
-                    </div>
-                     <!-- Review 5 -->
-                     <div class="testimonial-card">
-                        <div class="stars">★★★★★</div>
-                        <p class="testimonial-text lang-en-content">"Professional team and easy communication via WhatsApp."</p>
-                        <p class="testimonial-text lang-id-content hidden">"Tim profesional dan komunikasi mudah via WhatsApp."</p>
-                        <p class="customer-name">— Google User</p>
-                        <a href="https://share.google/2MHsXrhhmmLYXyGHS" target="_blank" class="review-link">Read Full Review on Google</a>
                     </div>
                 </div>
             </div>
@@ -963,7 +927,7 @@
                 <a href="#home" class="lang-en-content">Home</a>
                 <a href="#pricing" class="lang-en-content">Pricing</a>
                 <a href="#contact" class="lang-en-content">Contact</a>
-                <!-- 6. LEGAL MODAL TRIGGERS -->
+                <!-- LEGAL MODAL TRIGGERS -->
                 <a onclick="openModal('privacyModal')" class="lang-en-content">Privacy Policy</a>
                 <a onclick="openModal('termsModal')" class="lang-en-content">Terms of Service</a>
 
@@ -976,7 +940,7 @@
         </div>
     </footer>
 
-    <!-- 6. LEGAL MODALS (Privacy & Terms) -->
+    <!-- LEGAL MODALS (Privacy & Terms) -->
     <!-- Privacy Policy Modal -->
     <div id="privacyModal" class="modal">
         <div class="modal-content">
@@ -1016,7 +980,7 @@
             <h2 class="lang-id-content hidden">Syarat Ketentuan</h2>
             
             <div class="lang-en-content">
-                <p>By using Bali Express Laundry services, you agree to the following terms:</p>
+                <p>By using Bali Express Laundry services, you agree to following terms:</p>
                 <h4>1. Service Hours</h4>
                 <p>We operate 24 hours, but pickup times depend on driver availability and traffic conditions.</p>
                 <h4>2. Items</h4>
