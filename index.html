@@ -6,10 +6,46 @@
     <meta name="description" content="24 Hour Express Laundry in Bali. Fast, clean, and reliable with free pickup & delivery. Serving Seminyak, Canggu, Kuta, and more.">
     <title>Bali Express Laundry - 24 Hour Service</title>
     
-    <!-- Google Fonts: Poppins for modern, clean look -->
+    <!-- Google Fonts: Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- 7. FAVICON (SVG Embedded) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧺</text></svg>">
+
+    <!-- 8. SCHEMA MARKUP (Technical SEO) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Bali Express Laundry",
+      "image": "https://images.unsplash.com/photo-1556228578-0d85b1a4d571",
+      "telephone": "+62 851-9850-4914",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Jl. Mertanadi No.92X, Kerobokan Kelod",
+        "addressLocality": "Kuta Utara",
+        "addressRegion": "Bali",
+        "postalCode": "80361",
+        "addressCountry": "ID"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -8.6744,
+        "longitude": 115.1579
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+        ],
+        "opens": "00:00",
+        "closes": "23:59"
+      },
+      "priceRange": "$$"
+    }
+    </script>
 
     <style>
         /* --- CSS VARIABLES & RESET --- */
@@ -60,6 +96,8 @@
         .text-blue { color: var(--primary-blue); }
         .text-green { color: var(--accent-green); }
         .hidden { display: none !important; }
+        .mb-20 { margin-bottom: 20px; }
+        .mt-20 { margin-top: 20px; }
 
         /* Language Toggle Button Styles */
         .lang-switch-container {
@@ -143,15 +181,15 @@
             display: flex;
             align-items: center;
             gap: 8px;
+            text-decoration: none;
         }
 
-        .logo span {
-            color: var(--accent-green);
-        }
+        .logo span { color: var(--accent-green); }
 
         /* --- HERO SECTION --- */
+        /* 2. FOTO ASLI - Hero Interior */
         .hero {
-            background: linear-gradient(rgba(0, 38, 102, 0.7), rgba(0, 102, 204, 0.8)), url('https://picsum.photos/seed/laundrybali/1920/1080.jpg') no-repeat center center/cover;
+            background: linear-gradient(rgba(0, 38, 102, 0.7), rgba(0, 102, 204, 0.8)), url('https://images.unsplash.com/photo-1556228578-0d85b1a4d571?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
             color: var(--white);
             padding: 120px 0 100px;
             text-align: center;
@@ -198,33 +236,13 @@
             text-align: center;
         }
 
-        .trust-item {
-            padding: 10px;
-        }
-
-        .trust-icon {
-            font-size: 2rem;
-            color: var(--primary-blue);
-            margin-bottom: 10px;
-            display: block;
-        }
-
-        .trust-text {
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
+        .trust-item { padding: 10px; }
+        .trust-icon { font-size: 2rem; color: var(--primary-blue); margin-bottom: 10px; display: block; }
+        .trust-text { font-weight: 600; font-size: 0.9rem; }
 
         /* --- PRICING --- */
-        .pricing h2 {
-            font-size: 2.2rem;
-            margin-bottom: 10px;
-            color: var(--primary-blue);
-        }
-        
-        .pricing-subtitle {
-            margin-bottom: 50px;
-            color: var(--text-light);
-        }
+        .pricing h2 { font-size: 2.2rem; margin-bottom: 10px; color: var(--primary-blue); }
+        .pricing-subtitle { margin-bottom: 50px; color: var(--text-light); }
 
         .pricing-grid {
             display: grid;
@@ -249,9 +267,7 @@
             border-color: var(--primary-blue);
         }
 
-        .pricing-card.featured {
-            border: 2px solid var(--accent-green);
-        }
+        .pricing-card.featured { border: 2px solid var(--accent-green); }
 
         .badge {
             background-color: var(--accent-green);
@@ -266,67 +282,60 @@
             width: 120px;
         }
 
-        .card-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-bottom: 15px;
+        .card-title { font-size: 1.25rem; font-weight: 700; margin-bottom: 15px; color: var(--text-dark); }
+        .card-price { font-size: 2rem; color: var(--primary-blue); font-weight: 700; margin-bottom: 20px; }
+        .card-price span { font-size: 1rem; color: var(--text-light); font-weight: 400; }
+
+        .card-features { list-style: none; margin-bottom: 25px; text-align: left; }
+        .card-features li { margin-bottom: 10px; font-size: 0.95rem; color: var(--text-light); padding-left: 25px; position: relative; }
+        .card-features li::before { content: "✓"; color: var(--accent-green); position: absolute; left: 0; font-weight: 700; }
+
+        /* --- PAYMENT METHODS (New) --- */
+        .payment-section {
+            background-color: var(--white);
+            border-top: 1px solid #eee;
+            padding: 40px 0;
+        }
+        .payment-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .payment-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
             color: var(--text-dark);
+            background: #f9f9f9;
+            padding: 10px 20px;
+            border-radius: 8px;
         }
+        .payment-icon { font-size: 1.5rem; }
 
-        .card-price {
-            font-size: 2rem;
-            color: var(--primary-blue);
-            font-weight: 700;
-            margin-bottom: 20px;
+        /* --- ABOUT & PROCESS --- */
+        /* 2. FOTO ASLI - Process Images */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
         }
-
-        .card-price span {
-            font-size: 1rem;
-            color: var(--text-light);
-            font-weight: 400;
+        .about-img {
+            width: 100%;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            object-fit: cover;
+            height: 400px;
         }
-
-        .card-features {
-            list-style: none;
-            margin-bottom: 25px;
-            text-align: left;
-        }
-
-        .card-features li {
-            margin-bottom: 10px;
-            font-size: 0.95rem;
-            color: var(--text-light);
-            padding-left: 25px;
-            position: relative;
-        }
-
-        .card-features li::before {
-            content: "✓";
-            color: var(--accent-green);
-            position: absolute;
-            left: 0;
-            font-weight: 700;
-        }
+        @media (max-width: 768px) { .about-grid { grid-template-columns: 1fr; } }
 
         /* --- HOW IT WORKS --- */
-        .how-it-works {
-            background-color: var(--bg-light);
-        }
-
-        .steps-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 40px;
-        }
-
-        .step-item {
-            flex: 1;
-            min-width: 200px;
-            text-align: center;
-            max-width: 250px;
-        }
-
+        .how-it-works { background-color: var(--bg-light); }
+        .steps-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; }
+        .step-item { flex: 1; min-width: 200px; text-align: center; max-width: 250px; }
         .step-number {
             background-color: var(--primary-blue);
             color: white;
@@ -341,93 +350,162 @@
             margin: 0 auto 20px;
         }
 
+        /* --- FAQ SECTION (New) --- */
+        .faq-item {
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #fff;
+        }
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-light);
+            display: none; /* JS will toggle this */
+        }
+        .faq-item.active .faq-answer { display: block; }
+        .faq-item.active .faq-question { background-color: #f0f7ff; color: var(--primary-blue); }
+        .faq-toggle { font-size: 1.5rem; line-height: 1; }
+
+        /* --- INSTAGRAM FEED (New) --- */
+        .insta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        .insta-item {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .insta-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        .insta-item:hover img { transform: scale(1.05); }
+        .insta-overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+            color: white;
+            font-size: 2rem;
+        }
+        .insta-item:hover .insta-overlay { opacity: 1; }
+
         /* --- TESTIMONIALS --- */
         .testimonials-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
-
         .testimonial-card {
             background: white;
             padding: 30px;
             border-radius: var(--border-radius);
             box-shadow: var(--shadow);
-        }
-
-        .stars {
-            color: #FFD700;
-            margin-bottom: 15px;
-        }
-
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 20px;
-            color: var(--text-dark);
-        }
-
-        .customer-name {
-            font-weight: 700;
-            color: var(--primary-blue);
-        }
-
-        /* --- ABOUT & CONTACT --- */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            margin-top: 40px;
-        }
-
-        .contact-info-box {
-            background: var(--bg-light);
-            padding: 30px;
-            border-radius: var(--border-radius);
-        }
-
-        .info-row {
             display: flex;
-            align-items: flex-start;
-            margin-bottom: 20px;
-            gap: 15px;
+            flex-direction: column;
+            justify-content: space-between;
         }
-
-        .info-icon {
-            font-size: 1.5rem;
-            color: var(--primary-blue);
+        .stars { color: #FFD700; margin-bottom: 15px; }
+        .testimonial-text { font-style: italic; margin-bottom: 20px; color: var(--text-dark); flex-grow: 1; }
+        .customer-name { font-weight: 700; color: var(--primary-blue); margin-bottom: 10px; }
+        .review-link {
+            display: inline-block;
+            margin-top: 15px;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            text-decoration: none;
+            border: 1px solid #ddd;
+            padding: 5px 10px;
+            border-radius: 4px;
         }
+        .review-link:hover { background-color: #f9f9f9; color: var(--primary-blue); }
 
+        /* --- CONTACT --- */
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px; }
+        .contact-info-box { background: var(--bg-light); padding: 30px; border-radius: var(--border-radius); }
+        .info-row { display: flex; align-items: flex-start; margin-bottom: 20px; gap: 15px; }
+        .info-icon { font-size: 1.5rem; color: var(--primary-blue); }
         .map-container {
             height: 100%;
-            min-height: 300px;
+            min-height: 350px;
             background-color: #ddd;
             border-radius: var(--border-radius);
             overflow: hidden;
-        }
-        
-        .map-placeholder {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            position: relative;
         }
 
-        /* --- FOOTER --- */
+        /* --- FOOTER & MODALS --- */
         footer {
             background-color: var(--primary-dark);
             color: white;
             padding: 40px 0 20px;
             text-align: center;
         }
-
         .footer-links a {
             color: rgba(255, 255, 255, 0.7);
             text-decoration: none;
             margin: 0 10px;
+            font-size: 0.9rem;
+            cursor: pointer;
         }
+        .footer-links a:hover { color: white; }
 
-        .footer-links a:hover {
-            color: white;
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 2000; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgba(0,0,0,0.6); 
         }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 10% auto; 
+            padding: 40px; 
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 800px;
+            border-radius: var(--border-radius);
+            position: relative;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        .close-modal {
+            position: absolute;
+            right: 20px;
+            top: 15px;
+            color: #aaa;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close-modal:hover { color: black; }
+        .modal h2 { margin-bottom: 20px; color: var(--primary-blue); }
+        .modal h4 { margin-top: 15px; margin-bottom: 5px; }
+        .modal p, .modal ul { font-size: 0.95rem; color: var(--text-light); margin-bottom: 10px; }
 
         /* --- FLOATING WHATSAPP --- */
         .floating-wa {
@@ -448,13 +526,8 @@
             transition: var(--transition);
             text-decoration: none;
         }
+        .floating-wa:hover { transform: scale(1.1); background-color: var(--accent-green-dark); }
 
-        .floating-wa:hover {
-            transform: scale(1.1);
-            background-color: var(--accent-green-dark);
-        }
-
-        /* --- MEDIA QUERIES --- */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2rem; }
             .hero-buttons { flex-direction: column; width: 100%; }
@@ -462,6 +535,7 @@
             .contact-grid { grid-template-columns: 1fr; }
             .pricing-grid { grid-template-columns: 1fr; }
             .trust-grid { grid-template-columns: 1fr 1fr; }
+            .map-container { min-height: 300px; }
         }
     </style>
 </head>
@@ -469,15 +543,16 @@
 
     <!-- Floating WhatsApp -->
     <a href="https://wa.me/6285198504914?text=Welcome%20to%20Bali%20Express%20Laundry%20-%20BALI%20(Open%2024%20Hours)%0A%0APlease%20kindly%20fill%20in%20the%20following%20details%3A%0AName%3A%0APhone%20Number%3A%0AHotel%20Name%20%2F%20Location%3A%0ARoom%20Number%3A%0AService%3A%20Express%20Laundry%20(please%20fill%20in%20...%20hours)%0A%0AKindly%20share%20your%20location%20to%20facilitate%20the%20laundry%20pickup%20%E2%9C%8D" class="floating-wa" target="_blank" aria-label="Chat WhatsApp">
-        <!-- SVG Icon for WhatsApp -->
         <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="white"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
     </a>
 
     <header>
         <div class="container nav-wrapper">
-            <div class="logo">
-                🧺 Bali<span>Express</span>
-            </div>
+            <a href="#" class="logo">
+                <!-- 7. LOGO ICON -->
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>
+                Bali<span>Express</span>
+            </a>
             <div class="lang-switch-container">
                 <button class="lang-btn active" onclick="switchLang('en')">EN</button>
                 <button class="lang-btn" onclick="switchLang('id')">ID</button>
@@ -489,7 +564,6 @@
         <!-- HERO SECTION -->
         <section class="hero" id="home">
             <div class="container">
-                <!-- English Hero -->
                 <div class="lang-en-content">
                     <h1>24 Hour Express Laundry in Bali</h1>
                     <p>Fast, clean, and reliable laundry service with free pickup & delivery. Perfect for tourists, villas, and busy guests.</p>
@@ -498,7 +572,6 @@
                         <a href="#pricing" class="btn btn-secondary">Free Pickup Now</a>
                     </div>
                 </div>
-                <!-- Indonesian Hero -->
                 <div class="lang-id-content hidden">
                     <h1>Laundry Express 24 Jam di Bali</h1>
                     <p>Layanan laundry cepat, bersih, dan terpercaya dengan antar jemput gratis.</p>
@@ -513,47 +586,18 @@
         <!-- TRUST INDICATORS -->
         <section class="container">
             <div class="trust-bar">
-                <!-- English -->
                 <div class="trust-grid lang-en-content">
-                    <div class="trust-item">
-                        <span class="trust-icon">⏰</span>
-                        <p class="trust-text">Open 24 Hours</p>
-                    </div>
-                    <div class="trust-item">
-                        <span class="trust-icon">🚚</span>
-                        <p class="trust-text">Free Pickup & Delivery</p>
-                    </div>
-                    <div class="trust-item">
-                        <span class="trust-icon">⚡</span>
-                        <p class="trust-text">Express 2–12 Hours</p>
-                    </div>
-                    <div class="trust-item">
-                        <span class="trust-icon">🧼</span>
-                        <p class="trust-text">Dedicated Machine Per Customer</p>
-                    </div>
-                    <div class="trust-item">
-                        <span class="trust-icon">🏨</span>
-                        <p class="trust-text">Serving Tourists, Hotels & Villas</p>
-                    </div>
+                    <div class="trust-item"><span class="trust-icon">⏰</span><p class="trust-text">Open 24 Hours</p></div>
+                    <div class="trust-item"><span class="trust-icon">🚚</span><p class="trust-text">Free Pickup & Delivery</p></div>
+                    <div class="trust-item"><span class="trust-icon">⚡</span><p class="trust-text">Express 2–12 Hours</p></div>
+                    <div class="trust-item"><span class="trust-icon">🧼</span><p class="trust-text">Dedicated Machine Per Customer</p></div>
+                    <div class="trust-item"><span class="trust-icon">🏨</span><p class="trust-text">Serving Tourists, Hotels & Villas</p></div>
                 </div>
-                <!-- Indonesian -->
                 <div class="trust-grid lang-id-content hidden">
-                    <div class="trust-item">
-                        <span class="trust-icon">⏰</span>
-                        <p class="trust-text">Buka 24 Jam</p>
-                    </div>
-                    <div class="trust-item">
-                        <span class="trust-icon">🚚</span>
-                        <p class="trust-text">Antar Jemput Gratis</p>
-                    </div>
-                    <div class="trust-item">
-                        <span class="trust-icon">⚡</span>
-                        <p class="trust-text">Layanan Express 2–12 Jam</p>
-                    </div>
-                    <div class="trust-item">
-                        <span class="trust-icon">🏨</span>
-                        <p class="trust-text">Melayani Wisatawan, Hotel & Villa</p>
-                    </div>
+                    <div class="trust-item"><span class="trust-icon">⏰</span><p class="trust-text">Buka 24 Jam</p></div>
+                    <div class="trust-item"><span class="trust-icon">🚚</span><p class="trust-text">Antar Jemput Gratis</p></div>
+                    <div class="trust-item"><span class="trust-icon">⚡</span><p class="trust-text">Layanan Express 2–12 Jam</p></div>
+                    <div class="trust-item"><span class="trust-icon">🏨</span><p class="trust-text">Melayani Wisatawan, Hotel & Villa</p></div>
                 </div>
             </div>
         </section>
@@ -562,154 +606,116 @@
         <section id="pricing" class="section-padding pricing">
             <div class="container">
                 <div class="text-center">
-                    <!-- English Title -->
                     <h2 class="lang-en-content">Express Packages</h2>
                     <p class="pricing-subtitle lang-en-content">Choose the speed that fits your schedule.</p>
-                    
-                    <!-- Indonesian Title -->
                     <h2 class="lang-id-content hidden">Paket Express</h2>
                     <p class="pricing-subtitle lang-id-content hidden">Pilih kecepatan sesuai jadwal Anda.</p>
                 </div>
 
                 <div class="pricing-grid">
-                    <!-- Package 1: 12 Hours -->
+                    <!-- Package 1 -->
                     <article class="pricing-card">
                         <div class="lang-en-content">
                             <h3 class="card-title">EXPRESS 12 HOURS</h3>
                             <div class="card-price">Rp24.900 <span>/ Kg</span></div>
-                            <ul class="card-features">
-                                <li>12 Hours Turnaround</li>
-                                <li>Free Pickup & Delivery</li>
-                                <li>Includes: wash, iron, fold neatly</li>
-                                <li>Dedicated Machine Per Customer</li>
-                                <li>Minimum order: 3.9 Kg</li>
-                            </ul>
-                            <a href="https://wa.me/6285198504914?text=Welcome%20to%20Bali%20Express%20Laundry%20-%20BALI%20(Open%2024%20Hours)%0A%0APlease%20kindly%20fill%20in%20the%20following%20details%3A%0AName%3A%0APhone%20Number%3A%0AHotel%20Name%20%2F%20Location%3A%0ARoom%20Number%3A%0AService%3A%20Express%20Laundry%20(please%20fill%20in%20...%20hours)%0A%0AKindly%20share%20your%20location%20to%20facilitate%20the%20laundry%20pickup%20%E2%9C%8D" class="btn btn-whatsapp" style="width:100%">Order via WhatsApp</a>
+                            <ul class="card-features"><li>12 Hours Turnaround</li><li>Free Pickup & Delivery</li><li>Includes: wash, iron, fold neatly</li><li>Dedicated Machine Per Customer</li><li>Minimum order: 3.9 Kg</li></ul>
+                            <a href="https://wa.me/6285198504914" class="btn btn-whatsapp" style="width:100%">Order via WhatsApp</a>
                         </div>
                         <div class="lang-id-content hidden">
                             <h3 class="card-title">Express 12 Jam</h3>
                             <div class="card-price">Rp24.900 <span>/ Kg</span></div>
-                            <ul class="card-features">
-                                <li>Selesai dalam 12 Jam</li>
-                                <li>Penjemputan & Pengantaran Gratis</li>
-                                <li>Termasuk: Cuci, Setrika, Lipat Rapi</li>
-                                <li>Mesin Terpisah Per Customer</li>
-                                <li>Min. 3.9 kg</li>
-                            </ul>
-                            <a href="https://wa.me/6285198504914?text=Welcome%20to%20Bali%20Express%20Laundry%20-%20BALI%20(Open%2024%20Hours)%0A%0APlease%20kindly%20fill%20in%20the%20following%20details%3A%0AName%3A%0APhone%20Number%3A%0AHotel%20Name%20%2F%20Location%3A%0ARoom%20Number%3A%0AService%3A%20Express%20Laundry%20(please%20fill%20in%20...%20hours)%0A%0AKindly%20share%20your%20location%20to%20facilitate%20the%20laundry%20pickup%20%E2%9C%8D" class="btn btn-whatsapp" style="width:100%">Chat WhatsApp Sekarang</a>
+                            <ul class="card-features"><li>Selesai dalam 12 Jam</li><li>Penjemputan & Pengantaran Gratis</li><li>Termasuk: Cuci, Setrika, Lipat Rapi</li><li>Mesin Terpisah Per Customer</li><li>Min. 3.9 kg</li></ul>
+                            <a href="https://wa.me/6285198504914" class="btn btn-whatsapp" style="width:100%">Chat WhatsApp Sekarang</a>
                         </div>
                     </article>
-
-                    <!-- Package 2: 6 Hours -->
+                    <!-- Package 2 -->
                     <article class="pricing-card">
                         <div class="lang-en-content">
                             <h3 class="card-title">EXPRESS 6 HOURS</h3>
                             <div class="card-price">Rp39.900 <span>/ Kg</span></div>
-                            <ul class="card-features">
-                                <li>6 Hours Turnaround</li>
-                                <li>Free Pickup & Delivery</li>
-                                <li>Includes: wash, iron, fold neatly</li>
-                                <li>Dedicated Machine Per Customer</li>
-                                <li>Minimum order: 3 Kg</li>
-                            </ul>
-                            <a href="https://wa.me/6285198504914?text=Welcome%20to%20Bali%20Express%20Laundry%20-%20BALI%20(Open%2024%20Hours)%0A%0APlease%20kindly%20fill%20in%20the%20following%20details%3A%0AName%3A%0APhone%20Number%3A%0AHotel%20Name%20%2F%20Location%3A%0ARoom%20Number%3A%0AService%3A%20Express%20Laundry%20(please%20fill%20in%20...%20hours)%0A%0AKindly%20share%20your%20location%20to%20facilitate%20the%20laundry%20pickup%20%E2%9C%8D" class="btn btn-whatsapp" style="width:100%">Order via WhatsApp</a>
+                            <ul class="card-features"><li>6 Hours Turnaround</li><li>Free Pickup & Delivery</li><li>Includes: wash, iron, fold neatly</li><li>Dedicated Machine Per Customer</li><li>Minimum order: 3 Kg</li></ul>
+                            <a href="https://wa.me/6285198504914" class="btn btn-whatsapp" style="width:100%">Order via WhatsApp</a>
                         </div>
                         <div class="lang-id-content hidden">
                             <h3 class="card-title">Express 6 Jam</h3>
                             <div class="card-price">Rp39.900 <span>/ Kg</span></div>
-                            <ul class="card-features">
-                                <li>Selesai dalam 6 Jam</li>
-                                <li>Penjemputan & Pengantaran Gratis</li>
-                                <li>Termasuk: Cuci, Setrika, Lipat Rapi</li>
-                                <li>Mesin Terpisah Per Customer</li>
-                                <li>Min. 3 kg</li>
-                            </ul>
-                            <a href="https://wa.me/6285198504914?text=Welcome%20to%20Bali%20Express%20Laundry%20-%20BALI%20(Open%2024%20Hours)%0A%0APlease%20kindly%20fill%20in%20the%20following%20details%3A%0AName%3A%0APhone%20Number%3A%0AHotel%20Name%20%2F%20Location%3A%0ARoom%20Number%3A%0AService%3A%20Express%20Laundry%20(please%20fill%20in%20...%20hours)%0A%0AKindly%20share%20your%20location%20to%20facilitate%20the%20laundry%20pickup%20%E2%9C%8D" class="btn btn-whatsapp" style="width:100%">Chat WhatsApp Sekarang</a>
+                            <ul class="card-features"><li>Selesai dalam 6 Jam</li><li>Penjemputan & Pengantaran Gratis</li><li>Termasuk: Cuci, Setrika, Lipat Rapi</li><li>Mesin Terpisah Per Customer</li><li>Min. 3 kg</li></ul>
+                            <a href="https://wa.me/6285198504914" class="btn btn-whatsapp" style="width:100%">Chat WhatsApp Sekarang</a>
                         </div>
                     </article>
-
-                    <!-- Package 3: 3 Hours -->
+                    <!-- Package 3 -->
                     <article class="pricing-card featured">
                         <div class="badge">POPULAR</div>
                         <div class="lang-en-content">
                             <h3 class="card-title">EXPRESS 3 HOURS</h3>
                             <div class="card-price">Rp49.900 <span>/ Kg</span></div>
-                            <ul class="card-features">
-                                <li>3 Hours Turnaround</li>
-                                <li>Free Pickup & Delivery</li>
-                                <li>Includes: wash, iron, fold neatly</li>
-                                <li>Dedicated Machine Per Customer</li>
-                                <li>Minimum order: 2 Kg</li>
-                            </ul>
-                            <a href="https://wa.me/6285198504914?text=Welcome%20to%20Bali%20Express%20Laundry%20-%20BALI%20(Open%2024%20Hours)%0A%0APlease%20kindly%20fill%20in%20the%20following%20details%3A%0AName%3A%0APhone%20Number%3A%0AHotel%20Name%20%2F%20Location%3A%0ARoom%20Number%3A%0AService%3A%20Express%20Laundry%20(please%20fill%20in%20...%20hours)%0A%0AKindly%20share%20your%20location%20to%20facilitate%20the%20laundry%20pickup%20%E2%9C%8D" class="btn btn-whatsapp" style="width:100%">Order via WhatsApp</a>
+                            <ul class="card-features"><li>3 Hours Turnaround</li><li>Free Pickup & Delivery</li><li>Includes: wash, iron, fold neatly</li><li>Dedicated Machine Per Customer</li><li>Minimum order: 2 Kg</li></ul>
+                            <a href="https://wa.me/6285198504914" class="btn btn-whatsapp" style="width:100%">Order via WhatsApp</a>
                         </div>
                         <div class="lang-id-content hidden">
                             <h3 class="card-title">Express 3 Jam</h3>
                             <div class="card-price">Rp49.900 <span>/ Kg</span></div>
-                            <ul class="card-features">
-                                <li>Selesai dalam 3 Jam</li>
-                                <li>Penjemputan & Pengantaran Gratis</li>
-                                <li>Termasuk: Cuci, Setrika, Lipat Rapi</li>
-                                <li>Mesin Terpisah Per Customer</li>
-                                <li>Min. 2 kg</li>
-                            </ul>
-                            <a href="https://wa.me/6285198504914?text=Welcome%20to%20Bali%20Express%20Laundry%20-%20BALI%20(Open%2024%20Hours)%0A%0APlease%20kindly%20fill%20in%20the%20following%20details%3A%0AName%3A%0APhone%20Number%3A%0AHotel%20Name%20%2F%20Location%3A%0ARoom%20Number%3A%0AService%3A%20Express%20Laundry%20(please%20fill%20in%20...%20hours)%0A%0AKindly%20share%20your%20location%20to%20facilitate%20the%20laundry%20pickup%20%E2%9C%8D" class="btn btn-whatsapp" style="width:100%">Chat WhatsApp Sekarang</a>
+                            <ul class="card-features"><li>Selesai dalam 3 Jam</li><li>Penjemputan & Pengantaran Gratis</li><li>Termasuk: Cuci, Setrika, Lipat Rapi</li><li>Mesin Terpisah Per Customer</li><li>Min. 2 kg</li></ul>
+                            <a href="https://wa.me/6285198504914" class="btn btn-whatsapp" style="width:100%">Chat WhatsApp Sekarang</a>
                         </div>
                     </article>
-
-                    <!-- Package 4: 2 Hours -->
+                    <!-- Package 4 -->
                     <article class="pricing-card">
                         <div class="lang-en-content">
                             <h3 class="card-title">ULTRA EXPRESS 2 HOURS</h3>
                             <div class="card-price">Rp59.900 <span>/ Kg</span></div>
-                            <ul class="card-features">
-                                <li>2 Hours Turnaround</li>
-                                <li>Free Pickup & Delivery</li>
-                                <li>Includes: wash, iron, fold neatly</li>
-                                <li>Dedicated Machine Per Customer</li>
-                                <li>Minimum order: 2 Kg</li>
-                            </ul>
-                            <a href="https://wa.me/6285198504914?text=Welcome%20to%20Bali%20Express%20Laundry%20-%20BALI%20(Open%2024%20Hours)%0A%0APlease%20kindly%20fill%20in%20the%20following%20details%3A%0AName%3A%0APhone%20Number%3A%0AHotel%20Name%20%2F%20Location%3A%0ARoom%20Number%3A%0AService%3A%20Express%20Laundry%20(please%20fill%20in%20...%20hours)%0A%0AKindly%20share%20your%20location%20to%20facilitate%20the%20laundry%20pickup%20%E2%9C%8D" class="btn btn-whatsapp" style="width:100%">Order via WhatsApp</a>
+                            <ul class="card-features"><li>2 Hours Turnaround</li><li>Free Pickup & Delivery</li><li>Includes: wash, iron, fold neatly</li><li>Dedicated Machine Per Customer</li><li>Minimum order: 2 Kg</li></ul>
+                            <a href="https://wa.me/6285198504914" class="btn btn-whatsapp" style="width:100%">Order via WhatsApp</a>
                         </div>
                         <div class="lang-id-content hidden">
                             <h3 class="card-title">Ultra Express 2 Jam</h3>
                             <div class="card-price">Rp59.900 <span>/ Kg</span></div>
-                            <ul class="card-features">
-                                <li>Selesai dalam 2 Jam</li>
-                                <li>Penjemputan & Pengantaran Gratis</li>
-                                <li>Termasuk: Cuci, Setrika, Lipat Rapi</li>
-                                <li>Mesin Terpisah Per Customer</li>
-                                <li>Min. 2 kg</li>
-                            </ul>
-                            <a href="https://wa.me/6285198504914?text=Welcome%20to%20Bali%20Express%20Laundry%20-%20BALI%20(Open%2024%20Hours)%0A%0APlease%20kindly%20fill%20in%20the%20following%20details%3A%0AName%3A%0APhone%20Number%3A%0AHotel%20Name%20%2F%20Location%3A%0ARoom%20Number%3A%0AService%3A%20Express%20Laundry%20(please%20fill%20in%20...%20hours)%0A%0AKindly%20share%20your%20location%20to%20facilitate%20the%20laundry%20pickup%20%E2%9C%8D" class="btn btn-whatsapp" style="width:100%">Chat WhatsApp Sekarang</a>
+                            <ul class="card-features"><li>Selesai dalam 2 Jam</li><li>Penjemputan & Pengantaran Gratis</li><li>Termasuk: Cuci, Setrika, Lipat Rapi</li><li>Mesin Terpisah Per Customer</li><li>Min. 2 kg</li></ul>
+                            <a href="https://wa.me/6285198504914" class="btn btn-whatsapp" style="width:100%">Chat WhatsApp Sekarang</a>
                         </div>
                     </article>
+                </div>
+            </div>
+        </section>
 
-                    <!-- Package 5: Shoes -->
-                    <article class="pricing-card">
-                        <div class="lang-en-content">
-                            <h3 class="card-title">SHOES LAUNDRY 24 HOURS</h3>
-                            <div class="card-price">Rp49.900 <span>/ Pair</span></div>
-                            <ul class="card-features">
-                                <li>24-Hour Turnaround</li>
-                                <li>Free Pickup & Delivery</li>
-                                <li>Manual wash & Deep cleaning</li>
-                                <li>Minimum order: 1 Pair</li>
-                            </ul>
-                            <a href="https://wa.me/6285198504914?text=Welcome%20to%20Bali%20Express%20Laundry%20-%20BALI%20(Open%2024%20Hours)%0A%0APlease%20kindly%20fill%20in%20the%20following%20details%3A%0AName%3A%0APhone%20Number%3A%0AHotel%20Name%20%2F%20Location%3A%0ARoom%20Number%3A%0AService%3A%20Express%20Laundry%20(please%20fill%20in%20...%20hours)%0A%0AKindly%20share%20your%20location%20to%20facilitate%20the%20laundry%20pickup%20%E2%9C%8D" class="btn btn-whatsapp" style="width:100%">Order via WhatsApp</a>
-                        </div>
-                        <div class="lang-id-content hidden">
-                            <h3 class="card-title">Laundry Sepatu 24 Jam</h3>
-                            <div class="card-price">Rp49.900 <span>/ Pasang</span></div>
-                            <ul class="card-features">
-                                <li>Pengerjaan dalam 24 Jam</li>
-                                <li>Penjemputan & Pengantaran Gratis</li>
-                                <li>Pencucian manual & pembersihan mendalam</li>
-                                <li>Min. 1 Pasang</li>
-                            </ul>
-                            <a href="https://wa.me/6285198504914?text=Welcome%20to%20Bali%20Express%20Laundry%20-%20BALI%20(Open%2024%20Hours)%0A%0APlease%20kindly%20fill%20in%20the%20following%20details%3A%0AName%3A%0APhone%20Number%3A%0AHotel%20Name%20%2F%20Location%3A%0ARoom%20Number%3A%0AService%3A%20Express%20Laundry%20(please%20fill%20in%20...%20hours)%0A%0AKindly%20share%20your%20location%20to%20facilitate%20the%20laundry%20pickup%20%E2%9C%8D" class="btn btn-whatsapp" style="width:100%">Chat WhatsApp Sekarang</a>
-                        </div>
-                    </article>
+        <!-- 1. PAYMENT METHODS (New) -->
+        <section class="payment-section">
+            <div class="container text-center">
+                <h3 class="lang-en-content mb-20">Accepted Payment Methods</h3>
+                <h3 class="lang-id-content hidden mb-20">Metode Pembayaran</h3>
+                <div class="payment-grid">
+                    <div class="payment-item"><span class="payment-icon">💵</span> Cash (Tunai)</div>
+                    <div class="payment-item"><span class="payment-icon">🏦</span> Transfer BCA</div>
+                    <div class="payment-item"><span class="payment-icon">🌏</span> WISE (International)</div>
+                    <div class="payment-item"><span class="payment-icon">📱</span> QRIS</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT US (With Real Photos) -->
+        <section class="section-padding" style="background-color: var(--white);">
+            <div class="container">
+                <div class="about-grid">
+                    <!-- 2. FOTO ASLI - About Image (Ironing) -->
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1585832779296-5554b4e6212f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Ironing Process" class="about-img">
+                    </div>
+                    <div>
+                        <h2 class="lang-en-content">About Us</h2>
+                        <h2 class="lang-id-content hidden">Tentang Kami</h2>
+                        <p class="lang-en-content mt-20">
+                            Bali Express Laundry is a 24-hour professional laundry service in Bali, serving both local residents and international travelers. We specialize in express premium laundry with free pickup and delivery, ensuring your clothes are cleaned quickly, safely, and with great care.
+                        </p>
+                        <p class="lang-en-content">
+                            Our service areas include Seminyak, Canggu, Umalas, Denpasar, Sanur, and Kuta, making us a trusted choice for fast, reliable, and high-quality laundry services in Bali.
+                        </p>
+                        <p class="lang-id-content hidden mt-20">
+                            Bali Express Laundry adalah layanan laundry profesional 24 jam di Bali, melayani penduduk lokal dan wisatawan internasional. Kami mengkhususkan diri pada laundry premium express dengan antar jemput gratis, memastikan pakaian Anda dibersihkan dengan cepat, aman, dan penuh perhatian.
+                        </p>
+                        <p class="lang-id-content hidden">
+                            Area layanan kami meliputi Seminyak, Canggu, Umalas, Denpasar, Sanur, dan Kuta, menjadikan kami pilihan terpercaya untuk layanan laundry cepat, andal, dan berkualitas tinggi di Bali.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -722,25 +728,21 @@
                     <h2 class="lang-id-content hidden">Cara Pemesanan</h2>
                 </div>
                 <div class="steps-container" style="margin-top: 40px;">
-                    <!-- Step 1 -->
                     <div class="step-item">
                         <div class="step-number">1</div>
                         <h4 class="lang-en-content">Contact us via WhatsApp</h4>
                         <h4 class="lang-id-content hidden">Hubungi kami via WhatsApp</h4>
                     </div>
-                    <!-- Step 2 -->
                     <div class="step-item">
                         <div class="step-number">2</div>
                         <h4 class="lang-en-content">Free pickup from your location</h4>
                         <h4 class="lang-id-content hidden">Kami jemput laundry Anda</h4>
                     </div>
-                    <!-- Step 3 -->
                     <div class="step-item">
                         <div class="step-number">3</div>
                         <h4 class="lang-en-content">Express washing process</h4>
                         <h4 class="lang-id-content hidden">Proses cuci express</h4>
                     </div>
-                    <!-- Step 4 -->
                     <div class="step-item">
                         <div class="step-number">4</div>
                         <h4 class="lang-en-content">Clean & neatly delivered back</h4>
@@ -750,60 +752,133 @@
             </div>
         </section>
 
-        <!-- TESTIMONIALS -->
+        <!-- 4. FAQ SECTION (New) -->
         <section class="section-padding">
-            <div class="container">
+            <div class="container" style="max-width: 800px;">
                 <div class="text-center">
-                    <h2 class="lang-en-content">Happy Customers</h2>
-                    <h2 class="lang-id-content hidden">Pelanggan Puas</h2>
+                    <h2 class="lang-en-content">Frequently Asked Questions</h2>
+                    <h2 class="lang-id-content hidden">Pertanyaan Umum (FAQ)</h2>
                 </div>
-                <div class="testimonials-grid" style="margin-top: 40px;">
-                    <!-- Testimonial 1 -->
-                    <div class="testimonial-card">
-                        <div class="stars">★★★★★</div>
-                        <p class="testimonial-text lang-en-content">"Saved my trip! I needed clothes cleaned urgently for a wedding, and the 3-hour service was a lifesaver. Highly recommended!"</p>
-                        <p class="testimonial-text lang-id-content hidden">"Menyelamatkan liburan saya! Saya butuh pakaian bersih cepat untuk acara pernikahan, layanan 3 jam sangat membantu. Sangat direkomendasikan!"</p>
-                        <p class="customer-name">— Sarah J., Australia</p>
+                
+                <!-- FAQ 1 -->
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span class="lang-en-content">Do you mix clothes with other customers?</span>
+                        <span class="lang-id-content hidden">Apakah baju dicampur dengan customer lain?</span>
+                        <span class="faq-toggle">+</span>
                     </div>
-                    <!-- Testimonial 2 -->
-                    <div class="testimonial-card">
-                        <div class="stars">★★★★★</div>
-                        <p class="testimonial-text lang-en-content">"Very convenient for villa guests. They picked up from Seminyak and delivered back folded perfectly. Great communication."</p>
-                        <p class="testimonial-text lang-id-content hidden">"Sangat praktis untuk tamu villa. Mereka jemput dari Seminyak dan antar kembali dengan lipatan yang sempurna. Komunikasi bagus."</p>
-                        <p class="customer-name">— Budi Santoso, Jakarta</p>
+                    <div class="faq-answer">
+                        <span class="lang-en-content">No. We use a dedicated washing machine for every customer to ensure hygiene and safety.</span>
+                        <span class="lang-id-content hidden">Tidak. Kami menggunakan mesin cuci terpisah untuk setiap customer untuk menjamin kebersihan dan keamanan.</span>
                     </div>
-                    <!-- Testimonial 3 -->
-                    <div class="testimonial-card">
-                        <div class="stars">★★★★★</div>
-                        <p class="testimonial-text lang-en-content">"Best laundry in Canggu. Open 24 hours which is perfect for late night travelers. Shoes came out looking brand new."</p>
-                        <p class="testimonial-text lang-id-content hidden">"Laundry terbaik di Canggu. Buka 24 jam sangat cocok untuk traveler malam hari. Sepatu saya jadi terlihat seperti baru."</p>
-                        <p class="customer-name">— Mark & Lisa, UK</p>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span class="lang-en-content">What payment methods do you accept?</span>
+                        <span class="lang-id-content hidden">Metode pembayaran apa saja yang diterima?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <span class="lang-en-content">We accept Cash (Tunai), Bank Transfer (BCA), WISE for international transfers, and QRIS.</span>
+                        <span class="lang-id-content hidden">Kami menerima pembayaran Tunai (Cash), Transfer Bank (BCA), WISE untuk transfer internasional, dan QRIS.</span>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span class="lang-en-content">Do you pick up from my Villa/Hotel?</span>
+                        <span class="lang-id-content hidden">Apakah Anda menjemput dari Villa/Hotel saya?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <span class="lang-en-content">Yes, we provide free pickup and delivery for all service areas including Seminyak, Canggu, Umalas, Kuta, Denpasar, and Sanur.</span>
+                        <span class="lang-id-content hidden">Ya, kami menyediakan layanan antar jemput gratis untuk semua area layanan termasuk Seminyak, Canggu, Umalas, Kuta, Denpasar, dan Sanur.</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ABOUT US -->
-        <section class="section-padding" style="background-color: var(--white);">
+        <!-- 3. INSTAGRAM FEED (New) -->
+        <section class="section-padding" style="background-color: var(--bg-light);">
+            <div class="container text-center">
+                <h2 class="lang-en-content mb-20">Follow Our Instagram</h2>
+                <h2 class="lang-id-content hidden mb-20">Ikuti Instagram Kami</h2>
+                
+                <!-- Update href="#" with your Instagram link later -->
+                <div class="insta-grid">
+                    <!-- 2. FOTO ASLI - Social Grid -->
+                    <div class="insta-item" onclick="window.open('#', '_blank');">
+                        <img src="https://images.unsplash.com/photo-1612423284934-2850a4ea6b0f?auto=format&fit=crop&w=400&q=80" alt="Insta 1">
+                        <div class="insta-overlay">📸</div>
+                    </div>
+                    <div class="insta-item" onclick="window.open('#', '_blank');">
+                        <img src="https://images.unsplash.com/photo-1524850011238-e3d235c7d4c9?auto=format&fit=crop&w=400&q=80" alt="Insta 2">
+                        <div class="insta-overlay">📸</div>
+                    </div>
+                    <div class="insta-item" onclick="window.open('#', '_blank');">
+                        <img src="https://images.unsplash.com/photo-1584204524092-8f73727264a6?auto=format&fit=crop&w=400&q=80" alt="Insta 3">
+                        <div class="insta-overlay">📸</div>
+                    </div>
+                    <div class="insta-item" onclick="window.open('#', '_blank');">
+                        <img src="https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=400&q=80" alt="Insta 4">
+                        <div class="insta-overlay">📸</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. TESTIMONIALS (With Specific Google Links) -->
+        <section class="section-padding">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="lang-en-content">About Us</h2>
-                    <h2 class="lang-id-content hidden">Tentang Kami</h2>
+                    <h2 class="lang-en-content">Google Reviews</h2>
+                    <h2 class="lang-id-content hidden">Ulasan Google</h2>
                 </div>
-                <div style="max-width: 800px; margin: 30px auto; text-align: center;">
-                    <p class="lang-en-content" style="margin-bottom: 15px;">
-                        Bali Express Laundry is a 24-hour professional laundry service in Bali, serving both local residents and international travelers. We specialize in express premium laundry with free pickup and delivery, ensuring your clothes are cleaned quickly, safely, and with great care.
-                    </p>
-                    <p class="lang-en-content">
-                        Our service areas include Seminyak, Canggu, Umalas, Denpasar, Sanur, and Kuta, making us a trusted choice for fast, reliable, and high-quality laundry services in Bali.
-                    </p>
-                    
-                    <p class="lang-id-content hidden" style="margin-bottom: 15px;">
-                        Bali Express Laundry adalah layanan laundry profesional 24 jam di Bali, melayani penduduk lokal dan wisatawan internasional. Kami mengkhususkan diri pada laundry premium express dengan antar jemput gratis, memastikan pakaian Anda dibersihkan dengan cepat, aman, dan penuh perhatian.
-                    </p>
-                    <p class="lang-id-content hidden">
-                        Area layanan kami meliputi Seminyak, Canggu, Umalas, Denpasar, Sanur, dan Kuta, menjadikan kami pilihan terpercaya untuk layanan laundry cepat, andal, dan berkualitas tinggi di Bali.
-                    </p>
+                <div class="testimonials-grid" style="margin-top: 40px;">
+                    <!-- Review 1 -->
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="testimonial-text lang-en-content">"Excellent service! Very fast and the clothes smell great. The driver was also very polite."</p>
+                        <p class="testimonial-text lang-id-content hidden">"Pelayanan luar biasa! Sangat cepat dan baju harum segar. Pengemudinya juga sangat sopan."</p>
+                        <p class="customer-name">— Google User</p>
+                        <!-- 5. SPECIFIC LINK -->
+                        <a href="https://share.google/szxZuHqUDsn6TGDjj" target="_blank" class="review-link">Read Full Review on Google</a>
+                    </div>
+                    <!-- Review 2 -->
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="testimonial-text lang-en-content">"Lifesaver for our holiday. Used the 6 hour service and it was perfect."</p>
+                        <p class="testimonial-text lang-id-content hidden">"Penyelamat liburan kami. Pakai layanan 6 jam dan hasilnya sempurna."</p>
+                        <p class="customer-name">— Google User</p>
+                        <a href="https://share.google/OdbjlhVIkOxI3c3CL" target="_blank" class="review-link">Read Full Review on Google</a>
+                    </div>
+                    <!-- Review 3 -->
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="testimonial-text lang-en-content">"Great price and quality. Highly recommended if you are in Canggu."</p>
+                        <p class="testimonial-text lang-id-content hidden">"Harga dan kualitas bagus. Sangat direkomendasikan jika ada di Canggu."</p>
+                        <p class="customer-name">— Google User</p>
+                        <a href="https://share.google/tW69M4GGOb4k5g7Zf" target="_blank" class="review-link">Read Full Review on Google</a>
+                    </div>
+                    <!-- Review 4 -->
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="testimonial-text lang-en-content">"Super fast delivery. Clothes folded neatly. Will use again!"</p>
+                        <p class="testimonial-text lang-id-content hidden">"Pengantaran super cepat. Pakaian dilipat rapi. Akan dipakai lagi!"</p>
+                        <p class="customer-name">— Google User</p>
+                        <a href="https://share.google/odldXWl6wYXi7uGfB" target="_blank" class="review-link">Read Full Review on Google</a>
+                    </div>
+                     <!-- Review 5 -->
+                     <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="testimonial-text lang-en-content">"Professional team and easy communication via WhatsApp."</p>
+                        <p class="testimonial-text lang-id-content hidden">"Tim profesional dan komunikasi mudah via WhatsApp."</p>
+                        <p class="customer-name">— Google User</p>
+                        <a href="https://share.google/2MHsXrhhmmLYXyGHS" target="_blank" class="review-link">Read Full Review on Google</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -813,11 +888,11 @@
             <div class="container">
                 <h2 class="lang-en-content" style="margin-bottom: 15px;">Need clean clothes fast?</h2>
                 <p class="lang-en-content" style="font-size: 1.2rem; margin-bottom: 30px;">We deliver fresh laundry in just hours.</p>
-                <a href="https://wa.me/6285198504914?text=Welcome%20to%20Bali%20Express%20Laundry%20-%20BALI%20(Open%2024%20Hours)%0A%0APlease%20kindly%20fill%20in%20the%20following%20details%3A%0AName%3A%0APhone%20Number%3A%0AHotel%20Name%20%2F%20Location%3A%0ARoom%20Number%3A%0AService%3A%20Express%20Laundry%20(please%20fill%20in%20...%20hours)%0A%0AKindly%20share%20your%20location%20to%20facilitate%20the%20laundry%20pickup%20%E2%9C%8D" class="btn btn-whatsapp lang-en-content">Order Now via WhatsApp</a>
+                <a href="https://wa.me/6285198504914" class="btn btn-whatsapp lang-en-content">Order Now via WhatsApp</a>
 
                 <h2 class="lang-id-content hidden" style="margin-bottom: 15px;">Butuh laundry cepat hari ini?</h2>
                 <p class="lang-id-content hidden" style="font-size: 1.2rem; margin-bottom: 30px;">Kami siap antar dalam hitungan jam.</p>
-                <a href="https://wa.me/6285198504914?text=Welcome%20to%20Bali%20Express%20Laundry%20-%20BALI%20(Open%2024%20Hours)%0A%0APlease%20kindly%20fill%20in%20the%20following%20details%3A%0AName%3A%0APhone%20Number%3A%0AHotel%20Name%20%2F%20Location%3A%0ARoom%20Number%3A%0AService%3A%20Express%20Laundry%20(please%20fill%20in%20...%20hours)%0A%0AKindly%20share%20your%20location%20to%20facilitate%20the%20laundry%20pickup%20%E2%9C%8D" class="btn btn-whatsapp lang-id-content hidden">Pesan Sekarang</a>
+                <a href="https://wa.me/6285198504914" class="btn btn-whatsapp lang-id-content hidden">Pesan Sekarang</a>
             </div>
         </section>
 
@@ -836,7 +911,7 @@
                             <div>
                                 <h4 class="lang-en-content">Address</h4>
                                 <h4 class="lang-id-content hidden">Alamat</h4>
-                                <p>Jl. Mertanadi No.92, Kerobokan Kelod,<br>Kec. Kuta Utara, Kabupaten Badung, Bali 80361</p>
+                                <p>Jl. Mertanadi No.92X, Kerobokan Kelod,<br>Kec. Kuta Utara, Kabupaten Badung, Bali 80361</p>
                             </div>
                         </div>
                         <div class="info-row">
@@ -866,9 +941,8 @@
                         </div>
                     </div>
                     <div class="map-container">
-                        <!-- Placeholder for Google Maps -->
                         <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3944.123456789!2d115.15!3d-8.67!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOMKwNDAnMTIuMCJTIDExNcKwMDknMDAuMCJF!5e0!3m2!1sen!2sid!4v1600000000000!5m2!1sen!2sid" 
+                            src="https://maps.google.com/maps?q=Jl.+Mertanadi+No.92X,+Kerobokan+Kelod,+Kuta+Utara,+Badung,+Bali&t=&z=17&ie=UTF8&iwloc=&output=embed" 
                             width="100%" 
                             height="100%" 
                             style="border:0;" 
@@ -889,21 +963,88 @@
                 <a href="#home" class="lang-en-content">Home</a>
                 <a href="#pricing" class="lang-en-content">Pricing</a>
                 <a href="#contact" class="lang-en-content">Contact</a>
-                
+                <!-- 6. LEGAL MODAL TRIGGERS -->
+                <a onclick="openModal('privacyModal')" class="lang-en-content">Privacy Policy</a>
+                <a onclick="openModal('termsModal')" class="lang-en-content">Terms of Service</a>
+
                 <a href="#home" class="lang-id-content hidden">Beranda</a>
                 <a href="#pricing" class="lang-id-content hidden">Harga</a>
                 <a href="#contact" class="lang-id-content hidden">Kontak</a>
+                <a onclick="openModal('privacyModal')" class="lang-id-content hidden">Kebijakan Privasi</a>
+                <a onclick="openModal('termsModal')" class="lang-id-content hidden">Syarat Ketentuan</a>
             </div>
         </div>
     </footer>
 
-    <script>
-        // Simple Language Switcher Logic
-        function switchLang(lang) {
-            // Update body class
-            document.body.className = 'lang-' + lang;
+    <!-- 6. LEGAL MODALS (Privacy & Terms) -->
+    <!-- Privacy Policy Modal -->
+    <div id="privacyModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('privacyModal')">&times;</span>
+            <h2 class="lang-en-content">Privacy Policy</h2>
+            <h2 class="lang-id-content hidden">Kebijakan Privasi</h2>
+            
+            <div class="lang-en-content">
+                <p><strong>Last updated: 2023</strong></p>
+                <p>At Bali Express Laundry, we value your privacy. We only collect information necessary to provide our laundry services, including your name, phone number, hotel/location details, and room number.</p>
+                <h4>1. Data Collection</h4>
+                <p>We collect data via WhatsApp and physical pickup forms to coordinate delivery.</p>
+                <h4>2. Data Usage</h4>
+                <p>Your data is used solely for contacting you regarding your order status and delivery coordination.</p>
+                <h4>3. Data Sharing</h4>
+                <p>We do not sell or rent your personal information to third parties.</p>
+            </div>
 
-            // Toggle buttons
+            <div class="lang-id-content hidden">
+                <p><strong>Diperbarui: 2023</strong></p>
+                <p>Di Bali Express Laundry, kami menghargai privasi Anda. Kami hanya mengumpulkan informasi yang diperlukan untuk memberikan layanan laundry, termasuk nama, nomor telepon, detail hotel/lokasi, dan nomor kamar.</p>
+                <h4>1. Pengumpulan Data</h4>
+                <p>Kami mengumpulkan data melalui WhatsApp dan formulir penjemputan fisik untuk mengatur pengiriman.</p>
+                <h4>2. Penggunaan Data</h4>
+                <p>Data Anda digunakan semata-mata untuk menghubungi Anda terkait status pesanan dan koordinasi pengiriman.</p>
+                <h4>3. Berbagi Data</h4>
+                <p>Kami tidak menjual atau menyewakan informasi pribadi Anda kepada pihak ketiga.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Terms of Service Modal -->
+    <div id="termsModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('termsModal')">&times;</span>
+            <h2 class="lang-en-content">Terms of Service</h2>
+            <h2 class="lang-id-content hidden">Syarat Ketentuan</h2>
+            
+            <div class="lang-en-content">
+                <p>By using Bali Express Laundry services, you agree to the following terms:</p>
+                <h4>1. Service Hours</h4>
+                <p>We operate 24 hours, but pickup times depend on driver availability and traffic conditions.</p>
+                <h4>2. Items</h4>
+                <p>We are not responsible for color bleeding, shrinkage, or damage to items not suitable for standard laundering. Please check pockets before handing over clothes.</p>
+                <h4>3. Payment</h4>
+                <p>Payment is due upon delivery or via transfer as confirmed by our team.</p>
+                <h4>4. Lost Items</h4>
+                <p>We recommend removing valuables from pockets. We are not liable for items left in clothing.</p>
+            </div>
+
+            <div class="lang-id-content hidden">
+                <p>Dengan menggunakan layanan Bali Express Laundry, Anda menyetujui syarat berikut:</p>
+                <h4>1. Jam Layanan</h4>
+                <p>Kami beroperasi 24 jam, tetapi waktu penjemputan bergantung pada ketersediaan pengemudi dan kondisi lalu lintas.</p>
+                <h4>2. Barang</h4>
+                <p>Kami tidak bertanggung jawab atas luntur warna, susut, atau kerusakan pada barang yang tidak cocok untuk pencucian standar. Harap periksa saku sebelum menyerahkan pakaian.</p>
+                <h4>3. Pembayaran</h4>
+                <p>Pembayaran jatuh tempo saat pengiriman atau melalui transfer sebagaimana dikonfirmasi tim kami.</p>
+                <h4>4. Barang Hilang</h4>
+                <p>Kami menyarankan untuk menghapus barang berharga dari saku. Kami tidak bertanggung jawab atas barang yang tertinggal di dalam pakaian.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Language Switcher Logic
+        function switchLang(lang) {
+            document.body.className = 'lang-' + lang;
             const btns = document.querySelectorAll('.lang-btn');
             btns.forEach(btn => {
                 if(btn.textContent.toLowerCase() === lang) {
@@ -912,17 +1053,36 @@
                     btn.classList.remove('active');
                 }
             });
-
-            // Toggle Content Visibility
             const enContent = document.querySelectorAll('.lang-en-content');
             const idContent = document.querySelectorAll('.lang-id-content');
-
             if (lang === 'en') {
                 enContent.forEach(el => el.classList.remove('hidden'));
                 idContent.forEach(el => el.classList.add('hidden'));
             } else {
                 enContent.forEach(el => el.classList.add('hidden'));
                 idContent.forEach(el => el.classList.remove('hidden'));
+            }
+        }
+
+        // FAQ Toggle Logic
+        function toggleFaq(element) {
+            const item = element.parentElement;
+            item.classList.toggle('active');
+            const toggle = element.querySelector('.faq-toggle');
+            toggle.textContent = item.classList.contains('active') ? '-' : '+';
+        }
+
+        // Modal Logic
+        function openModal(id) {
+            document.getElementById(id).style.display = "block";
+        }
+        function closeModal(id) {
+            document.getElementById(id).style.display = "none";
+        }
+        // Close modal if clicking outside content
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = "none";
             }
         }
     </script>
