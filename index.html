@@ -1,759 +1,1272 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bali Express Laundry | 24-Hour Express Laundry Service in Bali</title>
-    <meta name="description" content="Premium 24-hour express laundry service in Bali with free pickup & delivery. Serving Seminyak, Canggu, Umalas, Denpasar, Sanur, and Kuta. Fast service 2-12 hours.">
-    <meta name="keywords" content="Bali Express Laundry, laundry service Bali, 24 hour laundry, express laundry Bali, free pickup laundry, Canggu laundry, Seminyak laundry, laundry Kuta, shoe cleaning Bali">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "Bali Express Laundry",
-        "description": "24-hour express laundry service in Bali with free pickup and delivery",
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Jl. Mertanadi No.92, Kerobokan Kelod",
-            "addressLocality": "Kec. Kuta Utara",
-            "addressRegion": "Kabupaten Badung",
-            "addressCountry": "ID",
-            "postalCode": "80361"
-        },
-        "telephone": "+6285198504914",
-        "areaServed": ["Seminyak", "Canggu", "Umalas", "Denpasar", "Sanur", "Kuta"],
-        "priceRange": "Rp24,900 - Rp49,900",
-        "openingHours": "Mo-Su 00:00-23:59",
-        "sameAs": ["https://wa.me/6285198504914"]
-    }
-    </script>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body { font-family: 'Inter', sans-serif; line-height: 1.6; color: #1a1a1a; background: white; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        
-        /* Header */
-        .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid #e5e7eb; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        .header-content { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; align-items: center; justify-content: space-between; height: 64px; }
-        .logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
-        .logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, #2563eb, #1e40af); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
-        .logo-text { font-weight: 700; font-size: 18px; color: #1a1a1a; text-decoration: none; }
-        .nav { display: none; gap: 32px; }
-        @media(min-width: 768px) { .nav { display: flex; align-items: center; } }
-        .nav a { text-decoration: none; color: #666; font-weight: 500; transition: color 0.3s; }
-        .nav a:hover { color: #2563eb; }
-        .header-actions { display: flex; align-items: center; gap: 16px; }
-        .lang-btn { padding: 6px 12px; border-radius: 8px; background: #f5f5f5; border: none; font-weight: 500; font-size: 14px; color: #374151; cursor: pointer; transition: background 0.3s; }
-        .lang-btn:hover { background: #e5e7eb; }
-        .whatsapp-btn { display: none; align-items: center; gap: 8px; padding: 8px 16px; background: #22c55e; color: white; text-decoration: none; border-radius: 8px; font-weight: 500; transition: background 0.3s; }
-        .whatsapp-btn:hover { background: #16a34a; }
-        @media(min-width: 640px) { .whatsapp-btn { display: flex; } }
-        
-        /* Hero */
-        .hero { background: url('https://images.unsplash.com/photo-1556909114-44e3e70034e2?w=1920&h=1080&fit=crop') center/cover no-repeat; padding-top: 100px; padding-bottom: 64px; min-height: 100vh; position: relative; display: flex; align-items: center; }
-        .hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(37,99,235,0.85) 0%, rgba(30,64,175,0.8) 50%, rgba(30,58,138,0.85) 100%); }
-        .hero-content { position: relative; z-index: 10; text-align: center; color: white; max-width: 800px; margin: 0 auto; padding: 0 20px; }
-        .hero h1 { font-size: clamp(32px, 5vw, 60px); font-weight: 800; margin-bottom: 24px; line-height: 1.2; }
-        .hero p { font-size: clamp(16px, 3vw, 20px); margin-bottom: 32px; color: rgba(255,255,255,0.9); }
-        .hero-cta { display: inline-flex; align-items: center; gap: 8px; padding: 16px 32px; background: #22c55e; color: white; text-decoration: none; border-radius: 12px; font-weight: 600; font-size: 18px; box-shadow: 0 4px 20px rgba(0,0,0,0.3); transition: all 0.3s; }
-        .hero-cta:hover { background: #16a34a; box-shadow: 0 6px 30px rgba(0,0,0,0.4); transform: translateY(-2px); }
-        
-        .trust-indicators { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; margin-top: 64px; }
-        .trust-card { background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); border-radius: 16px; padding: 24px; text-align: center; }
-        .trust-card:hover { background: rgba(255,255,255,0.2); }
-        .trust-icon { width: 48px; height: 48px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; }
-        .trust-icon svg { width: 24px; height: 24px; stroke: white; fill: none; stroke-width: 2; }
-        .trust-title { font-weight: 600; color: white; font-size: 16px; }
-        
-        /* Section Styles */
-        section { padding: 80px 0; }
-        .section-title { text-align: center; font-size: clamp(28px, 4vw, 40px); font-weight: 700; margin-bottom: 16px; color: #1a1a1a; }
-        .section-subtitle { text-align: center; font-size: 18px; color: #666; max-width: 700px; margin: 0 auto 48px; }
-        
-        /* Services */
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 48px; }
-        .service-card { border-radius: 16px; padding: 24px; color: white; display: flex; flex-direction: column; height: 100%; box-shadow: 0 4px 20px rgba(0,0,0,0.1); transition: all 0.3s; }
-        .service-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,0,0,0.2); }
-        .service-card-12h { background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); }
-        .service-card-6h { background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); }
-        .service-card-3h { background: linear-gradient(135deg, #1d4ed8 0%, #1e3a8a 100%); }
-        .service-card-2h { background: linear-gradient(135deg, #1e3a8a 0%, #1e1f5f 100%); }
-        .service-name { font-size: 20px; font-weight: 700; text-align: center; margin-bottom: 16px; }
-        .service-price { text-align: center; margin-bottom: 16px; }
-        .price-amount { font-size: 36px; font-weight: 700; display: block; }
-        .price-unit { font-size: 14px; opacity: 0.9; margin-left: 4px; }
-        .service-features { display: flex; flex-direction: column; gap: 12px; flex-grow: 1; margin-bottom: 16px; }
-        .feature-item { display: flex; align-items: center; gap: 12px; font-size: 14px; }
-        .feature-icon { width: 20px; height: 20px; flex-shrink: 0; stroke: white; fill: none; stroke-width: 2; }
-        .service-cta { width: 100%; padding: 12px 16px; background: white; color: #2563eb; text-decoration: none; border-radius: 12px; font-weight: 600; text-align: center; transition: background 0.3s; }
-        .service-cta:hover { background: #f0f9ff; }
-        
-        /* Shoes */
-        .shoes-section { background: linear-gradient(135deg, #111827 0%, #374151 100%); color: white; }
-        .shoes-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 48px; align-items: center; }
-        .shoes-info { background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); border-radius: 16px; padding: 32px; }
-        .shoes-price { font-size: 36px; font-weight: 700; color: #4ade80; margin-bottom: 24px; }
-        .shoes-features { display: flex; flex-direction: column; gap: 16px; margin-bottom: 24px; }
-        .shoes-cta { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: #22c55e; color: white; text-decoration: none; border-radius: 12px; font-weight: 600; transition: background 0.3s; }
-        .shoes-cta:hover { background: #16a34a; }
-        .shoes-image { border-radius: 16px; width: 100%; height: auto; box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
-        
-        /* About */
-        .about-section { background: #eff6ff; }
-        .about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 48px; align-items: center; }
-        .about-image { border-radius: 16px; width: 100%; height: 384px; object-fit: cover; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
-        .about-text { font-size: 18px; color: #374151; line-height: 1.8; white-space: pre-line; }
-        
-        /* Why Choose Us */
-        .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 48px; }
-        .why-card { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 16px; padding: 24px; transition: all 0.3s; }
-        .why-card:hover { box-shadow: 0 8px 30px rgba(0,0,0,0.1); transform: translateY(-4px); }
-        .why-icon { width: 48px; height: 48px; background: #dbeafe; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
-        .why-icon svg { width: 24px; height: 24px; stroke: #2563eb; fill: none; stroke-width: 2; }
-        .why-title { font-size: 20px; font-weight: 600; color: #1a1a1a; margin-bottom: 8px; }
-        .why-text { font-size: 15px; color: #666; line-height: 1.6; }
-        
-        /* Steps */
-        .steps-section { background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%); color: white; }
-        .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 32px; margin-top: 48px; }
-        .step-card { text-align: center; padding: 24px; }
-        .step-number { width: 64px; height: 64px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-size: 24px; font-weight: 700; border: 2px solid rgba(255,255,255,0.3); }
-        .step-title { font-size: 20px; font-weight: 600; margin-bottom: 8px; }
-        .step-text { font-size: 15px; opacity: 0.9; }
-        
-        /* Testimonials */
-        .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 48px; }
-        .testimonial-card { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 16px; padding: 24px; }
-        .stars { color: #fbbf24; margin-bottom: 12px; font-size: 20px; }
-        .testimonial-text { font-size: 15px; color: #374151; font-style: italic; margin-bottom: 16px; line-height: 1.6; }
-        .testimonial-author { font-weight: 600; color: #1a1a1a; }
-        .testimonial-location { font-size: 14px; color: #666; }
-        
-        /* FAQ */
-        .faq-item { background: white; border: 1px solid #e5e7eb; border-radius: 12px; margin-bottom: 12px; overflow: hidden; }
-        .faq-question { padding: 20px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; color: #1a1a1a; font-size: 16px; transition: background 0.3s; user-select: none; }
-        .faq-question:hover { background: #f9fafb; }
-        .faq-answer { padding: 0 20px 20px; display: none; border-top: 1px solid #e5e7eb; color: #666; font-size: 15px; line-height: 1.6; }
-        .faq-item.active .faq-answer { display: block; }
-        .faq-icon { width: 20px; height: 20px; transition: transform 0.3s; }
-        .faq-item.active .faq-icon { transform: rotate(180deg); }
-        
-        /* CTA */
-        .cta-section { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); text-align: center; padding: 100px 20px; }
-        .cta-section h2 { font-size: clamp(28px, 4vw, 40px); font-weight: 700; margin-bottom: 16px; color: #1a1a1a; }
-        .cta-section p { font-size: 18px; color: #374151; max-width: 600px; margin: 0 auto 32px; }
-        .cta-section a { display: inline-flex; align-items: center; gap: 8px; padding: 16px 40px; background: #22c55e; color: white; text-decoration: none; border-radius: 12px; font-weight: 600; font-size: 18px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); transition: all 0.3s; }
-        .cta-section a:hover { background: #16a34a; transform: translateY(-2px); }
-        
-        /* Footer */
-        footer { background: #111827; color: rgba(255,255,255,0.7); padding: 64px 0 32px; }
-        .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 32px; }
-        footer h3 { color: white; font-size: 18px; font-weight: 600; margin-bottom: 20px; }
-        footer p, footer li { color: rgba(255,255,255,0.6); font-size: 15px; margin-bottom: 10px; }
-        footer ul { list-style: none; }
-        .contact-link { color: #4ade80; text-decoration: none; transition: color 0.3s; }
-        .contact-link:hover { color: #22c55e; }
-        .map-container { border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); }
-        .map-container iframe { width: 100%; height: 250px; border: none; }
-        .copyright { text-align: center; padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 14px; margin-top: 48px; }
-        
-        /* Floating WhatsApp */
-        .floating-whatsapp { position: fixed; bottom: 24px; right: 24px; z-index: 1000; width: 60px; height: 60px; background: #22c55e; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(0,0,0,0.3); transition: all 0.3s; text-decoration: none; }
-        .floating-whatsapp:hover { transform: scale(1.1); background: #16a34a; }
-        .floating-whatsapp svg { width: 32px; height: 32px; fill: white; }
-        
-        /* Utility */
-        .hidden { display: none !important; }
-        @media(max-width: 768px) {
-            .hero h1 { font-size: 32px; }
-            .trust-indicators { grid-template-columns: 1fr; }
-            .shoes-content { grid-template-columns: 1fr; }
-            .about-grid { grid-template-columns: 1fr; }
-            .steps-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-    </style>
-</head>
-<body>
-    <!-- Header -->
-    <header class="header">
-        <div class="header-content">
-            <a href="#" class="logo">
-                <div class="logo-icon">
-                    <svg viewBox="0 0 24 24" stroke="white" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="10"/>
-                        <path d="M12 6v6l4 2"/>
-                    </svg>
-                </div>
-                <span class="logo-text">Bali Express Laundry</span>
-            </a>
-            <nav class="nav">
-                <a href="#services">Services</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
-            </nav>
-            <div class="header-actions">
-                <button class="lang-btn" onclick="toggleLanguage()">ID</button>
-                <a href="https://wa.me/6285198504914" class="whatsapp-btn" target="_blank">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-                    </svg>
-                    WhatsApp
-                </a>
-            </div>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1 class="lang-en">Bali Express Laundry - 24 Hour Express Laundry in Bali</h1>
-            <h1 class="lang-id hidden">Layanan Laundry Express 24 Jam Terpercaya di Bali</h1>
-            <p class="lang-en">Free pickup & delivery. Fast service 2-12 hours. Serving Seminyak, Canggu, Umalas, Denpasar, Sanur, and Kuta.</p>
-            <p class="lang-id hidden">Layanan laundry premium dengan gratis jemput & antar untuk wisatawan dan lokal di seluruh Bali</p>
-            <a href="https://wa.me/6285198504914" class="hero-cta" target="_blank">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-                </svg>
-                <span class="lang-en">Order via WhatsApp</span>
-                <span class="lang-id hidden">Pesan via WhatsApp</span>
-            </a>
-            <div class="trust-indicators">
-                <div class="trust-card">
-                    <div class="trust-icon">
-                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 12"/></svg>
-                    </div>
-                    <div class="trust-title lang-en">24 Hours Service</div>
-                    <div class="trust-title lang-id hidden">Layanan 24 Jam</div>
-                </div>
-                <div class="trust-card">
-                    <div class="trust-icon">
-                        <svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 16 16"/><circle cx="5.5" cy="18.5" r="2.5"/></svg>
-                    </div>
-                    <div class="trust-title lang-en">Free Pickup & Delivery</div>
-                    <div class="trust-title lang-id hidden">Gratis Jemput & Antar</div>
-                </div>
-                <div class="trust-card">
-                    <div class="trust-icon">
-                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 15.3"/></svg>
-                    </div>
-                    <div class="trust-title lang-en">Tourist Friendly</div>
-                    <div class="trust-title lang-id hidden">Ramah Wisatawan</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services">
-        <div class="container">
-            <h2 class="section-title lang-en">Our Laundry Services</h2>
-            <h2 class="section-title lang-id hidden">Layanan Laundry Kami</h2>
-            <p class="section-subtitle lang-en">Choose express service that fits your schedule</p>
-            <p class="section-subtitle lang-id hidden">Pilih layanan express yang sesuai dengan jadwal Anda</p>
-            <div class="services-grid">
-                <div class="service-card service-card-12h">
-                    <h3 class="service-name lang-en">Express 12 Hours</h3>
-                    <h3 class="service-name lang-id hidden">Express 12 Jam</h3>
-                    <div class="service-price">
-                        <span class="price-amount">Rp24,900</span>
-                        <span class="price-unit">/kg</span>
-                    </div>
-                    <div class="service-features">
-                        <div class="feature-item">
-                            <svg class="feature-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-                            <span class="lang-en">12 Hours Turnaround</span>
-                            <span class="lang-id hidden">12 Jam Pengerjaan</span>
-                        </div>
-                        <div class="feature-item">
-                            <svg class="feature-icon" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
-                            <span class="lang-en">Min. 3.9 kg</span>
-                            <span class="lang-id hidden">Min. 3.9 kg</span>
-                        </div>
-                        <div class="feature-item">
-                            <svg class="feature-icon" viewBox="0 0 24 24"><path d="M1 3h4l4 4v8H5V7m4 0v8h8"/></svg>
-                            <span class="lang-en">Free Pickup & Delivery</span>
-                            <span class="lang-id hidden">Gratis Jemput & Antar</span>
-                        </div>
-                        <div class="feature-item">
-                            <svg class="feature-icon" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/></svg>
-                            <span class="lang-en">Wash, Iron, Fold</span>
-                            <span class="lang-id hidden">Cuci, Setrika, Lipat</span>
-                        </div>
-                        <div class="feature-item">
-                            <svg class="feature-icon" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/></svg>
-                            <span>Dedicated Machine</span>
-                        </div>
-                    </div>
-                    <a href="https://wa.me/6285198504914" class="service-cta" target="_blank">
-                        <span class="lang-en">Order Now</span>
-                        <span class="lang-id hidden">Pesan Sekarang</span>
-                    </a>
-                </div>
-                <div class="service-card service-card-6h">
-                    <h3 class="service-name lang-en">Express 6 Hours</h3>
-                    <h3 class="service-name lang-id hidden">Express 6 Jam</h3>
-                    <div class="service-price">
-                        <span class="price-amount">Rp39,900</span>
-                        <span class="price-unit">/kg</span>
-                    </div>
-                    <div class="service-features">
-                        <div class="feature-item">
-                            <svg class="feature-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-                            <span class="lang-en">6 Hours Turnaround</span>
-                            <span class="lang-id hidden">6 Jam Pengerjaan</span>
-                        </div>
-                        <div class="feature-item">
-                            <svg class="feature-icon" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
-                            <span class="lang-en">Min. 3 kg</span>
-                            <span class="lang-id hidden">Min. 3 kg</span>
-                        </div>
-                        <div class="feature-item">
-                            <svg class="feature-icon" viewBox="0 0 24 24"><path d="M1 3h4l4 4v8H5V7m4 0v8h8"/></svg>
-                            <span class="lang-en">Free Pickup & Delivery</span>
-                            <span class="lang-id hidden">Gratis Jemput & Antar</span>
-                        </div>
-                        <div class="feature-item">
-                            <svg class="feature-icon" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/></svg>
-                            <span class="lang-en">Wash, Iron, Fold</span>
-                            <span class="lang-id hidden">Cuci, Setrika, Lipat</span>
-                        </div>
-                        <div class="feature-item">
-                            <svg class="feature-icon" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/></svg>
-                            <span>Dedicated Machine</span>
-                        </div>
-                    </div>
-                    <a href="https://wa.me/6285198504914" class="service-cta" target="_blank">
-                        <span class="lang-en">Order Now</span>
-                        <span class="lang-id hidden">Pesan Sekarang</span>
-                    </a>
-                </div>
-                <div class="service-card service-card-3h">
-                    <h3 class="service-name lang-en">Express 3 Hours</h3>
-                    <h3 class="service-name lang-id hidden">Express 3 Jam</h3>
-                    <div class="service-price">
-                        <span class="price-amount">Rp49,900</span>
-                        <span class="price-unit">/kg</span>
-                    </div>
-                    <div class="service-features">
-                        <div class="feature-item">
-                            <svg class="feature-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-                            <span class="lang-en">3 Hours Turnaround</span>
-                            <span class="lang-id hidden">3 Jam Pengerjaan</span>
-                        </div>
-                        <div class="feature-item">
-                            <svg class="feature-icon" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
-                            <span class="lang-en">Min. 2 kg</span>
-                            <span class="lang-id hidden">Min. 2 kg</span>
-                        </div>
-                        <div class="feature-item">
-                            <svg class="feature-icon" viewBox="0 0 24 24"><path d="M1 3h4l4 4v8H5V7m4 0v8h8"/></svg>
-                            <span class="lang-en">Free Pickup & Delivery</span>
-                            <span class="lang-id hidden">Gratis Jemput & Antar</span>
-                        </div>
-                        <div class="feature-item">
-                            <svg class="feature-icon" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/></svg>
-                            <span class="lang-en">Wash, Iron, Fold</span>
-                            <span class="lang-id hidden">Cuci, Setrika, Lipat</span>
-                        </div>
-                        <div class="feature-item">
-                            <svg class="feature-icon" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/></svg>
-                            <span>Dedicated Machine</span>
-                        </div>
-                    </div>
-                    <a href="https://wa.me/6285198504914" class="service-cta" target="_blank">
-                        <span class="lang-en">Order Now</span>
-                        <span class="lang-id hidden">Pesan Sekarang</span>
-                    </a>
-                </div>
-                <div class="service-card service-card-2h">
-                    <h3 class="service-name lang-en">Ultra Express 2 Hours</h3>
-                    <h3 class="service-name lang-id hidden">Ultra Express 2 Jam</h3>
-                    <div class="service-price">
-                        <span class="price-amount">Rp59,900</span>
-                        <span class="price-unit">/kg</span>
-                    </div>
-                    <div class="service-features">
-                        <div class="feature-item">
-                            <svg class="feature-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-                            <span class="lang-en">2 Hours Turnaround</span>
-                            <span class="lang-id hidden">2 Jam Pengerjaan</span>
-                        </div>
-                        <div class="feature-item">
-                            <svg class="feature-icon" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
-                            <span class="lang-en">Min. 2 kg</span>
-                            <span class="lang-id hidden">Min. 2 kg</span>
-                        </div>
-                        <div class="feature-item">
-                            <svg class="feature-icon" viewBox="0 0 24 24"><path d="M1 3h4l4 4v8H5V7m4 0v8h8"/></svg>
-                            <span class="lang-en">Free Pickup & Delivery</span>
-                            <span class="lang-id hidden">Gratis Jemput & Antar</span>
-                        </div>
-                        <div class="feature-item">
-                            <svg class="feature-icon" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/></svg>
-                            <span class="lang-en">Wash, Iron, Fold</span>
-                            <span class="lang-id hidden">Cuci, Setrika, Lipat</span>
-                        </div>
-                        <div class="feature-item">
-                            <svg class="feature-icon" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/></svg>
-                            <span>Dedicated Machine</span>
-                        </div>
-                    </div>
-                    <a href="https://wa.me/6285198504914" class="service-cta" target="_blank">
-                        <span class="lang-en">Order Now</span>
-                        <span class="lang-id hidden">Pesan Sekarang</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Shoes Section -->
-    <section class="shoes-section">
-        <div class="container">
-            <div class="shoes-content">
-                <div class="shoes-info">
-                    <h2 class="section-title lang-en" style="color: white;">Shoes Laundry</h2>
-                    <h2 class="section-title lang-id hidden" style="color: white;">Laundry Sepatu</h2>
-                    <p class="section-subtitle" style="color: rgba(255,255,255,0.7);">Professional 24-hour shoe cleaning service</p>
-                    <h3 class="lang-en" style="color: white; font-size: 24px; font-weight: 700; margin-bottom: 16px;">Shoes Laundry 24 Hours</h3>
-                    <h3 class="lang-id hidden" style="color: white; font-size: 24px; font-weight: 700; margin-bottom: 16px;">Shoes Laundry 24 Jam</h3>
-                    <div class="shoes-price">Rp49,900 /pasang</div>
-                    <div class="shoes-features">
-                        <div class="feature-item">
-                            <svg class="feature-icon" viewBox="0 0 24 24" style="stroke: #4ade80;"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-                            <span>24-Hour Turnaround</span>
-                        </div>
-                        <div class="feature-item">
-                            <svg class="feature-icon" viewBox="0 0 24 24" style="stroke: #4ade80;"><path d="M1 3h4l4 4v8H5V7m4 0v8h8"/></svg>
-                            <span>Free Pickup & Delivery</span>
-                        </div>
-                        <div class="feature-item">
-                            <svg class="feature-icon" viewBox="0 0 24 24" style="stroke: #4ade80;"><path d="M9 12l2 2 4-4"/></svg>
-                            <span>Manual Wash & Clean</span>
-                        </div>
-                    </div>
-                    <a href="https://wa.me/6285198504914" class="shoes-cta" target="_blank">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-                        </svg>
-                        <span class="lang-en">Order Shoe Cleaning</span>
-                        <span class="lang-id hidden">Pesan Cuci Sepatu</span>
-                    </a>
-                </div>
-                <div>
-                    <img src="https://images.unsplash.com/photo-1460353581641-37baddab0fa2?w=600&h=400&fit=crop" alt="Professional shoe cleaning service" class="shoes-image">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about-section" id="about">
-        <div class="container">
-            <div class="about-grid">
-                <img src="https://images.unsplash.com/photo-1556909114-44e3e70034e2?w=600&h=400&fit=crop" alt="Bali Express Laundry professional service" class="about-image">
-                <div>
-                    <h2 class="section-title lang-en">About Us</h2>
-                    <h2 class="section-title lang-id hidden">Tentang Kami</h2>
-                    <p class="about-text lang-en">Bali Express Laundry is a 24-hour professional laundry service in Bali, serving both local residents and international travelers. We specialize in express premium laundry with free pickup and delivery, ensuring your clothes are cleaned quickly, safely, and with great care.
-
-Our service areas include Seminyak, Canggu, Umalas, Denpasar, Sanur, and Kuta, making us a trusted choice for fast, reliable, and high-quality laundry services in Bali.</p>
-                    <p class="about-text lang-id hidden">Bali Express Laundry adalah layanan laundry profesional 24 jam di Bali, melayani penduduk lokal dan wisatawan internasional. Kami mengkhususkan diri dalam layanan laundry express premium dengan jemput & antar gratis, memastikan pakaian Anda dibersihkan dengan cepat, aman, dan dengan perhatian penuh.
-
-Area layanan kami meliputi Seminyak, Canggu, Umalas, Denpasar, Sanur, dan Kuta, menjadikan kami pilihan terpercaya untuk layanan laundry yang cepat, andal, dan berkualitas tinggi di Bali.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why Choose Us -->
-    <section>
-        <div class="container">
-            <h2 class="section-title lang-en">Why Choose Us</h2>
-            <h2 class="section-title lang-id hidden">Mengapa Memilih Kami</h2>
-            <div class="why-grid">
-                <div class="why-card">
-                    <div class="why-icon">
-                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 12"/></svg>
-                    </div>
-                    <h3 class="why-title lang-en">24/7 Operation</h3>
-                    <h3 class="why-title lang-id hidden">Operasi 24/7</h3>
-                    <p class="why-text lang-en">Round-the-clock service to fit your schedule</p>
-                    <p class="why-text lang-id hidden">Layanan sepanjang waktu sesuai jadwal Anda</p>
-                </div>
-                <div class="why-card">
-                    <div class="why-icon">
-                        <svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 16 16"/><circle cx="5.5" cy="18.5" r="2.5"/></svg>
-                    </div>
-                    <h3 class="why-title lang-en">Free Pickup & Delivery</h3>
-                    <h3 class="why-title lang-id hidden">Gratis Jemput & Antar</h3>
-                    <p class="why-text lang-en">Complimentary service across our coverage areas</p>
-                    <p class="why-text lang-id hidden">Layanan gratis di area cakupan kami</p>
-                </div>
-                <div class="why-card">
-                    <div class="why-icon">
-                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-                    </div>
-                    <h3 class="why-title lang-en">Fast Turnaround</h3>
-                    <h3 class="why-title lang-id hidden">Proses Cepat</h3>
-                    <p class="why-text lang-en">Express services from 2 to 12 hours</p>
-                    <p class="why-text lang-id hidden">Layanan express dari 2 sampai 12 jam</p>
-                </div>
-                <div class="why-card">
-                    <div class="why-icon">
-                        <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/></svg>
-                    </div>
-                    <h3 class="why-title lang-en">Premium Quality</h3>
-                    <h3 class="why-title lang-id hidden">Kualitas Premium</h3>
-                    <p class="why-text lang-en">Professional washing and ironing</p>
-                    <p class="why-text lang-id hidden">Cuci dan setrika profesional</p>
-                </div>
-                <div class="why-card">
-                    <div class="why-icon">
-                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/></svg>
-                    </div>
-                    <h3 class="why-title lang-en">Tourist Friendly</h3>
-                    <h3 class="why-title lang-id hidden">Ramah Wisatawan</h3>
-                    <p class="why-text lang-en">English-speaking staff for international guests</p>
-                    <p class="why-text lang-id hidden">Staf berbahasa Inggris untuk tamu internasional</p>
-                </div>
-                <div class="why-card">
-                    <div class="why-icon">
-                        <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-                    </div>
-                    <h3 class="why-title lang-en">Hygienic Process</h3>
-                    <h3 class="why-title lang-id hidden">Proses Higienis</h3>
-                    <p class="why-text lang-en">Dedicated machines per customer</p>
-                    <p class="why-text lang-id hidden">Mesin terpisah per pelanggan</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- How It Works -->
-    <section class="steps-section">
-        <div class="container">
-            <h2 class="section-title lang-en" style="color: white;">How It Works</h2>
-            <h2 class="section-title lang-id hidden" style="color: white;">Cara Kerja</h2>
-            <p class="section-subtitle" style="color: rgba(255,255,255,0.8);">Simple 4-step process</p>
-            <div class="steps-grid">
-                <div class="step-card">
-                    <div class="step-number">1</div>
-                    <h3 class="step-title lang-en">Contact Us</h3>
-                    <h3 class="step-title lang-id hidden">Hubungi Kami</h3>
-                    <p class="step-text lang-en">Reach out via WhatsApp</p>
-                    <p class="step-text lang-id hidden">Hubungi via WhatsApp</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-number">2</div>
-                    <h3 class="step-title lang-en">Free Pickup</h3>
-                    <h3 class="step-title lang-id hidden">Gratis Jemput</h3>
-                    <p class="step-text lang-en">We collect your laundry</p>
-                    <p class="step-text lang-id hidden">Kami jemput laundry</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-number">3</div>
-                    <h3 class="step-title lang-en">Professional Cleaning</h3>
-                    <h3 class="step-title lang-id hidden">Pembersihan Profesional</h3>
-                    <p class="step-text lang-en">Items washed with care</p>
-                    <p class="step-text lang-id hidden">Dicuci dengan hati-hati</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-number">4</div>
-                    <h3 class="step-title lang-en">Free Delivery</h3>
-                    <h3 class="step-title lang-id hidden">Gratis Antar</h3>
-                    <p class="step-text lang-en">Clean laundry delivered</p>
-                    <p class="step-text lang-id hidden">Laundry bersih diantar</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section>
-        <div class="container">
-            <h2 class="section-title lang-en">What Our Customers Say</h2>
-            <h2 class="section-title lang-id hidden">Apa Kata Pelanggan Kami</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p class="testimonial-text lang-en">Amazing service! Had my laundry ready in 6 hours. Very professional and free pickup is a game-changer for tourists.</p>
-                    <p class="testimonial-text lang-id hidden">Layanan yang luar biasa! Laundry saya selesai dalam 6 jam. Sangat profesional dan gratis jemput sangat membantu wisatawan.</p>
-                    <div>
-                        <div class="testimonial-author">Sarah M.</div>
-                        <div class="testimonial-location">Canggu</div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p class="testimonial-text lang-en">Best laundry service in Canggu. Quick, affordable, and clothes come back perfectly ironed and folded.</p>
-                    <p class="testimonial-text lang-id hidden">Layanan laundry terbaik di Canggu. Cepat, terjangkau, dan baju kembali dalam kondisi disetrika dan dilipat sempurna.</p>
-                    <div>
-                        <div class="testimonial-author">John D.</div>
-                        <div class="testimonial-location">Seminyak</div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p class="testimonial-text lang-en">Used their shoe cleaning service and it was incredible. My sneakers look brand new. Highly recommend!</p>
-                    <p class="testimonial-text lang-id hidden">Menggunakan layanan pembersihan sepatu mereka dan hasilnya luar biasa. Sneakers saya terlihat seperti baru. Sangat direkomendasikan!</p>
-                    <div>
-                        <div class="testimonial-author">Emma L.</div>
-                        <div class="testimonial-location">Umalas</div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p class="testimonial-text lang-en">As a frequent Bali visitor, Bali Express Laundry is my go-to. Reliable, fast, and excellent quality every time.</p>
-                    <p class="testimonial-text lang-id hidden">Sebagai pengunjung Bali yang sering, Bali Express Laundry adalah pilihan utama saya. Andal, cepat, dan kualitas yang sangat baik setiap saat.</p>
-                    <div>
-                        <div class="testimonial-author">Michael R.</div>
-                        <div class="testimonial-location">Kuta</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ -->
-    <section>
-        <div class="container">
-            <h2 class="section-title lang-en">Frequently Asked Questions</h2>
-            <h2 class="section-title lang-id hidden">Pertanyaan yang Sering Diajukan</h2>
-            <div class="faq-item" onclick="toggleFaq(this)">
-                <div class="faq-question">
-                    <span class="lang-en">What areas do you serve?</span>
-                    <span class="lang-id hidden">Area mana yang Anda layani?</span>
-                    <svg class="faq-icon" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-                </div>
-                <div class="faq-answer lang-en">We serve Seminyak, Canggu, Umalas, Denpasar, Sanur, and Kuta areas with free pickup and delivery.</div>
-                <div class="faq-answer lang-id hidden">Kami melayani area Seminyak, Canggu, Umalas, Denpasar, Sanur, dan Kuta dengan gratis jemput dan antar.</div>
-            </div>
-            <div class="faq-item" onclick="toggleFaq(this)">
-                <div class="faq-question">
-                    <span class="lang-en">How do I place an order?</span>
-                    <span class="lang-id hidden">Bagaimana cara memesan?</span>
-                    <svg class="faq-icon" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-                </div>
-                <div class="faq-answer lang-en">Simply contact us via WhatsApp at +6285198504914 with your laundry requirements and location.</div>
-                <div class="faq-answer lang-id hidden">Cukup hubungi kami via WhatsApp di +6285198504914 dengan kebutuhan laundry dan lokasi Anda.</div>
-            </div>
-            <div class="faq-item" onclick="toggleFaq(this)">
-                <div class="faq-question">
-                    <span class="lang-en">What is the minimum order?</span>
-                    <span class="lang-id hidden">Berapa minimum pesanan?</span>
-                    <svg class="faq-icon" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-                </div>
-                <div class="faq-answer lang-en">Minimum order varies by package: 3.9 kg for 12-hour express, 3 kg for 6-hour express, and 2 kg for 3-hour and 2-hour express services.</div>
-                <div class="faq-answer lang-id hidden">Minimum pesanan bervariasi per paket: 3.9 kg untuk express 12 jam, 3 kg untuk express 6 jam, dan 2 kg untuk layanan express 3 jam dan 2 jam.</div>
-            </div>
-            <div class="faq-item" onclick="toggleFaq(this)">
-                <div class="faq-question">
-                    <span class="lang-en">Is pickup and delivery really free?</span>
-                    <span class="lang-id hidden">Apakah jemput dan antar benar-benar gratis?</span>
-                    <svg class="faq-icon" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-                </div>
-                <div class="faq-answer lang-en">Yes! We offer completely free pickup and delivery service across all our coverage areas.</div>
-                <div class="faq-answer lang-id hidden">Ya! Kami menawarkan layanan jemput dan antar sepenuhnya gratis di semua area cakupan kami.</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <h2 class="lang-en">Ready for Fresh, Clean Laundry?</h2>
-        <h2 class="lang-id hidden">Siap untuk Laundry Bersih dan Segar?</h2>
-        <p class="lang-en">Experience best express laundry service in Bali. Contact us now for free pickup and delivery!</p>
-        <p class="lang-id hidden">Nikmati layanan laundry express terbaik di Bali. Hubungi kami sekarang untuk gratis jemput dan antar!</p>
-        <a href="https://wa.me/6285198504914" target="_blank">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-            </svg>
-            <span class="lang-en">Contact Us Now</span>
-            <span class="lang-id hidden">Hubungi Kami Sekarang</span>
-        </a>
-    </section>
-
-    <!-- Footer -->
-    <footer id="contact">
-        <div class="container">
-            <div class="footer-content">
-                <div>
-                    <h3 class="lang-en">Contact Information</h3>
-                    <h3 class="lang-id hidden">Informasi Kontak</h3>
-                    <p>📍 Jl. Mertanadi No.92, Kerobokan Kelod</p>
-                    <p>📞 <a href="https://wa.me/6285198504914" class="contact-link" target="_blank">+62 851 9850 4914</a></p>
-                    <p>🕐 24 Hours Service</p>
-                </div>
-                <div>
-                    <h3 class="lang-en">Service Areas</h3>
-                    <h3 class="lang-id hidden">Area Layanan</h3>
-                    <ul>
-                        <li>Seminyak</li>
-                        <li>Canggu</li>
-                        <li>Umalas</li>
-                        <li>Denpasar</li>
-                        <li>Sanur</li>
-                        <li>Kuta</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="lang-en">Quick Links</h3>
-                    <h3 class="lang-id hidden">Tautan Cepat</h3>
-                    <ul>
-                        <li><a href="#services" style="color: rgba(255,255,255,0.6); text-decoration: none;">Services</a></li>
-                        <li><a href="#about" style="color: rgba(255,255,255,0.6); text-decoration: none;">About Us</a></li>
-                        <li><a href="#contact" style="color: rgba(255,255,255,0.6); text-decoration: none;">Contact</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="lang-en">Location</h3>
-                    <h3 class="lang-id hidden">Lokasi</h3>
-                    <div class="map-container">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3944.8297252773277!2d115.16144931477568!3d-8.6832379937189!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd2405f8b795d91%3A0x2f6c7d5c9b2e3d87!2sJl.+Mertanadi+No.92!5e0!3m2!1sid!2sid!4v1608204016724!5m2!1sid!2sid" allowfullscreen="" loading="lazy"></iframe>
-                    </div>
-                </div>
-            </div>
-            <div class="copyright">
-                <p>© 2024 Bali Express Laundry. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Floating WhatsApp -->
-    <a href="https://wa.me/6285198504914" class="floating-whatsapp" target="_blank">
-        <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-        </svg>
-    </a>
-
-    <!-- JavaScript -->
-    <script>
-        let currentLang = 'en';
-
-        function toggleLanguage() {
-            currentLang = currentLang === 'en' ? 'id' : 'en';
-            document.querySelectorAll('.lang-btn').forEach(btn => {
-                btn.textContent = currentLang === 'en' ? 'ID' : 'EN';
-            });
-
-            document.querySelectorAll('.lang-en').forEach(el => {
-                el.classList.toggle('hidden', currentLang !== 'en');
-            });
-
-            document.querySelectorAll('.lang-id').forEach(el => {
-                el.classList.toggle('hidden', currentLang !== 'id');
-            });
-        }
-
-        function toggleFaq(element) {
-            element.classList.toggle('active');
-        }
-    </script>
-</body>
-</html>
+1→<!DOCTYPE html>
+2→<html lang="en">
+3→<head>
+4→ <meta charset="UTF-8">
+5→ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+6→ <title>Bali Express Laundry | 24-Hour Express Laundry Service in Bali</title>
+7→ <meta name="description" content="Premium 24-hour express laundry service in Bali with free pickup & delivery. Serving Seminyak, Canggu, Umalas, Denpasar, Sanur, and Kuta. Fast service 2-12 hours.">
+8→ <link rel="preconnect" href="https://fonts.googleapis.com">
+9→ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+10→ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+11→ <style>
+12→ * { margin: 0; padding: 0; box-sizing: border-box; }
+13→ html { scroll-behavior: smooth; }
+14→ body {
+15→ font-family: 'Inter', sans-serif;
+16→ line-height: 1.6;
+17→ color: #1a1a1a;
+18→ background: white;
+19→ min-height: 100vh;
+20→ }
+21→ .container {
+22→ max-width: 1200px;
+23→ margin: 0 auto;
+24→ padding: 0 20px;
+25→ }
+26→
+27→ .header {
+28→ position: fixed;
+29→ top: 0;
+30→ left: 0;
+31→ right: 0;
+32→ z-index: 1000;
+33→ background: rgba(255,255,255,0.95);
+34→ backdrop-filter: blur(10px);
+35→ border-bottom: 1px solid #e5e7eb;
+36→ box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+37→ }
+38→ .header-content {
+39→ max-width: 1200px;
+40→ margin: 0 auto;
+41→ padding: 0 20px;
+42→ display: flex;
+43→ align-items: center;
+44→ justify-content: space-between;
+45→ height: 64px;
+46→ }
+47→ .logo {
+48→ display: flex;
+49→ align-items: center;
+50→ gap: 8px;
+51→ text-decoration: none;
+52→ }
+53→ .logo-icon {
+54→ width: 32px;
+55→ height: 32px;
+56→ background: linear-gradient(135deg, #2563eb, #1e40af);
+57→ border-radius: 8px;
+58→ display: flex;
+59→ align-items: center;
+60→ justify-content: center;
+61→ }
+62→ .logo-text {
+63→ font-weight: 700;
+64→ font-size: 18px;
+65→ color: #1a1a1a;
+66→ text-decoration: none;
+67→ }
+68→ .nav {
+69→ display: none;
+70→ gap: 32px;
+71→ }
+72→ @media(min-width: 768px) {
+73→ .nav {
+74→ display: flex;
+75→ align-items: center;
+76→ }
+77→ }
+78→ .nav a {
+79→ text-decoration: none;
+80→ color: #666;
+81→ font-weight: 500;
+82→ transition: color 0.3s;
+83→ }
+84→ .nav a:hover {
+85→ color: #2563eb;
+86→ }
+87→ .header-actions {
+88→ display: flex;
+89→ align-items: center;
+90→ gap: 16px;
+91→ }
+92→ .lang-btn {
+93→ padding: 6px 12px;
+94→ border-radius: 8px;
+95→ background: #f5f5f5;
+96→ border: none;
+97→ font-weight: 500;
+98→ font-size: 14px;
+99→ color: #374151;
+100→ cursor: pointer;
+101→ transition: background 0.3s;
+102→ }
+103→ .lang-btn:hover {
+104→ background: #e5e7eb;
+105→ }
+106→ .whatsapp-btn {
+107→ display: none;
+108→ align-items: center;
+109→ gap: 8px;
+110→ padding: 8px 16px;
+111→ background: #22c55e;
+112→ color: white;
+113→ text-decoration: none;
+114→ border-radius: 8px;
+115→ font-weight: 500;
+116→ transition: background 0.3s;
+117→ }
+118→ .whatsapp-btn:hover {
+119→ background: #16a34a;
+120→ }
+121→ @media(min-width: 640px) {
+122→ .whatsapp-btn {
+123→ display: flex;
+124→ }
+125→ }
+126→
+127→ .hero {
+128→ background: url('https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat;
+129→ background-size: cover;
+130→ background-position: center;
+131→ padding-top: 100px;
+132→ padding-bottom: 64px;
+133→ min-height: 100vh;
+134→ position: relative;
+135→ display: flex;
+136→ align-items: center;
+137→ }
+138→ .hero-overlay {
+139→ position: absolute;
+140→ inset: 0;
+141→ background: linear-gradient(135deg, rgba(37,99,235,0.85) 0%, rgba(30,64,175,0.8) 50%, rgba(30,58,138,0.85) 100%);
+142→ }
+143→ .hero-content {
+144→ position: relative;
+145→ z-index: 10;
+146→ text-align: center;
+147→ color: white;
+148→ max-width: 800px;
+149→ margin: 0 auto;
+150→ padding: 0 20px;
+151→ }
+152→ .hero h1 {
+153→ font-size: clamp(32px, 5vw, 60px);
+154→ font-weight: 800;
+155→ margin-bottom: 24px;
+156→ line-height: 1.2;
+157→ }
+158→ .hero p {
+159→ font-size: clamp(16px, 3vw, 20px);
+160→ margin-bottom: 32px;
+161→ color: rgba(255,255,255,0.9);
+162→ }
+163→ .hero-cta {
+164→ display: inline-flex;
+165→ align-items: center;
+166→ gap: 8px;
+167→ padding: 16px 32px;
+168→ background: #22c55e;
+169→ color: white;
+170→ text-decoration: none;
+171→ border-radius: 12px;
+172→ font-weight: 600;
+173→ font-size: 18px;
+174→ box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+175→ transition: all 0.3s;
+176→ }
+177→ .hero-cta:hover {
+178→ background: #16a34a;
+179→ box-shadow: 0 6px 30px rgba(0,0,0,0.4);
+180→ transform: translateY(-2px);
+181→ }
+182→
+183→ .trust-indicators {
+184→ display: grid;
+185→ grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+186→ gap: 24px;
+187→ margin-top: 64px;
+188→ }
+189→ .trust-card {
+190→ background: rgba(255,255,255,0.1);
+191→ backdrop-filter: blur(10px);
+192→ border: 1px solid rgba(255,255,255,0.2);
+193→ border-radius: 16px;
+194→ padding: 24px;
+195→ text-align: center;
+196→ }
+197→ .trust-card:hover {
+198→ background: rgba(255,255,255,0.2);
+199→ }
+200→ .trust-icon {
+201→ width: 48px;
+202→ height: 48px;
+203→ background: rgba(255,255,255,0.2);
+204→ border-radius: 50%;
+205→ display: flex;
+206→ align-items: center;
+207→ justify-content: center;
+208→ margin: 0 auto 16px;
+209→ }
+210→ .trust-icon svg {
+211→ width: 24px;
+212→ height: 24px;
+213→ stroke: white;
+214→ fill: none;
+215→ stroke-width: 2;
+216→ stroke-linecap: round;
+217→ stroke-linejoin: round;
+218→ }
+219→ .trust-title {
+220→ font-weight: 600;
+221→ color: white;
+222→ font-size: 16px;
+223→ }
+224→
+225→ section {
+226→ padding: 80px 0;
+227→ }
+228→ .section-title {
+229→ text-align: center;
+230→ font-size: clamp(28px, 4vw, 40px);
+231→ font-weight: 700;
+232→ margin-bottom: 16px;
+233→ color: #1a1a1a;
+234→ }
+235→ .section-subtitle {
+236→ text-align: center;
+237→ font-size: 18px;
+238→ color: #666;
+239→ max-width: 700px;
+240→ margin: 0 auto 48px;
+241→ }
+242→
+243→ .services-grid {
+244→ display: grid;
+245→ grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+246→ gap: 24px;
+247→ margin-top: 48px;
+248→ }
+249→ .service-card {
+250→ border-radius: 16px;
+251→ padding: 24px;
+252→ color: white;
+253→ display: flex;
+254→ flex-direction: column;
+255→ height: 100%;
+256→ box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+257→ transition: all 0.3s;
+258→ }
+259→ .service-card:hover {
+260→ transform: translateY(-4px);
+261→ box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+262→ }
+263→ .service-card-12h {
+264→ background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+265→ }
+266→ .service-card-6h {
+267→ background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+268→ }
+269→ .service-card-3h {
+270→ background: linear-gradient(135deg, #1d4ed8 0%, #1e3a8a 100%);
+271→ }
+272→ .service-card-2h {
+273→ background: linear-gradient(135deg, #1e3a8a 0%, #1e1f5f 100%);
+274→ }
+275→ .service-name {
+276→ font-size: 20px;
+277→ font-weight: 700;
+278→ text-align: center;
+279→ margin-bottom: 16px;
+280→ }
+281→ .service-price {
+282→ text-align: center;
+283→ margin-bottom: 16px;
+284→ }
+285→ .price-amount {
+286→ font-size: 36px;
+287→ font-weight: 700;
+288→ display: block;
+289→ }
+290→ .price-unit {
+291→ font-size: 14px;
+292→ opacity: 0.9;
+293→ margin-left: 4px;
+294→ }
+295→ .service-features {
+296→ display: flex;
+297→ flex-direction: column;
+298→ gap: 12px;
+299→ flex-grow: 1;
+300→ margin-bottom: 16px;
+301→ }
+302→ .feature-item {
+303→ display: flex;
+304→ align-items: center;
+305→ gap: 12px;
+306→ font-size: 14px;
+307→ }
+308→ .feature-icon {
+309→ width: 20px;
+310→ height: 20px;
+311→ flex-shrink: 0;
+312→ stroke: white;
+313→ fill: none;
+314→ stroke-width: 2;
+315→ stroke-linecap: round;
+316→ stroke-linejoin: round;
+317→ }
+318→ .service-cta {
+319→ width: 100%;
+320→ padding: 12px 16px;
+321→ background: white;
+322→ color: #2563eb;
+323→ text-decoration: none;
+324→ border-radius: 12px;
+325→ font-weight: 600;
+326→ text-align: center;
+327→ transition: background 0.3s;
+328→ }
+329→ .service-cta:hover {
+330→ background: #f0f9ff;
+331→ }
+332→
+333→ .shoes-section {
+334→ background: linear-gradient(135deg, #111827 0%, #374151 100%);
+335→ color: white;
+336→ }
+337→ .shoes-content {
+338→ display: grid;
+339→ grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+340→ gap: 48px;
+341→ align-items: center;
+342→ }
+343→ .shoes-info {
+344→ background: rgba(255,255,255,0.1);
+345→ backdrop-filter: blur(10px);
+346→ border: 1px solid rgba(255,255,255,0.2);
+347→ border-radius: 16px;
+348→ padding: 32px;
+349→ }
+350→ .shoes-price {
+351→ font-size: 36px;
+352→ font-weight: 700;
+353→ color: #4ade80;
+354→ margin-bottom: 24px;
+355→ }
+356→ .shoes-features {
+357→ display: flex;
+358→ flex-direction: column;
+359→ gap: 16px;
+360→ margin-bottom: 24px;
+361→ }
+362→ .shoes-cta {
+363→ display: inline-flex;
+364→ align-items: center;
+365→ gap: 8px;
+366→ padding: 12px 24px;
+367→ background: #22c55e;
+368→ color: white;
+369→ text-decoration: none;
+370→ border-radius: 12px;
+371→ font-weight: 600;
+372→ transition: background 0.3s;
+373→ }
+374→ .shoes-cta:hover {
+375→ background: #16a34a;
+376→ }
+377→ .shoes-image {
+378→ border-radius: 16px;
+379→ width: 100%;
+380→ height: auto;
+381→ box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+382→ }
+383→
+384→ .about-section {
+385→ background: #eff6ff;
+386→ }
+387→ .about-grid {
+388→ display: grid;
+389→ grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+390→ gap: 48px;
+391→ align-items: center;
+392→ }
+393→ .about-image {
+394→ border-radius: 16px;
+395→ width: 100%;
+396→ height: 384px;
+397→ object-fit: cover;
+398→ box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+399→ }
+400→ .about-text {
+401→ font-size: 18px;
+402→ color: #374151;
+403→ line-height: 1.8;
+404→ white-space: pre-line;
+405→ }
+406→
+407→ .why-grid {
+408→ display: grid;
+409→ grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+410→ gap: 24px;
+411→ margin-top: 48px;
+412→ }
+413→ .why-card {
+414→ background: #f9fafb;
+415→ border: 1px solid #e5e7eb;
+416→ border-radius: 16px;
+417→ padding: 24px;
+418→ transition: all 0.3s;
+419→ }
+420→ .why-card:hover {
+421→ box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+422→ transform: translateY(-4px);
+423→ }
+424→ .why-icon {
+425→ width: 48px;
+426→ height: 48px;
+427→ background: #dbeafe;
+428→ border-radius: 12px;
+429→ display: flex;
+430→ align-items: center;
+431→ justify-content: center;
+432→ margin-bottom: 16px;
+433→ }
+434→ .why-icon svg {
+435→ width: 24px;
+436→ height: 24px;
+437→ stroke: #2563eb;
+438→ fill: none;
+439→ stroke-width: 2;
+440→ stroke-linecap: round;
+441→ stroke-linejoin: round;
+442→ }
+443→ .why-title {
+444→ font-size: 20px;
+445→ font-weight: 600;
+446→ color: #1a1a1a;
+447→ margin-bottom: 8px;
+448→ }
+449→ .why-text {
+450→ font-size: 15px;
+451→ color: #666;
+452→ line-height: 1.6;
+453→ }
+454→
+455→ .steps-section {
+456→ background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+457→ color: white;
+458→ }
+459→ .steps-grid {
+460→ display: grid;
+461→ grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+462→ gap: 32px;
+463→ margin-top: 48px;
+464→ }
+465→ .step-card {
+466→ text-align: center;
+467→ padding: 24px;
+468→ }
+469→ .step-number {
+470→ width: 64px;
+471→ height: 64px;
+472→ background: rgba(255,255,255,0.2);
+473→ border-radius: 50%;
+474→ display: flex;
+475→ align-items: center;
+476→ justify-content: center;
+477→ margin: 0 auto 16px;
+478→ font-size: 24px;
+479→ font-weight: 700;
+480→ border: 2px solid rgba(255,255,255,0.3);
+481→ }
+482→ .step-title {
+483→ font-size: 20px;
+484→ font-weight: 600;
+485→ margin-bottom: 8px;
+486→ }
+487→ .step-text {
+488→ font-size: 15px;
+489→ opacity: 0.9;
+490→ }
+491→
+492→ .testimonials-grid {
+493→ display: grid;
+494→ grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+495→ gap: 24px;
+496→ margin-top: 48px;
+497→ }
+498→ .testimonial-card {
+499→ background: #f9fafb;
+500→ border: 1px solid #e5e7eb;
+501→ border-radius: 16px;
+502→ padding: 24px;
+503→ }
+504→ .stars {
+505→ color: #fbbf24;
+506→ margin-bottom: 12px;
+507→ font-size: 20px;
+508→ }
+509→ .testimonial-text {
+510→ font-size: 15px;
+511→ color: #374151;
+512→ font-style: italic;
+513→ margin-bottom: 16px;
+514→ line-height: 1.6;
+515→ }
+516→ .testimonial-author {
+517→ font-weight: 600;
+518→ color: #1a1a1a;
+519→ }
+520→ .testimonial-location {
+521→ font-size: 14px;
+522→ color: #666;
+523→ }
+524→
+525→ .faq-item {
+526→ background: white;
+527→ border: 1px solid #e5e7eb;
+528→ border-radius: 12px;
+529→ margin-bottom: 12px;
+530→ overflow: hidden;
+531→ }
+532→ .faq-question {
+533→ padding: 20px;
+534→ cursor: pointer;
+535→ display: flex;
+536→ justify-content: space-between;
+537→ align-items: center;
+538→ font-weight: 600;
+539→ color: #1a1a1a;
+540→ font-size: 16px;
+541→ transition: background 0.3s;
+542→ user-select: none;
+543→ }
+544→ .faq-question:hover {
+545→ background: #f9fafb;
+546→ }
+547→ .faq-answer {
+548→ padding: 0 20px 20px;
+549→ display: none;
+550→ border-top: 1px solid #e5e7eb;
+551→ color: #666;
+552→ font-size: 15px;
+553→ line-height: 1.6;
+554→ }
+555→ .faq-item.active .faq-answer {
+556→ display: block;
+557→ }
+558→ .faq-icon {
+559→ width: 20px;
+560→ height: 20px;
+561→ transition: transform 0.3s;
+562→ stroke: currentColor;
+563→ fill: none;
+564→ stroke-width: 2;
+565→ stroke-linecap: round;
+566→ stroke-linejoin: round;
+567→ }
+568→ .faq-item.active .faq-icon {
+569→ transform: rotate(180deg);
+570→ }
+571→
+572→ .cta-section {
+573→ background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+574→ text-align: center;
+575→ padding: 100px 20px;
+576→ }
+577→ .cta-section h2 {
+578→ font-size: clamp(28px, 4vw, 40px);
+579→ font-weight: 700;
+580→ margin-bottom: 16px;
+581→ color: #1a1a1a;
+582→ }
+583→ .cta-section p {
+584→ font-size: 18px;
+585→ color: #374151;
+586→ max-width: 600px;
+587→ margin: 0 auto 32px;
+588→ }
+589→ .cta-section a {
+590→ display: inline-flex;
+591→ align-items: center;
+592→ gap: 8px;
+593→ padding: 16px 40px;
+594→ background: #22c55e;
+595→ color: white;
+596→ text-decoration: none;
+597→ border-radius: 12px;
+598→ font-weight: 600;
+599→ font-size: 18px;
+600→ box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+601→ transition: all 0.3s;
+602→ }
+603→ .cta-section a:hover {
+604→ background: #16a34a;
+605→ transform: translateY(-2px);
+606→ }
+607→
+608→ footer {
+609→ background: #111827;
+610→ color: rgba(255,255,255,0.7);
+611→ padding: 64px 0 32px;
+612→ }
+613→ .footer-content {
+614→ display: grid;
+615→ grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+616→ gap: 32px;
+617→ }
+618→ footer h3 {
+619→ color: white;
+620→ font-size: 18px;
+621→ font-weight: 600;
+622→ margin-bottom: 20px;
+623→ }
+624→ footer p, footer li {
+625→ color: rgba(255,255,255,0.6);
+626→ font-size: 15px;
+627→ margin-bottom: 10px;
+628→ }
+629→ footer ul {
+630→ list-style: none;
+631→ }
+632→ .contact-link {
+633→ color: #4ade80;
+634→ text-decoration: none;
+635→ transition: color 0.3s;
+636→ }
+637→ .contact-link:hover {
+638→ color: #22c55e;
+639→ }
+640→ .map-container {
+641→ border-radius: 12px;
+642→ overflow: hidden;
+643→ border: 1px solid rgba(255,255,255,0.1);
+644→ }
+645→ .map-container iframe {
+646→ width: 100%;
+647→ height: 250px;
+648→ border: none;
+649→ }
+650→ .copyright {
+651→ text-align: center;
+652→ padding-top: 32px;
+653→ border-top: 1px solid rgba(255,255,255,0.1);
+654→ font-size: 14px;
+655→ margin-top: 48px;
+656→ }
+657→
+658→ .floating-whatsapp {
+659→ position: fixed;
+660→ bottom: 24px;
+661→ right: 24px;
+662→ z-index: 1000;
+663→ width: 60px;
+664→ height: 60px;
+665→ background: #22c55e;
+666→ border-radius: 50%;
+667→ display: flex;
+668→ align-items: center;
+669→ justify-content: center;
+670→ box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+671→ transition: all 0.3s;
+672→ text-decoration: none;
+673→ }
+674→ .floating-whatsapp:hover {
+675→ transform: scale(1.1);
+676→ background: #16a34a;
+677→ }
+678→ .floating-whatsapp svg {
+679→ width: 32px;
+680→ height: 32px;
+681→ fill: white;
+682→ }
+683→
+684→ .hidden {
+685→ display: none !important;
+686→ }
+687→
+688→ @media(max-width: 768px) {
+689→ .hero h1 { font-size: 32px; }
+690→ .trust-indicators { grid-template-columns: 1fr; }
+691→ .shoes-content { grid-template-columns: 1fr; }
+692→ .about-grid { grid-template-columns: 1fr; }
+693→ .steps-grid { grid-template-columns: repeat(2, 1fr); }
+694→ }
+695→ </style>
+696→</head>
+697→<body>
+698→ <!-- Header -->
+699→ <header class="header">
+700→ <div class="header-content">
+701→ <a href="#" class="logo">
+702→ <div class="logo-icon">
+703→ <svg viewBox="0 0 24 24" stroke="white" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+704→ <circle cx="12" cy="12" r="10"/>
+705→ <path d="M12 6v6l4 2"/>
+706→ </svg>
+707→ </div>
+708→ <span class="logo-text">Bali Express Laundry</span>
+709→ </a>
+710→ <nav class="nav">
+711→ <a href="#services">Services</a>
+712→ <a href="#about">About</a>
+713→ <a href="#contact">Contact</a>
+714→ </nav>
+715→ <div class="header-actions">
+716→ <button class="lang-btn" onclick="toggleLanguage()">ID</button>
+717→ <a href="https://wa.me/6285198504914?text=Selamat%20datang%20di%20Bali%20Express%20Laundry%20(Buka%2024%20Jam)%0A%0ASilakan%20isi%20data%20diri%20Anda%3A%0ANama%3A%20%0ANomor%20Handphone%3A%20%0ANama%20Hotel%20%2F%20Lokasi%3A%20%0ANomor%20Kamar%3A%20%0ALayanan%3A%20%0A%0AMohon%20share%20lokasi%20maps%20Anda%20untuk%20memudahkan%20penjemputan%20laundry" class="whatsapp-btn" target="_blank">
+718→ <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+719→ <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+720→ </svg>
+721→ WhatsApp
+722→ </a>
+723→ </div>
+724→ </div>
+725→ </header>
+726→
+727→ <!-- Hero Section -->
+728→ <section class="hero">
+729→ <div class="hero-overlay"></div>
+730→ <div class="hero-content">
+731→ <h1 class="lang-en">Bali Express Laundry - 24 Hour Express Laundry in Bali</h1>
+732→ <h1 class="lang-id hidden">Layanan Laundry Express 24 Jam Terpercaya di Bali</h1>
+733→ <p class="lang-en">Free pickup & delivery. Fast service 2-12 hours. Serving Seminyak, Canggu, Umalas, Denpasar, Sanur, and Kuta.</p>
+734→ <p class="lang-id hidden">Layanan laundry premium dengan gratis jemput & antar untuk wisatawan dan lokal di seluruh Bali</p>
+735→ <a href="https://wa.me/6285198504914?text=Selamat%20datang%20di%20Bali%20Express%20Laundry%20(Buka%2024%20Jam)%0A%0ASilakan%20isi%20data%20diri%20Anda%3A%0ANama%3A%20%0ANomor%20Handphone%3A%20%0ANama%20Hotel%20%2F%20Lokasi%3A%20%0ANomor%20Kamar%3A%20%0ALayanan%3A%20%0A%0AMohon%20share%20lokasi%20maps%20Anda%20untuk%20memudahkan%20penjemputan%20laundry" class="hero-cta" target="_blank">
+736→ <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+737→ <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+738→ </svg>
+739→ <span class="lang-en">Order via WhatsApp</span>
+740→ <span class="lang-id hidden">Pesan via WhatsApp</span>
+741→ </a>
+742→ <div class="trust-indicators">
+743→ <div class="trust-card">
+744→ <div class="trust-icon">
+745→ <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 12"/></svg>
+746→ </div>
+747→ <div class="trust-title lang-en">24 Hours Service</div>
+748→ <div class="trust-title lang-id hidden">Layanan 24 Jam</div>
+749→ </div>
+750→ <div class="trust-card">
+751→ <div class="trust-icon">
+752→ <svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 16 16"/><circle cx="5.5" cy="18.5" r="2.5"/></svg>
+753→ </div>
+754→ <div class="trust-title lang-en">Free Pickup & Delivery</div>
+755→ <div class="trust-title lang-id hidden">Gratis Jemput & Antar</div>
+756→ </div>
+757→ <div class="trust-card">
+758→ <div class="trust-icon">
+759→ <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 15.3"/></svg>
+760→ </div>
+761→ <div class="trust-title lang-en">Tourist Friendly</div>
+762→ <div class="trust-title lang-id hidden">Ramah Wisatawan</div>
+763→ </div>
+764→ </div>
+765→ </div>
+766→ </section>
+767→
+768→ <!-- Services Section -->
+769→ <section id="services">
+770→ <div class="container">
+771→ <h2 class="section-title lang-en">Our Laundry Services</h2>
+772→ <h2 class="section-title lang-id hidden">Layanan Laundry Kami</h2>
+773→ <p class="section-subtitle lang-en">Choose express service that fits your schedule</p>
+774→ <p class="section-subtitle lang-id hidden">Pilih layanan express yang sesuai dengan jadwal Anda</p>
+775→ <div class="services-grid">
+776→ <!-- 12 Hours -->
+777→ <div class="service-card service-card-12h">
+778→ <h3 class="service-name lang-en">Express 12 Hours</h3>
+779→ <h3 class="service-name lang-id hidden">Express 12 Jam</h3>
+780→ <div class="service-price">
+781→ <span class="price-amount">Rp24,900</span>
+782→ <span class="price-unit">/kg</span>
+783→ </div>
+784→ <div class="service-features">
+785→ <div class="feature-item">
+786→ <svg class="feature-icon" viewBox="0 0 24 24"><circle cx="<response clipped><NOTE>To save on context only part of this file has been shown to you. You should retry this tool after you have searched inside the file with `grep -n` in order to find the line numbers of what you are looking for.</NOTE>
+801→ <svg class="feature-icon" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/></svg>
+802→ <span class="lang-en">Wash, Iron, Fold</span>
+803→ <span class="lang-id hidden">Cuci, Setrika, Lipat</span>
+804→ </div>
+805→ <div class="feature-item">
+806→ <svg class="feature-icon" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/></svg>
+807→ <span>Dedicated Machine</span>
+808→ </div>
+809→ </div>
+810→ <a href="https://wa.me/6285198504914?text=Selamat%20datang%20di%20Bali%20Express%20Laundry%20(Buka%2024%20Jam)%0A%0ASilakan%20isi%20data%20diri%20Anda%3A%0ANama%3A%20%0ANomor%20Handphone%3A%20%0ANama%20Hotel%20%2F%20Lokasi%3A%20%0ANomor%20Kamar%3A%20%0ALayanan%3A%20Express%20Laundry%2012%20Jam%0A%0AMohon%20share%20lokasi%20maps%20Anda%20untuk%20memudahkan%20penjemputan%20laundry" class="service-cta" target="_blank">
+811→ <span class="lang-en">Order Now</span>
+812→ <span class="lang-id hidden">Pesan Sekarang</span>
+813→ </a>
+814→ </div>
+815→
+816→ <!-- 6 Hours -->
+817→ <div class="service-card service-card-6h">
+818→ <h3 class="service-name lang-en">Express 6 Hours</h3>
+819→ <h3 class="service-name lang-id hidden">Express 6 Jam</h3>
+820→ <div class="service-price">
+821→ <span class="price-amount">Rp39,900</span>
+822→ <span class="price-unit">/kg</span>
+823→ </div>
+824→ <div class="service-features">
+825→ <div class="feature-item">
+826→ <svg class="feature-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+827→ <span class="lang-en">6 Hours Turnaround</span>
+828→ <span class="lang-id hidden">6 Jam Pengerjaan</span>
+829→ </div>
+830→ <div class="feature-item">
+831→ <svg class="feature-icon" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+832→ <span class="lang-en">Min. 3 kg</span>
+833→ <span class="lang-id hidden">Min. 3 kg</span>
+834→ </div>
+835→ <div class="feature-item">
+836→ <svg class="feature-icon" viewBox="0 0 24 24"><path d="M1 3h4l4 4v8H5V7m4 0v8h8"/></svg>
+837→ <span class="lang-en">Free Pickup & Delivery</span>
+838→ <span class="lang-id hidden">Gratis Jemput & Antar</span>
+839→ </div>
+840→ <div class="feature-item">
+841→ <svg class="feature-icon" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/></svg>
+842→ <span class="lang-en">Wash, Iron, Fold</span>
+843→ <span class="lang-id hidden">Cuci, Setrika, Lipat</span>
+844→ </div>
+845→ <div class="feature-item">
+846→ <svg class="feature-icon" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/></svg>
+847→ <span>Dedicated Machine</span>
+848→ </div>
+849→ </div>
+850→ <a href="https://wa.me/6285198504914?text=Selamat%20datang%20di%20Bali%20Express%20Laundry%20(Buka%2024%20Jam)%0A%0ASilakan%20isi%20data%20diri%20Anda%3A%0ANama%3A%20%0ANomor%20Handphone%3A%20%0ANama%20Hotel%20%2F%20Lokasi%3A%20%0ANomor%20Kamar%3A%20%0ALayanan%3A%20Express%20Laundry%206%20Jam%0A%0AMohon%20share%20lokasi%20maps%20Anda%20untuk%20memudahkan%20penjemputan%20laundry" class="service-cta" target="_blank">
+851→ <span class="lang-en">Order Now</span>
+852→ <span class="lang-id hidden">Pesan Sekarang</span>
+853→ </a>
+854→ </div>
+855→
+856→ <!-- 3 Hours -->
+857→ <div class="service-card service-card-3h">
+858→ <h3 class="service-name lang-en">Express 3 Hours</h3>
+859→ <h3 class="service-name lang-id hidden">Express 3 Jam</h3>
+860→ <div class="service-price">
+861→ <span class="price-amount">Rp49,900</span>
+862→ <span class="price-unit">/kg</span>
+863→ </div>
+864→ <div class="service-features">
+865→ <div class="feature-item">
+866→ <svg class="feature-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+867→ <span class="lang-en">3 Hours Turnaround</span>
+868→ <span class="lang-id hidden">3 Jam Pengerjaan</span>
+869→ </div>
+870→ <div class="feature-item">
+871→ <svg class="feature-icon" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+872→ <span class="lang-en">Min. 2 kg</span>
+873→ <span class="lang-id hidden">Min. 2 kg</span>
+874→ </div>
+875→ <div class="feature-item">
+876→ <svg class="feature-icon" viewBox="0 0 24 24"><path d="M1 3h4l4 4v8H5V7m4 0v8h8"/></svg>
+877→ <span class="lang-en">Free Pickup & Delivery</span>
+878→ <span class="lang-id hidden">Gratis Jemput & Antar</span>
+879→ </div>
+880→ <div class="feature-item">
+881→ <svg class="feature-icon" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/></svg>
+882→ <span class="lang-en">Wash, Iron, Fold</span>
+883→ <span class="lang-id hidden">Cuci, Setrika, Lipat</span>
+884→ </div>
+885→ <div class="feature-item">
+886→ <svg class="feature-icon" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/></svg>
+887→ <span>Dedicated Machine</span>
+888→ </div>
+889→ </div>
+890→ <a href="https://wa.me/6285198504914?text=Selamat%20datang%20di%20Bali%20Express%20Laundry%20(Buka%2024%20Jam)%0A%0ASilakan%20isi%20data%20diri%20Anda%3A%0ANama%3A%20%0ANomor%20Handphone%3A%20%0ANama%20Hotel%20%2F%20Lokasi%3A%20%0ANomor%20Kamar%3A%20%0ALayanan%3A%20Express%20Laundry%203%20Jam%0A%0AMohon%20share%20lokasi%20maps%20Anda%20untuk%20memudahkan%20penjemputan%20laundry" class="service-cta" target="_blank">
+891→ <span class="lang-en">Order Now</span>
+892→ <span class="lang-id hidden">Pesan Sekarang</span>
+893→ </a>
+894→ </div>
+895→
+896→ <!-- 2 Hours -->
+897→ <div class="service-card service-card-2h">
+898→ <h3 class="service-name lang-en">Ultra Express 2 Hours</h3>
+899→ <h3 class="service-name lang-id hidden">Ultra Express 2 Jam</h3>
+900→ <div class="service-price">
+901→ <span class="price-amount">Rp59,900</span>
+902→ <span class="price-unit">/kg</span>
+903→ </div>
+904→ <div class="service-features">
+905→ <div class="feature-item">
+906→ <svg class="feature-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+907→ <span class="lang-en">2 Hours Turnaround</span>
+908→ <span class="lang-id hidden">2 Jam Pengerjaan</span>
+909→ </div>
+910→ <div class="feature-item">
+911→ <svg class="feature-icon" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+912→ <span class="lang-en">Min. 2 kg</span>
+913→ <span class="lang-id hidden">Min. 2 kg</span>
+914→ </div>
+915→ <div class="feature-item">
+916→ <svg class="feature-icon" viewBox="0 0 24 24"><path d="M1 3h4l4 4v8H5V7m4 0v8h8"/></svg>
+917→ <span class="lang-en">Free Pickup & Delivery</span>
+918→ <span class="lang-id hidden">Gratis Jemput & Antar</span>
+919→ </div>
+920→ <div class="feature-item">
+921→ <svg class="feature-icon" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/></svg>
+922→ <span class="lang-en">Wash, Iron, Fold</span>
+923→ <span class="lang-id hidden">Cuci, Setrika, Lipat</span>
+924→ </div>
+925→ <div class="feature-item">
+926→ <svg class="feature-icon" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/></svg>
+927→ <span>Dedicated Machine</span>
+928→ </div>
+929→ </div>
+930→ <a href="https://wa.me/6285198504914?text=Selamat%20datang%20di%20Bali%20Express%20Laundry%20(Buka%2024%20Jam)%0A%0ASilakan%20isi%20data%20diri%20Anda%3A%0ANama%3A%20%0ANomor%20Handphone%3A%20%0ANama%20Hotel%20%2F%20Lokasi%3A%20%0ANomor%20Kamar%3A%20%0ALayanan%3A%20Ultra%20Express%202%20Jam%0A%0AMohon%20share%20lokasi%20maps%20Anda%20untuk%20memudahkan%20penjemputan%20laundry" class="service-cta" target="_blank">
+931→ <span class="lang-en">Order Now</span>
+932→ <span class="lang-id hidden">Pesan Sekarang</span>
+933→ </a>
+934→ </div>
+935→ </div>
+936→ </div>
+937→ </section>
+938→
+939→ <!-- Shoes Section -->
+940→ <section class="shoes-section">
+941→ <div class="container">
+942→ <div class="shoes-content">
+943→ <div class="shoes-info">
+944→ <h2 class="section-title lang-en" style="color: white;">Shoes Laundry</h2>
+945→ <h2 class="section-title lang-id hidden" style="color: white;">Laundry Sepatu</h2>
+946→ <p class="section-subtitle" style="color: rgba(255,255,255,0.7);">Professional 24-hour shoe cleaning service</p>
+947→ <h3 class="lang-en" style="color: white; font-size: 24px; font-weight: 700; margin-bottom: 16px;">Shoes Laundry 24 Hours</h3>
+948→ <h3 class="lang-id hidden" style="color: white; font-size: 24px; font-weight: 700; margin-bottom: 16px;">Shoes Laundry 24 Jam</h3>
+949→ <div class="shoes-price">Rp49,900 /pasang</div>
+950→ <div class="shoes-features">
+951→ <div class="feature-item">
+952→ <svg class="feature-icon" viewBox="0 0 24 24" style="stroke: #4ade80;"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+953→ <span>24-Hour Turnaround</span>
+954→ </div>
+955→ <div class="feature-item">
+956→ <svg class="feature-icon" viewBox="0 0 24 24" style="stroke: #4ade80;"><path d="M1 3h4l4 4v8H5V7m4 0v8h8"/></svg>
+957→ <span>Free Pickup & Delivery</span>
+958→ </div>
+959→ <div class="feature-item">
+960→ <svg class="feature-icon" viewBox="0 0 24 24" style="stroke: #4ade80;"><path d="M9 12l2 2 4-4"/></svg>
+961→ <span>Manual Wash & Clean</span>
+962→ </div>
+963→ </div>
+964→ <a href="https://wa.me/6285198504914?text=Selamat%20datang%20di%20Bali%20Express%20Laundry%20(Buka%2024%20Jam)%0A%0ASilakan%20isi%20data%20diri%20Anda%3A%0ANama%3A%20%0ANomor%20Handphone%3A%20%0ANama%20Hotel%20%2F%20Lokasi%3A%20%0ANomor%20Kamar%3A%20%0ALayanan%3A%20Cuci%20Sepatu%0A%0AMohon%20share%20lokasi%20maps%20Anda%20untuk%20memudahkan%20penjemputan%20laundry" class="shoes-cta" target="_blank">
+965→ <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+966→ <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+967→ </svg>
+968→ <span class="lang-en">Order Shoe Cleaning</span>
+969→ <span class="lang-id hidden">Pesan Cuci Sepatu</span>
+970→ </a>
+971→ </div>
+972→ <div>
+973→ <img src="https://images.unsplash.com/photo-1549493589-94aebd37236e?q=80&w=600&auto=format&fit=crop" alt="Professional shoe cleaning service" class="shoes-image">
+974→ </div>
+975→ </div>
+976→ </div>
+977→ </section>
+978→
+979→ <!-- About Section -->
+980→ <section class="about-section" id="about">
+981→ <div class="container">
+982→ <div class="about-grid">
+983→ <img src="https://images.unsplash.com/photo-1556740749-887f67178db8?q=80&w=600&auto=format&fit=crop" alt="Bali Express Laundry professional service" class="about-image">
+984→ <div>
+985→ <h2 class="section-title lang-en">About Us</h2>
+986→ <h2 class="section-title lang-id hidden">Tentang Kami</h2>
+987→ <p class="about-text lang-en">Bali Express Laundry is a 24-hour professional laundry service in Bali, serving both local residents and international travelers. We specialize in express premium laundry with free pickup and delivery, ensuring your clothes are cleaned quickly, safely, and with great care.
+988→
+989→Our service areas include Seminyak, Canggu, Umalas, Denpasar, Sanur, and Kuta, making us a trusted choice for fast, reliable, and high-quality laundry services in Bali.</p>
+990→ <p class="about-text lang-id hidden">Bali Express Laundry adalah layanan laundry profesional 24 jam di Bali, melayani penduduk lokal dan wisatawan internasional. Kami mengkhususkan diri dalam layanan laundry express premium dengan jemput & antar gratis, memastikan pakaian Anda dibersihkan dengan cepat, aman, dan dengan perhatian penuh.
+991→
+992→Area layanan kami meliputi Seminyak, Canggu, Umalas, Denpasar, Sanur, dan Kuta, menjadikan kami pilihan terpercaya untuk layanan laundry yang cepat, andal, dan berkualitas tinggi di Bali.</p>
+993→ </div>
+994→ </div>
+995→ </div>
+996→ </section>
+997→
+998→ <!-- Why Choose Us -->
+999→ <section>
+1000→ <div class="container">
+1001→ <h2 class="section-title lang-en">Why Choose Us</h2>
+1002→ <h2 class="section-title lang-id hidden">Mengapa Memilih Kami</h2>
+1003→ <div class="why-grid">
+1004→ <div class="why-card">
+1005→ <div class="why-icon">
+1006→ <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 12"/></svg>
+1007→ </div>
+1008→ <h3 class="why-title lang-en">24/7 Operation</h3>
+1009→ <h3 class="why-title lang<response clipped><NOTE>To save on context only part of this file has been shown to you. You should retry this tool after you have searched inside the file with `grep -n` in order to find the line numbers of what you are looking for.</NOTE>
+1201→ <span class="lang-en">Contact Us Now</span>
+1202→ <span class="lang-id hidden">Hubungi Kami Sekarang</span>
+1203→ </a>
+1204→ </section>
+1205→
+1206→ <!-- Footer -->
+1207→ <footer id="contact">
+1208→ <div class="container">
+1209→ <div class="footer-content">
+1210→ <div>
+1211→ <h3 class="lang-en">Contact Information</h3>
+1212→ <h3 class="lang-id hidden">Informasi Kontak</h3>
+1213→ <p>📍 Jl. Mertanadi No.92, Kerobokan Kelod</p>
+1214→ <p>📞 <a href="https://wa.me/6285198504914" class="contact-link" target="_blank">+62 851 9850 4914</a></p>
+1215→ <p>🕐 24 Hours Service</p>
+1216→ </div>
+1217→ <div>
+1218→ <h3 class="lang-en">Service Areas</h3>
+1219→ <h3 class="lang-id hidden">Area Layanan</h3>
+1220→ <ul>
+1221→ <li>Seminyak</li>
+1222→ <li>Canggu</li>
+1223→ <li>Umalas</li>
+1224→ <li>Denpasar</li>
+1225→ <li>Sanur</li>
+1226→ <li>Kuta</li>
+1227→ </ul>
+1228→ </div>
+1229→ <div>
+1230→ <h3 class="lang-en">Quick Links</h3>
+1231→ <h3 class="lang-id hidden">Tautan Cepat</h3>
+1232→ <ul>
+1233→ <li><a href="#services" style="color: rgba(255,255,255,0.6); text-decoration: none;">Services</a></li>
+1234→ <li><a href="#about" style="color: rgba(255,255,255,0.6); text-decoration: none;">About Us</a></li>
+1235→ <li><a href="#contact" style="color: rgba(255,255,255,0.6); text-decoration: none;">Contact</a></li>
+1236→ </ul>
+1237→ </div>
+1238→ <div>
+1239→ <h3 class="lang-en">Location</h3>
+1240→ <h3 class="lang-id hidden">Lokasi</h3>
+1241→ <div class="map-container">
+1242→ <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3944.8297252773277!2d115.16144931477568!3d-8.6832379937189!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd2405f8b795d91%3A0x2f6c7d5c9b2e3d87!2sJl.+Mertanadi+No.92!5e0!3m2!1sid!2sid!4v1608204016724!5m2!1sid!2sid" allowfullscreen="" loading="lazy"></iframe>
+1243→ </div>
+1244→ </div>
+1245→ </div>
+1246→ <div class="copyright">
+1247→ <p>© 2024 Bali Express Laundry. All rights reserved.</p>
+1248→ </div>
+1249→ </div>
+1250→ </footer>
+1251→
+1252→ <!-- Floating WhatsApp -->
+1253→ <a href="https://wa.me/6285198504914?text=Selamat%20datang%20di%20Bali%20Express%20Laundry%20(Buka%2024%20Jam)%0A%0ASilakan%20isi%20data%20diri%20Anda%3A%0ANama%3A%20%0ANomor%20Handphone%3A%20%0ANama%20Hotel%20%2F%20Lokasi%3A%20%0ANomor%20Kamar%3A%20%0ALayanan%3A%20%0A%0AMohon%20share%20lokasi%20maps%20Anda%20untuk%20memudahkan%20penjemputan%20laundry" class="floating-whatsapp" target="_blank">
+1254→ <svg viewBox="0 0 24 24" fill="currentColor">
+1255→ <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+1256→ </svg>
+1257→ </a>
+1258→
+1259→ <!-- JavaScript -->
+1260→ <script>
+1261→ let currentLang = 'en';
+1262→
+1263→ function toggleLanguage() {
+1264→ currentLang = currentLang === 'en' ? 'id' : 'en';
+1265→ document.querySelectorAll('.lang-btn').forEach(btn => {
+1266→ btn.textContent = currentLang === 'en' ? 'ID' : 'EN';
+1267→ });
+1268→
+1269→ document.querySelectorAll('.lang-en').forEach(el => {
+1270→ el.classList.toggle('hidden', currentLang !== 'en');
+1271→ });
+1272→
+1273→ document.querySelectorAll('.lang-id').forEach(el => {
+1274→ el.classList.toggle('hidden', currentLang !== 'id');
+1275→ });
+1276→ }
+1277→
+1278→ function toggleFaq(element) {
+1279→ element.classList.toggle('active');
+1280→ }
+1281→ </script>
+1282→</body>
+1283→</html>
+1284→
+1009→ <h3 class="why-title lang-id hidden">Operasi 24/7</h3>
+1010→ <p class="why-text lang-en">Round-the-clock service to fit your schedule</p>
+1011→ <p class="why-text lang-id hidden">Layanan sepanjang waktu sesuai jadwal Anda</p>
+1012→ </div>
+1013→ <div class="why-card">
+1014→ <div class="why-icon">
+1015→ <svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 16 16"/><circle cx="5.5" cy="18.5" r="2.5"/></svg>
+1016→ </div>
+1017→ <h3 class="why-title lang-en">Free Pickup & Delivery</h3>
+1018→ <h3 class="why-title lang-id hidden">Gratis Jemput & Antar</h3>
+1019→ <p class="why-text lang-en">Complimentary service across our coverage areas</p>
+1020→ <p class="why-text lang-id hidden">Layanan gratis di area cakupan kami</p>
+1021→ </div>
+1022→ <div class="why-card">
+1023→ <div class="why-icon">
+1024→ <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+1025→ </div>
+1026→ <h3 class="why-title lang-en">Fast Turnaround</h3>
+1027→ <h3 class="why-title lang-id hidden">Proses Cepat</h3>
+1028→ <p class="why-text lang-en">Express services from 2 to 12 hours</p>
+1029→ <p class="why-text lang-id hidden">Layanan express dari 2 sampai 12 jam</p>
+1030→ </div>
+1031→ <div class="why-card">
+1032→ <div class="why-icon">
+1033→ <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/></svg>
+1034→ </div>
+1035→ <h3 class="why-title lang-en">Premium Quality</h3>
+1036→ <h3 class="why-title lang-id hidden">Kualitas Premium</h3>
+1037→ <p class="why-text lang-en">Professional washing and ironing</p>
+1038→ <p class="why-text lang-id hidden">Cuci dan setrika profesional</p>
+1039→ </div>
+1040→ <div class="why-card">
+1041→ <div class="why-icon">
+1042→ <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/></svg>
+1043→ </div>
+1044→ <h3 class="why-title lang-en">Tourist Friendly</h3>
+1045→ <h3 class="why-title lang-id hidden">Ramah Wisatawan</h3>
+1046→ <p class="why-text lang-en">English-speaking staff for international guests</p>
+1047→ <p class="why-text lang-id hidden">Staf berbahasa Inggris untuk tamu internasional</p>
+1048→ </div>
+1049→ <div class="why-card">
+1050→ <div class="why-icon">
+1051→ <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+1052→ </div>
+1053→ <h3 class="why-title lang-en">Hygienic Process</h3>
+1054→ <h3 class="why-title lang-id hidden">Proses Higienis</h3>
+1055→ <p class="why-text lang-en">Dedicated machines per customer</p>
+1056→ <p class="why-text lang-id hidden">Mesin terpisah per pelanggan</p>
+1057→ </div>
+1058→ </div>
+1059→ </div>
+1060→ </section>
+1061→
+1062→ <!-- How It Works -->
+1063→ <section class="steps-section">
+1064→ <div class="container">
+1065→ <h2 class="section-title lang-en" style="color: white;">How It Works</h2>
+1066→ <h2 class="section-title lang-id hidden" style="color: white;">Cara Kerja</h2>
+1067→ <p class="section-subtitle" style="color: rgba(255,255,255,0.8);">Simple 4-step process</p>
+1068→ <div class="steps-grid">
+1069→ <div class="step-card">
+1070→ <div class="step-number">1</div>
+1071→ <h3 class="step-title lang-en">Contact Us</h3>
+1072→ <h3 class="step-title lang-id hidden">Hubungi Kami</h3>
+1073→ <p class="step-text lang-en">Reach out via WhatsApp</p>
+1074→ <p class="step-text lang-id hidden">Hubungi via WhatsApp</p>
+1075→ </div>
+1076→ <div class="step-card">
+1077→ <div class="step-number">2</div>
+1078→ <h3 class="step-title lang-en">Free Pickup</h3>
+1079→ <h3 class="step-title lang-id hidden">Gratis Jemput</h3>
+1080→ <p class="step-text lang-en">We collect your laundry</p>
+1081→ <p class="step-text lang-id hidden">Kami jemput laundry</p>
+1082→ </div>
+1083→ <div class="step-card">
+1084→ <div class="step-number">3</div>
+1085→ <h3 class="step-title lang-en">Professional Cleaning</h3>
+1086→ <h3 class="step-title lang-id hidden">Pembersihan Profesional</h3>
+1087→ <p class="step-text lang-en">Items washed with care</p>
+1088→ <p class="step-text lang-id hidden">Dicuci dengan hati-hati</p>
+1089→ </div>
+1090→ <div class="step-card">
+1091→ <div class="step-number">4</div>
+1092→ <h3 class="step-title lang-en">Free Delivery</h3>
+1093→ <h3 class="step-title lang-id hidden">Gratis Antar</h3>
+1094→ <p class="step-text lang-en">Clean laundry delivered</p>
+1095→ <p class="step-text lang-id hidden">Laundry bersih diantar</p>
+1096→ </div>
+1097→ </div>
+1098→ </div>
+1099→ </section>
+1100→
+1101→ <!-- Testimonials -->
+1102→ <section>
+1103→ <div class="container">
+1104→ <h2 class="section-title lang-en">What Our Customers Say</h2>
+1105→ <h2 class="section-title lang-id hidden">Apa Kata Pelanggan Kami</h2>
+1106→ <div class="testimonials-grid">
+1107→ <div class="testimonial-card">
+1108→ <div class="stars">★★★★★</div>
+1109→ <p class="testimonial-text lang-en">Amazing service! Had my laundry ready in 6 hours. Very professional and free pickup is a game-changer for tourists.</p>
+1110→ <p class="testimonial-text lang-id hidden">Layanan yang luar biasa! Laundry saya selesai dalam 6 jam. Sangat profesional dan gratis jemput sangat membantu wisatawan.</p>
+1111→ <div>
+1112→ <div class="testimonial-author">Sarah M.</div>
+1113→ <div class="testimonial-location">Canggu</div>
+1114→ </div>
+1115→ </div>
+1116→ <div class="testimonial-card">
+1117→ <div class="stars">★★★★★</div>
+1118→ <p class="testimonial-text lang-en">Best laundry service in Canggu. Quick, affordable, and clothes come back perfectly ironed and folded.</p>
+1119→ <p class="testimonial-text lang-id hidden">Layanan laundry terbaik di Canggu. Cepat, terjangkau, dan baju kembali dalam kondisi disetrika dan dilipat sempurna.</p>
+1120→ <div>
+1121→ <div class="testimonial-author">John D.</div>
+1122→ <div class="testimonial-location">Seminyak</div>
+1123→ </div>
+1124→ </div>
+1125→ <div class="testimonial-card">
+1126→ <div class="stars">★★★★★</div>
+1127→ <p class="testimonial-text lang-en">Used their shoe cleaning service and it was incredible. My sneakers look brand new. Highly recommend!</p>
+1128→ <p class="testimonial-text lang-id hidden">Menggunakan layanan pembersihan sepatu mereka dan hasilnya luar biasa. Sneakers saya terlihat seperti baru. Sangat direkomendasikan!</p>
+1129→ <div>
+1130→ <div class="testimonial-author">Emma L.</div>
+1131→ <div class="testimonial-location">Umalas</div>
+1132→ </div>
+1133→ </div>
+1134→ <div class="testimonial-card">
+1135→ <div class="stars">★★★★★</div>
+1136→ <p class="testimonial-text lang-en">As a frequent Bali visitor, Bali Express Laundry is my go-to. Reliable, fast, and excellent quality every time.</p>
+1137→ <p class="testimonial-text lang-id hidden">Sebagai pengunjung Bali yang sering, Bali Express Laundry adalah pilihan utama saya. Andal, cepat, dan kualitas yang sangat baik setiap saat.</p>
+1138→ <div>
+1139→ <div class="testimonial-author">Michael R.</div>
+1140→ <div class="testimonial-location">Kuta</div>
+1141→ </div>
+1142→ </div>
+1143→ </div>
+1144→ </div>
+1145→ </section>
+1146→
+1147→ <!-- FAQ -->
+1148→ <section>
+1149→ <div class="container">
+1150→ <h2 class="section-title lang-en">Frequently Asked Questions</h2>
+1151→ <h2 class="section-title lang-id hidden">Pertanyaan yang Sering Diajukan</h2>
+1152→ <div class="faq-item" onclick="toggleFaq(this)">
+1153→ <div class="faq-question">
+1154→ <span class="lang-en">What areas do you serve?</span>
+1155→ <span class="lang-id hidden">Area mana yang Anda layani?</span>
+1156→ <svg class="faq-icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+1157→ </div>
+1158→ <div class="faq-answer lang-en">We serve Seminyak, Canggu, Umalas, Denpasar, Sanur, and Kuta areas with free pickup and delivery.</div>
+1159→ <div class="faq-answer lang-id hidden">Kami melayani area Seminyak, Canggu, Umalas, Denpasar, Sanur, dan Kuta dengan gratis jemput dan antar.</div>
+1160→ </div>
+1161→ <div class="faq-item" onclick="toggleFaq(this)">
+1162→ <div class="faq-question">
+1163→ <span class="lang-en">How do I place an order?</span>
+1164→ <span class="lang-id hidden">Bagaimana cara memesan?</span>
+1165→ <svg class="faq-icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+1166→ </div>
+1167→ <div class="faq-answer lang-en">Simply contact us via WhatsApp at +6285198504914 with your laundry requirements and location.</div>
+1168→ <div class="faq-answer lang-id hidden">Cukup hubungi kami via WhatsApp di +6285198504914 dengan kebutuhan laundry dan lokasi Anda.</div>
+1169→ </div>
+1170→ <div class="faq-item" onclick="toggleFaq(this)">
+1171→ <div class="faq-question">
+1172→ <span class="lang-en">What is minimum order?</span>
+1173→ <span class="lang-id hidden">Berapa minimum pesanan?</span>
+1174→ <svg class="faq-icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+1175→ </div>
+1176→ <div class="faq-answer lang-en">Minimum order varies by package: 3.9 kg for 12-hour express, 3 kg for 6-hour express, and 2 kg for 3-hour and 2-hour express services.</div>
+1177→ <div class="faq-answer lang-id hidden">Minimum pesanan bervariasi per paket: 3.9 kg untuk express 12 jam, 3 kg untuk express 6 jam, dan 2 kg untuk layanan express 3 jam dan 2 jam.</div>
+1178→ </div>
+1179→ <div class="faq-item" onclick="toggleFaq(this)">
+1180→ <div class="faq-question">
+1181→ <span class="lang-en">Is pickup and delivery really free?</span>
+1182→ <span class="lang-id hidden">Apakah jemput dan antar benar-benar gratis?</span>
+1183→ <svg class="faq-icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+1184→ </div>
+1185→ <div class="faq-answer lang-en">Yes! We offer completely free pickup and delivery service across all our coverage areas.</div>
+1186→ <div class="faq-answer lang-id hidden">Ya! Kami menawarkan layanan jemput dan antar sepenuhnya gratis di semua area cakupan kami.</div>
+1187→ </div>
+1188→ </div>
+1189→ </section>
+1190→
+1191→ <!-- CTA Section -->
+1192→ <section class="cta-section">
+1193→ <h2 class="lang-en">Ready for Fresh, Clean Laundry?</h2>
+1194→ <h2 class="lang-id hidden">Siap untuk Laundry Bersih dan Segar?</h2>
+1195→ <p class="lang-en">Experience best express laundry service in Bali. Contact us now for free pickup and delivery!</p>
+1196→ <p class="lang-id hidden">Nikmati layanan laundry express terbaik di Bali. Hubungi kami sekarang untuk gratis jemput dan antar!</p>
+1197→ <a href="https://wa.me/6285198504914?text=Selamat%20datang%20di%20Bali%20Express%20Laundry%20(Buka%2024%20Jam)%0A%0ASilakan%20isi%20data%20diri%20Anda%3A%0ANama%3A%20%0ANomor%20Handphone%3A%20%0ANama%20Hotel%20%2F%20Lokasi%3A%20%0ANomor%20Kamar%3A%20%0ALayanan%3A%20%0A%0AMohon%20share%20lokasi%20maps%20Anda%20untuk%20memudahkan%20penjemputan%20laundry" target="_blank">
+1198→ <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+1199→ <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+1200→ </svg>
+1201→ <span class="lang-en">Contact Us Now</span>
