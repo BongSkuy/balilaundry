@@ -11,10 +11,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- FAVICON (SVG Embedded) -->
+    <!-- FAVICON -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧺</text></svg>">
 
-    <!-- SCHEMA MARKUP (Technical SEO) -->
+    <!-- SCHEMA MARKUP -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -29,39 +29,40 @@
         "postalCode": "80361",
         "addressCountry": "ID"
       },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": -8.6744,
-        "longitude": 115.1579
-      },
       "openingHoursSpecification": {
         "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
-        ],
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
         "opens": "00:00",
         "closes": "23:59"
-      },
-      "priceRange": "$$"
+      }
     }
     </script>
 
     <style>
-        /* --- CSS VARIABLES & RESET --- */
+        /* --- STYLE BARU (INSPIRED BY BALI BERKAH LAUNDRY) --- */
         :root {
-            --primary-blue: #0066CC;
-            --primary-light: #E0F2FE;
-            --primary-dark: #004C99;
-            --accent-green: #25D366;
-            --accent-green-dark: #1DA851;
-            --text-dark: #1E293B;
-            --text-gray: #64748B;
-            --bg-light: #F8FAFC;
-            --white: #ffffff;
-            --border-radius: 16px;
-            --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.05);
-            --shadow-card: 0 10px 30px -5px rgba(0, 102, 204, 0.1);
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            /* Warna Utama: Biru Premium */
+            --primary: #0056b3;
+            --primary-light: #e7f5ff;
+            --primary-dark: #003d5c;
+            
+            /* Warna Aksen: Orange (Energetik) */
+            --accent: #ff6b00;
+            --accent-hover: #e65c00;
+
+            /* Warna Text & Background */
+            --text-main: #1e293b;
+            --text-sub: #64748b;
+            --bg-body: #ffffff;
+            --bg-soft: #f8fafc;
+            
+            /* Efek */
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.05), 0 4px 6px -2px rgba(0,0,0,0.025);
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-full: 9999px;
         }
 
         * {
@@ -76,107 +77,35 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            color: var(--text-dark);
-            background-color: var(--white);
-            line-height: 1.7;
+            color: var(--text-main);
+            background-color: var(--bg-body);
+            line-height: 1.6;
             overflow-x: hidden;
         }
 
-        /* --- UTILITIES --- */
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 0 20px;
         }
 
         .section-padding {
-            padding: 100px 0;
+            padding: 80px 0;
         }
 
         .text-center { text-align: center; }
-        .text-blue { color: var(--primary-blue); }
-        .text-green { color: var(--accent-green); }
         .hidden { display: none !important; }
         .mb-20 { margin-bottom: 20px; }
-        .mt-20 { margin-top: 20px; }
 
-        /* Language Toggle Button Styles */
-        .lang-switch-container {
-            display: flex;
-            gap: 10px;
-            background: var(--bg-light);
-            padding: 5px;
-            border-radius: 30px;
-        }
-
-        .lang-btn {
-            background: transparent;
-            border: none;
-            color: var(--text-gray);
-            padding: 6px 18px;
-            border-radius: 25px;
-            font-weight: 600;
-            cursor: pointer;
-            font-size: 0.85rem;
-            transition: var(--transition);
-        }
-
-        .lang-btn.active {
-            background: var(--white);
-            color: var(--primary-blue);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-
-        /* --- BUTTONS --- */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 14px 36px;
-            font-weight: 600;
-            text-decoration: none;
-            border-radius: 50px;
-            transition: var(--transition);
-            text-align: center;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-            letter-spacing: 0.5px;
-        }
-
-        .btn-whatsapp {
-            background-color: var(--accent-green);
-            color: white;
-            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
-        }
-
-        .btn-whatsapp:hover {
-            background-color: var(--accent-green-dark);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
-        }
-
-        .btn-secondary {
-            background-color: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            border: 2px solid rgba(255,255,255,0.5);
-            color: var(--white);
-        }
-
-        .btn-secondary:hover {
-            background-color: var(--white);
-            color: var(--primary-blue);
-        }
-
-        /* --- HEADER & NAV --- */
+        /* --- HEADER --- */
         header {
-            background-color: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 1px 0 rgba(0,0,0,0.05);
+            background-color: var(--bg-body);
+            box-shadow: var(--shadow-sm);
             position: sticky;
             top: 0;
             z-index: 1000;
-            padding: 18px 0;
+            padding: 15px 0;
+            border-bottom: 1px solid #e2e8f0;
         }
 
         .nav-wrapper {
@@ -188,78 +117,132 @@
         .logo {
             font-size: 1.5rem;
             font-weight: 800;
-            color: var(--primary-blue);
+            color: var(--primary);
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
             text-decoration: none;
             letter-spacing: -0.5px;
         }
-        .logo span { color: var(--accent-green); }
+        .logo span { color: var(--accent); }
 
-        /* Navigation Menu Styles */
         .nav-menu {
             display: flex;
-            gap: 35px;
-            align-items: center;
+            gap: 30px;
         }
         
         .nav-link {
             text-decoration: none;
-            color: var(--text-dark);
+            color: var(--text-main);
             font-weight: 500;
             font-size: 1rem;
             transition: color 0.3s;
             position: relative;
         }
         
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background-color: var(--primary-blue);
-            transition: width 0.3s;
-        }
-
         .nav-link:hover {
-            color: var(--primary-blue);
-        }
-        
-        .nav-link:hover::after {
-            width: 100%;
+            color: var(--primary);
         }
 
-        /* --- HERO SECTION --- */
+        .lang-switch-container {
+            display: flex;
+            gap: 5px;
+            background: var(--bg-soft);
+            padding: 5px;
+            border-radius: 30px;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-sub);
+            padding: 5px 15px;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: all 0.3s;
+        }
+
+        .lang-btn.active {
+            background-color: var(--white);
+            color: var(--primary);
+            box-shadow: var(--shadow-sm);
+        }
+
+        /* --- HERO SECTION (FULL WIDTH HERO) --- */
         .hero {
-            /* PLACEHOLDER IMAGE: DIJAMIN MUNCUL */
-            background: linear-gradient(rgba(0, 40, 90, 0.75), rgba(0, 90, 170, 0.75)), url('https://placehold.co/1920x1080/0066CC/FFFFFF?text=UPLOAD+PHOTO+TOKO+ANDA+DISINI&font=roboto') no-repeat center center/cover;
-            color: var(--white);
-            padding: 160px 0 140px;
+            /* BACKGROUND: Gradient Biru Elegan dengan Placeholder Gambar */
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%), 
+                        url('https://placehold.co/1920x1080/0056b3/FFFFFF?text=BALI+EXPRESS+LAUNDRY&font=montserrat') no-repeat center center/cover;
+            background-blend-mode: overlay; /* Mencampur gradient ke gambar */
+            color: var(--bg-body);
+            padding: 140px 0 100px;
             text-align: center;
+            position: relative;
         }
 
         .hero h1 {
             font-size: 3.5rem;
             font-weight: 800;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
             line-height: 1.1;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
         }
 
         .hero p {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             margin-bottom: 40px;
-            opacity: 0.95;
+            font-weight: 300;
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
-            font-weight: 300;
-            text-shadow: 0 1px 5px rgba(0,0,0,0.3);
+            text-shadow: 0 1px 4px rgba(0,0,0,0.2);
         }
 
+        /* --- BUTTONS (GRADIENT STYLE) --- */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 35px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(90deg, var(--accent), #ff8533);
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 107, 0, 0.4);
+        }
+
+        .btn-secondary {
+            background-color: rgba(255,255,255,0.15);
+            backdrop-filter: blur(5px);
+            border: 2px solid rgba(255,255,255,0.5);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background-color: white;
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .btn-whatsapp { /* Override if needed, keeping green for WA consistency but styled like Primary */ }
+        
         .hero-buttons {
             display: flex;
             gap: 20px;
@@ -269,103 +252,105 @@
 
         /* --- TRUST INDICATORS --- */
         .trust-section {
-            background-color: var(--white);
-            padding: 60px 0;
-            border-bottom: 1px solid #f1f5f9;
+            background-color: var(--bg-body);
+            padding: 50px 0;
+            margin-top: -50px;
+            position: relative;
+            z-index: 10;
+            padding-bottom: 80px;
         }
 
         .trust-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
             text-align: center;
         }
 
-        .trust-item { 
-            padding: 10px;
-            transition: transform 0.3s ease;
+        .trust-item {
+            background: white;
+            padding: 25px 15px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-md);
+            border: 1px solid #f1f5f9;
+            transition: transform 0.3s;
         }
         
         .trust-item:hover {
             transform: translateY(-5px);
+            border-color: var(--primary-light);
         }
 
         .trust-icon { 
             font-size: 2.5rem; 
-            margin-bottom: 12px; 
+            margin-bottom: 15px; 
             display: block; 
-            color: var(--primary-blue);
-            background: var(--primary-light);
-            width: 80px;
-            height: 80px;
-            line-height: 80px;
-            border-radius: 50%;
-            margin-left: auto;
-            margin-right: auto;
         }
 
         .trust-text { 
             font-weight: 600; 
             font-size: 1rem; 
-            color: var(--text-dark);
-            letter-spacing: 0.5px;
+            color: var(--text-main);
         }
 
         /* --- PRICING --- */
-        .pricing { background-color: var(--bg-light); }
-        .pricing h2 { font-size: 2.5rem; font-weight: 700; margin-bottom: 10px; color: var(--primary-blue); }
-        .pricing-subtitle { margin-bottom: 60px; color: var(--text-gray); font-weight: 400; }
+        .pricing { background-color: var(--bg-soft); }
+        .pricing h2 { font-size: 2.5rem; font-weight: 700; margin-bottom: 10px; color: var(--primary); }
+        .pricing-subtitle { margin-bottom: 60px; color: var(--text-sub); font-weight: 400; }
 
         .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 30px;
         }
 
         .pricing-card {
-            background: var(--white);
+            background: var(--bg-body);
             border: 1px solid #e2e8f0;
-            border-radius: var(--border-radius);
-            padding: 40px 30px;
+            border-radius: var(--radius-lg);
+            padding: 40px 25px;
             text-align: center;
-            transition: var(--transition);
+            transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
         }
 
         .pricing-card:hover {
             transform: translateY(-10px);
-            box-shadow: var(--shadow-card);
-            border-color: transparent;
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary);
         }
 
-        .pricing-card.featured { border: 2px solid var(--primary-blue); background: linear-gradient(to bottom, #ffffff, #f0f9ff); }
+        .pricing-card.featured {
+            border: 2px solid var(--accent);
+            background: #fffdf5; /* Very light orange tint */
+        }
 
         .badge {
-            background: linear-gradient(135deg, var(--primary-blue), var(--primary-dark));
+            background: var(--accent);
             color: white;
-            padding: 6px 20px;
+            padding: 6px 25px;
             position: absolute;
-            top: 25px;
-            right: -30px;
+            top: 20px;
+            right: -35px;
             transform: rotate(45deg);
             font-size: 0.75rem;
             font-weight: 700;
-            width: 140px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            width: 130px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
-        .card-title { font-size: 1.35rem; font-weight: 700; margin-bottom: 20px; color: var(--text-dark); }
-        .card-price { font-size: 2.25rem; color: var(--primary-blue); font-weight: 700; margin-bottom: 25px; letter-spacing: -1px; }
-        .card-price span { font-size: 1rem; color: var(--text-gray); font-weight: 400; }
+        .card-title { font-size: 1.3rem; font-weight: 700; margin-bottom: 20px; color: var(--text-main); }
+        .card-price { font-size: 2.5rem; color: var(--primary); font-weight: 800; margin-bottom: 25px; line-height: 1; }
+        .card-price span { font-size: 1rem; color: var(--text-sub); font-weight: 400; }
 
         .card-features { list-style: none; margin-bottom: 30px; text-align: left; }
-        .card-features li { margin-bottom: 12px; font-size: 0.95rem; color: var(--text-gray); padding-left: 30px; position: relative; }
-        .card-features li::before { content: "✓"; color: var(--accent-green); position: absolute; left: 0; font-weight: 700; }
+        .card-features li { margin-bottom: 12px; font-size: 0.95rem; color: var(--text-sub); padding-left: 25px; position: relative; }
+        .card-features li::before { content: "✓"; color: var(--accent); position: absolute; left: 0; font-weight: 700; }
 
         /* --- PAYMENT METHODS --- */
         .payment-section {
-            background-color: var(--white);
+            background-color: var(--bg-body);
             padding: 50px 0;
         }
         .payment-grid {
@@ -380,15 +365,15 @@
             align-items: center;
             gap: 12px;
             font-weight: 600;
-            color: var(--text-dark);
-            background: var(--bg-light);
-            padding: 14px 28px;
+            color: var(--text-main);
+            background: var(--bg-soft);
+            padding: 12px 25px;
             border-radius: 50px;
             border: 1px solid #e2e8f0;
         }
         .payment-icon { font-size: 1.5rem; }
 
-        /* --- ABOUT & PROCESS --- */
+        /* --- ABOUT --- */
         .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -397,23 +382,23 @@
         }
         .about-img {
             width: 100%;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow-card);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
             object-fit: cover;
             height: 450px;
-            background-color: #eee; /* Fallback color */
+            background-color: #eee; 
         }
         @media (max-width: 768px) { 
             .about-grid { grid-template-columns: 1fr; } 
-            .about-img { height: 350px; }
+            .about-img { height: 300px; }
         }
 
         /* --- HOW IT WORKS --- */
-        .how-it-works { background-color: var(--white); }
-        .steps-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 50px; }
+        .how-it-works { background-color: var(--bg-body); }
+        .steps-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; }
         .step-item { flex: 1; min-width: 200px; text-align: center; max-width: 250px; }
         .step-number {
-            background: linear-gradient(135deg, var(--primary-blue), var(--primary-dark));
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             color: white;
             width: 60px;
             height: 60px;
@@ -421,46 +406,18 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.75rem;
+            font-size: 1.5rem;
             font-weight: 700;
-            margin: 0 auto 25px;
-            box-shadow: 0 10px 20px rgba(0, 102, 204, 0.2);
+            margin: 0 auto 20px;
+            box-shadow: 0 4px 10px rgba(0, 86, 179, 0.3);
         }
 
-        /* --- FAQ SECTION --- */
-        .faq-item {
-            background: white;
-            border-radius: 12px;
-            margin-bottom: 15px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
-            overflow: hidden;
-            border: 1px solid #f1f5f9;
-        }
-        .faq-question {
-            padding: 24px;
-            cursor: pointer;
-            font-weight: 600;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: #fff;
-            transition: background 0.3s;
-        }
-        .faq-answer {
-            padding: 0 24px 24px;
-            color: var(--text-gray);
-            display: none; 
-        }
-        .faq-item.active .faq-answer { display: block; }
-        .faq-item.active .faq-question { background-color: var(--primary-light); color: var(--primary-blue); }
-        .faq-toggle { font-size: 1.5rem; line-height: 1; color: var(--text-gray); }
-
-        /* --- TESTIMONIALS STATS (NEW) --- */
+        /* --- TESTIMONIALS & STATS --- */
         .stats-section {
-            background-color: var(--primary-light);
+            background: var(--primary-light);
             padding: 60px 0;
             margin-bottom: 60px;
-            border-radius: var(--border-radius);
+            border-radius: var(--radius-lg);
         }
         .stats-grid {
             display: grid;
@@ -471,7 +428,7 @@
         .stat-number {
             font-size:3rem;
             font-weight: 800;
-            color: var(--primary-blue);
+            color: var(--primary);
             line-height: 1;
             margin-bottom: 10px;
         }
@@ -480,10 +437,9 @@
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: var(--text-gray);
+            color: var(--text-sub);
         }
 
-        /* --- TESTIMONIALS --- */
         .testimonials-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -491,21 +447,21 @@
         }
         .testimonial-card {
             background: white;
-            padding: 35px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow-soft);
+            padding: 30px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             border: 1px solid #f1f5f9;
         }
         .stars { color: #FFD700; margin-bottom: 15px; font-size: 1.2rem; }
-        .testimonial-text { font-style: italic; margin-bottom: 20px; color: var(--text-dark); flex-grow: 1; font-size: 1rem; }
-        .customer-name { font-weight: 700; color: var(--primary-blue); margin-bottom: 15px; font-size: 1.1rem; }
+        .testimonial-text { font-style: italic; margin-bottom: 20px; color: var(--text-main); flex-grow: 1; font-size: 1rem; }
+        .customer-name { font-weight: 700; color: var(--primary); margin-bottom: 15px; font-size: 1.1rem; }
         .review-link {
             display: inline-block;
             font-size: 0.85rem;
-            color: var(--text-gray);
+            color: var(--text-sub);
             text-decoration: none;
             border: 1px solid #e2e8f0;
             padding: 8px 16px;
@@ -513,24 +469,52 @@
             font-weight: 500;
             transition: all 0.3s;
         }
-        .review-link:hover { background-color: var(--bg-light); color: var(--primary-blue); border-color: var(--primary-blue); }
+        .review-link:hover { background-color: var(--bg-soft); color: var(--primary); border-color: var(--primary); }
+
+        /* --- FAQ --- */
+        .faq-item {
+            background: white;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+        }
+        .faq-question {
+            padding: 20px 25px;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #fff;
+            transition: background 0.3s;
+        }
+        .faq-answer {
+            padding: 0 25px 25px;
+            color: var(--text-sub);
+            display: none; 
+        }
+        .faq-item.active .faq-answer { display: block; }
+        .faq-item.active .faq-question { background-color: var(--primary-light); color: var(--primary); }
+        .faq-toggle { font-size: 1.5rem; line-height: 1; color: var(--text-sub); }
 
         /* --- CONTACT --- */
         .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; margin-top: 50px; }
-        .contact-info-box { background: var(--bg-light); padding: 40px; border-radius: var(--border-radius); }
+        .contact-info-box { background: var(--bg-soft); padding: 40px; border-radius: var(--radius-lg); }
         .info-row { display: flex; align-items: flex-start; margin-bottom: 25px; gap: 20px; }
-        .info-icon { font-size: 1.5rem; color: var(--primary-blue); }
+        .info-icon { font-size: 1.5rem; color: var(--primary); }
         .map-container {
             height: 100%;
             min-height: 400px;
             background-color: #ddd;
-            border-radius: var(--border-radius);
+            border-radius: var(--radius-lg);
             overflow: hidden;
             position: relative;
-            box-shadow: var(--shadow-soft);
+            box-shadow: var(--shadow-md);
         }
 
-        /* --- FOOTER & MODALS --- */
+        /* --- FOOTER --- */
         footer {
             background-color: #0f172a;
             color: white;
@@ -543,10 +527,10 @@
             margin: 0 12px;
             font-size: 0.9rem;
             cursor: pointer;
-            transition: color 0.3s;
         }
         .footer-links a:hover { color: white; }
 
+        /* --- MODALS --- */
         .modal {
             display: none; 
             position: fixed; 
@@ -565,7 +549,7 @@
             border: 1px solid #888;
             width: 80%;
             max-width: 800px;
-            border-radius: var(--border-radius);
+            border-radius: var(--radius-lg);
             position: relative;
             max-height: 85vh;
             overflow-y: auto;
@@ -582,16 +566,16 @@
             transition: color 0.3s;
         }
         .close-modal:hover { color: black; }
-        .modal h2 { margin-bottom: 25px; color: var(--primary-blue); font-size: 2rem; }
-        .modal h4 { margin-top: 20px; margin-bottom: 8px; color: var(--text-dark); }
-        .modal p, .modal ul { font-size: 1rem; color: var(--text-gray); margin-bottom: 12px; }
+        .modal h2 { margin-bottom: 25px; color: var(--primary); font-size: 2rem; }
+        .modal h4 { margin-top: 20px; margin-bottom: 8px; color: var(--text-main); }
+        .modal p, .modal ul { font-size: 1rem; color: var(--text-sub); margin-bottom: 12px; }
 
         /* --- FLOATING WHATSAPP --- */
         .floating-wa {
             position: fixed;
             bottom: 35px;
             right: 35px;
-            background-color: var(--accent-green);
+            background-color: #25D366;
             color: white;
             width: 65px;
             height: 65px;
@@ -602,10 +586,10 @@
             font-size: 2rem;
             box-shadow: 0 8px 25px rgba(0,0,0,0.2);
             z-index: 1001;
-            transition: var(--transition);
+            transition: transform 0.3s ease;
             text-decoration: none;
         }
-        .floating-wa:hover { transform: scale(1.1); background-color: var(--accent-green-dark); }
+        .floating-wa:hover { transform: scale(1.1); }
 
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.2rem; }
@@ -616,9 +600,9 @@
             .pricing-grid { grid-template-columns: 1fr; }
             .trust-grid { grid-template-columns: 1fr 1fr; }
             .map-container { min-height: 300px; }
+            .nav-menu { display: none; }
             .stats-section { padding: 40px 0; }
             .stat-number { font-size: 2.5rem; }
-            .nav-menu { display: none; }
             .nav-wrapper { flex-direction: column; gap: 15px; }
         }
     </style>
@@ -665,7 +649,7 @@
                     <h1>24 Hour Express Laundry in Bali</h1>
                     <p>Fast, clean, and reliable laundry service with free pickup & delivery. Perfect for tourists, villas, and busy guests.</p>
                     <div class="hero-buttons">
-                        <a href="https://wa.me/6285198504914" class="btn btn-whatsapp">Order via WhatsApp</a>
+                        <a href="https://wa.me/6285198504914" class="btn btn-primary">Order via WhatsApp</a>
                         <a href="#pricing" class="btn btn-secondary">Check Pricing</a>
                     </div>
                 </div>
@@ -673,7 +657,7 @@
                     <h1>Laundry Express 24 Jam di Bali</h1>
                     <p>Layanan laundry cepat, bersih, dan terpercaya dengan antar jemput gratis.</p>
                     <div class="hero-buttons">
-                        <a href="https://wa.me/6285198504914" class="btn btn-whatsapp">Pesan via WhatsApp</a>
+                        <a href="https://wa.me/6285198504914" class="btn btn-primary">Pesan via WhatsApp</a>
                         <a href="#pricing" class="btn btn-secondary">Lihat Harga</a>
                     </div>
                 </div>
@@ -717,13 +701,13 @@
                             <h3 class="card-title">EXPRESS 12 HOURS</h3>
                             <div class="card-price">Rp24.900 <span>/ Kg</span></div>
                             <ul class="card-features"><li>12 Hours Turnaround</li><li>Free Pickup & Delivery</li><li>Includes: wash, iron, fold neatly</li><li>Dedicated Machine Per Customer</li><li>Minimum order: 3.9 Kg</li></ul>
-                            <a href="https://wa.me/6285198504914" class="btn btn-whatsapp" style="width:100%">Order via WhatsApp</a>
+                            <a href="https://wa.me/6285198504914" class="btn btn-primary" style="width:100%">Order via WhatsApp</a>
                         </div>
                         <div class="lang-id-content hidden">
                             <h3 class="card-title">Express 12 Jam</h3>
                             <div class="card-price">Rp24.900 <span>/ Kg</span></div>
                             <ul class="card-features"><li>Selesai dalam 12 Jam</li><li>Penjemputan & Pengantaran Gratis</li><li>Termasuk: Cuci, Setrika, Lipat Rapi</li><li>Mesin Terpisah Per Customer</li><li>Min. 3.9 kg</li></ul>
-                            <a href="https://wa.me/6285198504914" class="btn btn-whatsapp" style="width:100%">Chat WhatsApp Sekarang</a>
+                            <a href="https://wa.me/6285198504914" class="btn btn-primary" style="width:100%">Chat WhatsApp Sekarang</a>
                         </div>
                     </article>
                     <!-- Package 2 -->
@@ -732,13 +716,13 @@
                             <h3 class="card-title">EXPRESS 6 HOURS</h3>
                             <div class="card-price">Rp39.900 <span>/ Kg</span></div>
                             <ul class="card-features"><li>6 Hours Turnaround</li><li>Free Pickup & Delivery</li><li>Includes: wash, iron, fold neatly</li><li>Dedicated Machine Per Customer</li><li>Minimum order: 3 Kg</li></ul>
-                            <a href="https://wa.me/6285198504914" class="btn btn-whatsapp" style="width:100%">Order via WhatsApp</a>
+                            <a href="https://wa.me/6285198504914" class="btn btn-primary" style="width:100%">Order via WhatsApp</a>
                         </div>
                         <div class="lang-id-content hidden">
                             <h3 class="card-title">Express 6 Jam</h3>
                             <div class="card-price">Rp39.900 <span>/ Kg</span></div>
                             <ul class="card-features"><li>Selesai dalam 6 Jam</li><li>Penjemputan & Pengantaran Gratis</li><li>Termasuk: Cuci, Setrika, Lipat Rapi</li><li>Mesin Terpisah Per Customer</li><li>Min. 3 kg</li></ul>
-                            <a href="https://wa.me/6285198504914" class="btn btn-whatsapp" style="width:100%">Chat WhatsApp Sekarang</a>
+                            <a href="https://wa.me/6285198504914" class="btn btn-primary" style="width:100%">Chat WhatsApp Sekarang</a>
                         </div>
                     </article>
                     <!-- Package 3 -->
@@ -748,13 +732,13 @@
                             <h3 class="card-title">EXPRESS 3 HOURS</h3>
                             <div class="card-price">Rp49.900 <span>/ Kg</span></div>
                             <ul class="card-features"><li>3 Hours Turnaround</li><li>Free Pickup & Delivery</li><li>Includes: wash, iron, fold neatly</li><li>Dedicated Machine Per Customer</li><li>Minimum order: 2 Kg</li></ul>
-                            <a href="https://wa.me/6285198504914" class="btn btn-whatsapp" style="width:100%">Order via WhatsApp</a>
+                            <a href="https://wa.me/6285198504914" class="btn btn-primary" style="width:100%">Order via WhatsApp</a>
                         </div>
                         <div class="lang-id-content hidden">
                             <h3 class="card-title">Express 3 Jam</h3>
                             <div class="card-price">Rp49.900 <span>/ Kg</span></div>
                             <ul class="card-features"><li>Selesai dalam 3 Jam</li><li>Penjemputan & Pengantaran Gratis</li><li>Termasuk: Cuci, Setrika, Lipat Rapi</li><li>Mesin Terpisah Per Customer</li><li>Min. 2 kg</li></ul>
-                            <a href="https://wa.me/6285198504914" class="btn btn-whatsapp" style="width:100%">Chat WhatsApp Sekarang</a>
+                            <a href="https://wa.me/6285198504914" class="btn btn-primary" style="width:100%">Chat WhatsApp Sekarang</a>
                         </div>
                     </article>
                     <!-- Package 4 -->
@@ -763,13 +747,13 @@
                             <h3 class="card-title">ULTRA EXPRESS 2 HOURS</h3>
                             <div class="card-price">Rp59.900 <span>/ Kg</span></div>
                             <ul class="card-features"><li>2 Hours Turnaround</li><li>Free Pickup & Delivery</li><li>Includes: wash, iron, fold neatly</li><li>Dedicated Machine Per Customer</li><li>Minimum order: 2 Kg</li></ul>
-                            <a href="https://wa.me/6285198504914" class="btn btn-whatsapp" style="width:100%">Order via WhatsApp</a>
+                            <a href="https://wa.me/6285198504914" class="btn btn-primary" style="width:100%">Order via WhatsApp</a>
                         </div>
                         <div class="lang-id-content hidden">
                             <h3 class="card-title">Ultra Express 2 Jam</h3>
                             <div class="card-price">Rp59.900 <span>/ Kg</span></div>
                             <ul class="card-features"><li>Selesai dalam 2 Jam</li><li>Penjemputan & Pengantaran Gratis</li><li>Termasuk: Cuci, Setrika, Lipat Rapi</li><li>Mesin Terpisah Per Customer</li><li>Min. 2 kg</li></ul>
-                            <a href="https://wa.me/6285198504914" class="btn btn-whatsapp" style="width:100%">Chat WhatsApp Sekarang</a>
+                            <a href="https://wa.me/6285198504914" class="btn btn-primary" style="width:100%">Chat WhatsApp Sekarang</a>
                         </div>
                     </article>
                 </div>
@@ -779,8 +763,8 @@
         <!-- PAYMENT METHODS -->
         <section class="payment-section">
             <div class="container text-center">
-                <h3 class="lang-en-content mb-20" style="font-weight: 700; color: var(--text-dark);">Accepted Payment Methods</h3>
-                <h3 class="lang-id-content hidden mb-20" style="font-weight: 700; color: var(--text-dark);">Metode Pembayaran</h3>
+                <h3 class="lang-en-content mb-20" style="font-weight: 700; color: var(--text-main);">Accepted Payment Methods</h3>
+                <h3 class="lang-id-content hidden mb-20" style="font-weight: 700; color: var(--text-main);">Metode Pembayaran</h3>
                 <div class="payment-grid">
                     <div class="payment-item"><span class="payment-icon">💵</span> Cash (Tunai)</div>
                     <div class="payment-item"><span class="payment-icon">🏦</span> Transfer BCA</div>
@@ -791,26 +775,26 @@
         </section>
 
         <!-- ABOUT US (PLACEHOLDER) -->
-        <section id="about" class="section-padding" style="background-color: var(--white);">
+        <section id="about" class="section-padding" style="background-color: var(--bg-body);">
             <div class="container">
                 <div class="about-grid">
-                    <!-- GAMBAR PLACEHOLDER: DIJAMIN MUNCUL -->
+                    <!-- GAMBAR PLACEHOLDER -->
                     <div>
                         <img src="https://placehold.co/800x600/EEEEEE/333333?text=UPLOAD+PHOTO+OF+FOLDED+CLOTHES+HERE&font=roboto" alt="About Us Image Placeholder" class="about-img">
                     </div>
                     <div>
-                        <h2 class="lang-en-content" style="font-size: 2.5rem; color: var(--primary-blue); font-weight: 700;">About Us</h2>
-                        <h2 class="lang-id-content hidden" style="font-size: 2.5rem; color: var(--primary-blue); font-weight: 700;">Tentang Kami</h2>
-                        <p class="lang-en-content mt-20" style="color: var(--text-gray);">
+                        <h2 class="lang-en-content" style="font-size: 2.5rem; color: var(--primary); font-weight: 700;">About Us</h2>
+                        <h2 class="lang-id-content hidden" style="font-size: 2.5rem; color: var(--primary); font-weight: 700;">Tentang Kami</h2>
+                        <p class="lang-en-content mt-20" style="color: var(--text-sub);">
                             Bali Express Laundry is a 24-hour professional laundry service in Bali, serving both local residents and international travelers. We specialize in express premium laundry with free pickup and delivery, ensuring your clothes are cleaned quickly, safely, and with great care.
                         </p>
-                        <p class="lang-en-content mt-20" style="color: var(--text-gray);">
+                        <p class="lang-en-content mt-20" style="color: var(--text-sub);">
                             Our service areas include Seminyak, Canggu, Umalas, Denpasar, Sanur, and Kuta, making us a trusted choice for fast, reliable, and high-quality laundry services in Bali.
                         </p>
-                        <p class="lang-id-content hidden mt-20" style="color: var(--text-gray);">
+                        <p class="lang-id-content hidden mt-20" style="color: var(--text-sub);">
                             Bali Express Laundry adalah layanan laundry profesional 24 jam di Bali, melayani penduduk lokal dan wisatawan internasional. Kami mengkhususkan diri pada laundry premium express dengan antar jemput gratis, memastikan pakaian Anda dibersihkan dengan cepat, aman, dan penuh perhatian.
                         </p>
-                        <p class="lang-id-content hidden mt-20" style="color: var(--text-gray);">
+                        <p class="lang-id-content hidden mt-20" style="color: var(--text-sub);">
                             Area layanan kami meliputi Seminyak, Canggu, Umalas, Denpasar, Sanur, dan Kuta, menjadikan kami pilihan terpercaya untuk layanan laundry cepat, andal, dan berkualitas tinggi di Bali.
                         </p>
                     </div>
@@ -958,15 +942,15 @@
         </section>
 
         <!-- CLOSING CTA -->
-        <section class="section-padding text-center" style="background: linear-gradient(135deg, var(--primary-blue), var(--primary-dark)); color: white;">
+        <section class="section-padding text-center" style="background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white;">
             <div class="container">
                 <h2 class="lang-en-content" style="margin-bottom: 15px; font-size: 2rem;">Need clean clothes fast?</h2>
-                <p class="lang-en-content" style="font-size: 1.2rem; margin-bottom: 30px; opacity: 0.9;">We deliver fresh laundry in just hours.</p>
-                <a href="https://wa.me/6285198504914" class="btn btn-whatsapp lang-en-content">Order Now via WhatsApp</a>
+                <p class="lang-en-content" style="font-size: 1.2rem; margin-bottom: 30px;">We deliver fresh laundry in just hours.</p>
+                <a href="https://wa.me/6285198504914" class="btn btn-primary lang-en-content">Order Now via WhatsApp</a>
 
                 <h2 class="lang-id-content hidden" style="margin-bottom: 15px; font-size: 2rem;">Butuh laundry cepat hari ini?</h2>
-                <p class="lang-id-content hidden" style="font-size: 1.2rem; margin-bottom: 30px; opacity: 0.9;">Kami siap antar dalam hitungan jam.</p>
-                <a href="https://wa.me/6285198504914" class="btn btn-whatsapp lang-id-content hidden">Pesan Sekarang</a>
+                <p class="lang-id-content hidden" style="font-size: 1.2rem; margin-bottom: 30px;">Kami siap antar dalam hitungan jam.</p>
+                <a href="https://wa.me/6285198504914" class="btn btn-primary lang-id-content hidden">Pesan Sekarang</a>
             </div>
         </section>
 
@@ -985,7 +969,7 @@
                             <div>
                                 <h4 class="lang-en-content">Address</h4>
                                 <h4 class="lang-id-content hidden">Alamat</h4>
-                                <p style="color: var(--text-gray);">Jl. Mertanadi No.92X, Kerobokan Kelod,<br>Kec. Kuta Utara, Kabupaten Badung, Bali 80361</p>
+                                <p style="color: var(--text-sub);">Jl. Mertanadi No.92X, Kerobokan Kelod,<br>Kec. Kuta Utara, Kabupaten Badung, Bali 80361</p>
                             </div>
                         </div>
                         <div class="info-row">
@@ -993,7 +977,7 @@
                             <div>
                                 <h4 class="lang-en-content">WhatsApp (24 Hours)</h4>
                                 <h4 class="lang-id-content hidden">WhatsApp (24 Jam)</h4>
-                                <p><a href="https://wa.me/6285198504914" style="color: var(--primary-blue); text-decoration: none; font-weight: 700; font-size: 1.1rem;">+62 851-9850-4914</a></p>
+                                <p><a href="https://wa.me/6285198504914" style="color: var(--primary); text-decoration: none; font-weight: 700; font-size: 1.1rem;">+62 851-9850-4914</a></p>
                             </div>
                         </div>
                         <div class="info-row">
@@ -1010,7 +994,7 @@
                             <div>
                                 <h4 class="lang-en-content">Service Areas</h4>
                                 <h4 class="lang-id-content hidden">Area Layanan</h4>
-                                <p style="color: var(--text-gray);">Seminyak, Canggu, Umalas, Denpasar, Sanur, Kuta</p>
+                                <p style="color: var(--text-sub);">Seminyak, Canggu, Umalas, Denpasar, Sanur, Kuta</p>
                             </div>
                         </div>
                     </div>
