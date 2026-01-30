@@ -20,7 +20,6 @@
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "Bali Express Laundry",
-      "image": "https://images.unsplash.com/photo-1584204524092-8f73727264a6",
       "telephone": "+62 851-9850-4914",
       "address": {
         "@type": "PostalAddress",
@@ -235,12 +234,11 @@
 
         /* --- HERO SECTION --- */
         .hero {
-            /* FOTO HERO: Fokus pada proses setrika yang nyata */
-            background: linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.6)), url('https://images.unsplash.com/photo-1584204524092-8f73727264a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=90') no-repeat center center/cover;
+            /* PLACEHOLDER IMAGE: DIJAMIN MUNCUL */
+            background: linear-gradient(rgba(0, 40, 90, 0.75), rgba(0, 90, 170, 0.75)), url('https://placehold.co/1920x1080/0066CC/FFFFFF?text=UPLOAD+PHOTO+TOKO+ANDA+DISINI&font=roboto') no-repeat center center/cover;
             color: var(--white);
             padding: 160px 0 140px;
             text-align: center;
-            position: relative;
         }
 
         .hero h1 {
@@ -248,17 +246,18 @@
             font-weight: 800;
             margin-bottom: 24px;
             line-height: 1.1;
-            letter-spacing: -1px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
 
         .hero p {
             font-size: 1.25rem;
             margin-bottom: 40px;
-            opacity: 0.9;
+            opacity: 0.95;
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
             font-weight: 300;
+            text-shadow: 0 1px 5px rgba(0,0,0,0.3);
         }
 
         .hero-buttons {
@@ -402,6 +401,7 @@
             box-shadow: var(--shadow-card);
             object-fit: cover;
             height: 450px;
+            background-color: #eee; /* Fallback color */
         }
         @media (max-width: 768px) { 
             .about-grid { grid-template-columns: 1fr; } 
@@ -409,7 +409,7 @@
         }
 
         /* --- HOW IT WORKS --- */
-        .how-it-works { background-color: var(--bg-light); }
+        .how-it-works { background-color: var(--white); }
         .steps-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 50px; }
         .step-item { flex: 1; min-width: 200px; text-align: center; max-width: 250px; }
         .step-number {
@@ -469,7 +469,7 @@
             text-align: center;
         }
         .stat-number {
-            font-size: 3rem;
+            font-size:3rem;
             font-weight: 800;
             color: var(--primary-blue);
             line-height: 1;
@@ -538,7 +538,7 @@
             text-align: center;
         }
         .footer-links a {
-            color: rgba(255, 255, 255, 0.6);
+            color: rgba(255,255,255,0.6);
             text-decoration: none;
             margin: 0 12px;
             font-size: 0.9rem;
@@ -616,9 +616,9 @@
             .pricing-grid { grid-template-columns: 1fr; }
             .trust-grid { grid-template-columns: 1fr 1fr; }
             .map-container { min-height: 300px; }
-            .nav-menu { display: none; }
             .stats-section { padding: 40px 0; }
             .stat-number { font-size: 2.5rem; }
+            .nav-menu { display: none; }
             .nav-wrapper { flex-direction: column; gap: 15px; }
         }
     </style>
@@ -790,13 +790,13 @@
             </div>
         </section>
 
-        <!-- ABOUT US (UPDATED IMAGE) -->
+        <!-- ABOUT US (PLACEHOLDER) -->
         <section id="about" class="section-padding" style="background-color: var(--white);">
             <div class="container">
                 <div class="about-grid">
-                    <!-- GAMBAR ABOUT US - KERANJANG LAUNDRY PUTIH BERSIH -->
+                    <!-- GAMBAR PLACEHOLDER: DIJAMIN MUNCUL -->
                     <div>
-                        <img src="https://images.unsplash.com/photo-1523987543654-765f054b5f27?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Clean White Laundry" class="about-img">
+                        <img src="https://placehold.co/800x600/EEEEEE/333333?text=UPLOAD+PHOTO+OF+FOLDED+CLOTHES+HERE&font=roboto" alt="About Us Image Placeholder" class="about-img">
                     </div>
                     <div>
                         <h2 class="lang-en-content" style="font-size: 2.5rem; color: var(--primary-blue); font-weight: 700;">About Us</h2>
@@ -902,12 +902,12 @@
         <!-- TESTIMONIALS (WITH STATS) -->
         <section class="section-padding">
             <div class="container">
-                <div class="text-center mb-20">
+                <div class="text-center">
                     <h2 class="lang-en-content" style="font-size: 2.2rem; font-weight: 700;">Google Reviews</h2>
                     <h2 class="lang-id-content hidden" style="font-size: 2.2rem; font-weight: 700;">Ulasan Google</h2>
                 </div>
 
-                <!-- NEW STATS SECTION -->
+                <!-- STATS SECTION -->
                 <div class="stats-section">
                     <div class="stats-grid">
                         <div>
