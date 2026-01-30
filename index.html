@@ -9,7 +9,7 @@
     <!-- Google Fonts: Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- FAVICON (SVG Embedded) -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧺</text></svg>">
@@ -20,7 +20,7 @@
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "Bali Express Laundry",
-      "image": "https://images.unsplash.com/photo-1581092160607-ee22621dd758",
+      "image": "https://images.unsplash.com/photo-1584204524092-8f73727264a6",
       "telephone": "+62 851-9850-4914",
       "address": {
         "@type": "PostalAddress",
@@ -51,16 +51,18 @@
         /* --- CSS VARIABLES & RESET --- */
         :root {
             --primary-blue: #0066CC;
+            --primary-light: #E0F2FE;
             --primary-dark: #004C99;
             --accent-green: #25D366;
             --accent-green-dark: #1DA851;
-            --text-dark: #1F2937;
-            --text-light: #6B7280;
-            --bg-light: #F9FAFB; /* Updated for cleaner look */
+            --text-dark: #1E293B;
+            --text-gray: #64748B;
+            --bg-light: #F8FAFC;
             --white: #ffffff;
-            --border-radius: 12px;
-            --shadow-subtle: 0 2px 4px rgba(0,0,0,0.03);
-            --transition: all 0.3s ease;
+            --border-radius: 16px;
+            --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.05);
+            --shadow-card: 0 10px 30px -5px rgba(0, 102, 204, 0.1);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         * {
@@ -77,7 +79,7 @@
             font-family: 'Poppins', sans-serif;
             color: var(--text-dark);
             background-color: var(--white);
-            line-height: 1.6;
+            line-height: 1.7;
             overflow-x: hidden;
         }
 
@@ -85,11 +87,11 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 24px;
         }
 
         .section-padding {
-            padding: 80px 0;
+            padding: 100px 0;
         }
 
         .text-center { text-align: center; }
@@ -103,29 +105,35 @@
         .lang-switch-container {
             display: flex;
             gap: 10px;
+            background: var(--bg-light);
+            padding: 5px;
+            border-radius: 30px;
         }
 
         .lang-btn {
             background: transparent;
-            border: 2px solid var(--primary-blue);
-            color: var(--primary-blue);
-            padding: 5px 15px;
-            border-radius: 20px;
+            border: none;
+            color: var(--text-gray);
+            padding: 6px 18px;
+            border-radius: 25px;
             font-weight: 600;
             cursor: pointer;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             transition: var(--transition);
         }
 
-        .lang-btn.active, .lang-btn:hover {
-            background: var(--primary-blue);
-            color: var(--white);
+        .lang-btn.active {
+            background: var(--white);
+            color: var(--primary-blue);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
         /* --- BUTTONS --- */
         .btn {
-            display: inline-block;
-            padding: 12px 30px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 36px;
             font-weight: 600;
             text-decoration: none;
             border-radius: 50px;
@@ -134,22 +142,25 @@
             border: none;
             cursor: pointer;
             font-size: 1rem;
+            letter-spacing: 0.5px;
         }
 
         .btn-whatsapp {
             background-color: var(--accent-green);
             color: white;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
         }
 
         .btn-whatsapp:hover {
             background-color: var(--accent-green-dark);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
         }
 
         .btn-secondary {
-            background-color: transparent;
-            border: 2px solid var(--white);
+            background-color: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.5);
             color: var(--white);
         }
 
@@ -160,37 +171,37 @@
 
         /* --- HEADER & NAV --- */
         header {
-            background-color: var(--white);
-            box-shadow: var(--shadow-subtle);
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 1px 0 rgba(0,0,0,0.05);
             position: sticky;
             top: 0;
             z-index: 1000;
-            padding: 15px 0;
-            border-bottom: 1px solid #f3f3f3;
+            padding: 18px 0;
         }
 
         .nav-wrapper {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
         }
 
         .logo {
             font-size: 1.5rem;
-            font-weight: 700;
+            font-weight: 800;
             color: var(--primary-blue);
             display: flex;
             align-items: center;
             gap: 8px;
             text-decoration: none;
+            letter-spacing: -0.5px;
         }
         .logo span { color: var(--accent-green); }
 
         /* Navigation Menu Styles */
         .nav-menu {
             display: flex;
-            gap: 25px;
+            gap: 35px;
             align-items: center;
         }
         
@@ -203,33 +214,51 @@
             position: relative;
         }
         
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-blue);
+            transition: width 0.3s;
+        }
+
         .nav-link:hover {
             color: var(--primary-blue);
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
         }
 
         /* --- HERO SECTION --- */
         .hero {
-            /* FOTO HERO DIPERBAIKI: Interior Laundry dengan Mesin Cuci */
-            background: linear-gradient(rgba(0, 30, 80, 0.75), rgba(0, 80, 170, 0.75)), url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            /* FOTO HERO: Fokus pada proses setrika yang nyata */
+            background: linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.6)), url('https://images.unsplash.com/photo-1584204524092-8f73727264a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=90') no-repeat center center/cover;
             color: var(--white);
-            padding: 140px 0 120px;
+            padding: 160px 0 140px;
             text-align: center;
+            position: relative;
         }
 
         .hero h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            line-height: 1.2;
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 24px;
+            line-height: 1.1;
+            letter-spacing: -1px;
         }
 
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             margin-bottom: 40px;
-            opacity: 0.95;
+            opacity: 0.9;
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
+            font-weight: 300;
         }
 
         .hero-buttons {
@@ -239,17 +268,17 @@
             flex-wrap: wrap;
         }
 
-        /* --- TRUST INDICATORS (REDESIGNED) --- */
+        /* --- TRUST INDICATORS --- */
         .trust-section {
             background-color: var(--white);
-            padding: 50px 0;
-            border-bottom: 1px solid #f0f0f0;
+            padding: 60px 0;
+            border-bottom: 1px solid #f1f5f9;
         }
 
         .trust-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
             text-align: center;
         }
 
@@ -259,15 +288,21 @@
         }
         
         .trust-item:hover {
-            transform: translateY(-3px);
+            transform: translateY(-5px);
         }
 
         .trust-icon { 
             font-size: 2.5rem; 
-            margin-bottom: 10px; 
+            margin-bottom: 12px; 
             display: block; 
             color: var(--primary-blue);
-            opacity: 0.9;
+            background: var(--primary-light);
+            width: 80px;
+            height: 80px;
+            line-height: 80px;
+            border-radius: 50%;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .trust-text { 
@@ -278,8 +313,9 @@
         }
 
         /* --- PRICING --- */
-        .pricing h2 { font-size: 2.2rem; margin-bottom: 10px; color: var(--primary-blue); }
-        .pricing-subtitle { margin-bottom: 50px; color: var(--text-light); }
+        .pricing { background-color: var(--bg-light); }
+        .pricing h2 { font-size: 2.5rem; font-weight: 700; margin-bottom: 10px; color: var(--primary-blue); }
+        .pricing-subtitle { margin-bottom: 60px; color: var(--text-gray); font-weight: 400; }
 
         .pricing-grid {
             display: grid;
@@ -289,9 +325,9 @@
 
         .pricing-card {
             background: var(--white);
-            border: 1px solid #e5e7eb;
+            border: 1px solid #e2e8f0;
             border-radius: var(--border-radius);
-            padding: 30px;
+            padding: 40px 30px;
             text-align: center;
             transition: var(--transition);
             position: relative;
@@ -300,55 +336,56 @@
 
         .pricing-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            border-color: var(--primary-blue);
+            box-shadow: var(--shadow-card);
+            border-color: transparent;
         }
 
-        .pricing-card.featured { border: 2px solid var(--accent-green); }
+        .pricing-card.featured { border: 2px solid var(--primary-blue); background: linear-gradient(to bottom, #ffffff, #f0f9ff); }
 
         .badge {
-            background-color: var(--accent-green);
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-dark));
             color: white;
-            padding: 5px 15px;
+            padding: 6px 20px;
             position: absolute;
-            top: 20px;
+            top: 25px;
             right: -30px;
             transform: rotate(45deg);
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             font-weight: 700;
-            width: 120px;
+            width: 140px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
-        .card-title { font-size: 1.25rem; font-weight: 700; margin-bottom: 15px; color: var(--text-dark); }
-        .card-price { font-size: 2rem; color: var(--primary-blue); font-weight: 700; margin-bottom: 20px; }
-        .card-price span { font-size: 1rem; color: var(--text-light); font-weight: 400; }
+        .card-title { font-size: 1.35rem; font-weight: 700; margin-bottom: 20px; color: var(--text-dark); }
+        .card-price { font-size: 2.25rem; color: var(--primary-blue); font-weight: 700; margin-bottom: 25px; letter-spacing: -1px; }
+        .card-price span { font-size: 1rem; color: var(--text-gray); font-weight: 400; }
 
-        .card-features { list-style: none; margin-bottom: 25px; text-align: left; }
-        .card-features li { margin-bottom: 10px; font-size: 0.95rem; color: var(--text-light); padding-left: 25px; position: relative; }
+        .card-features { list-style: none; margin-bottom: 30px; text-align: left; }
+        .card-features li { margin-bottom: 12px; font-size: 0.95rem; color: var(--text-gray); padding-left: 30px; position: relative; }
         .card-features li::before { content: "✓"; color: var(--accent-green); position: absolute; left: 0; font-weight: 700; }
 
         /* --- PAYMENT METHODS --- */
         .payment-section {
-            background-color: var(--bg-light);
-            padding: 40px 0;
+            background-color: var(--white);
+            padding: 50px 0;
         }
         .payment-grid {
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 20px;
             flex-wrap: wrap;
             align-items: center;
         }
         .payment-item {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             font-weight: 600;
             color: var(--text-dark);
-            background: white;
-            padding: 12px 25px;
+            background: var(--bg-light);
+            padding: 14px 28px;
             border-radius: 50px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
         }
         .payment-icon { font-size: 1.5rem; }
 
@@ -356,65 +393,95 @@
         .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 50px;
+            gap: 60px;
             align-items: center;
         }
         .about-img {
             width: 100%;
             border-radius: var(--border-radius);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: var(--shadow-card);
             object-fit: cover;
-            height: 400px;
-            background-color: #eee; /* Placeholder color */
+            height: 450px;
         }
         @media (max-width: 768px) { 
             .about-grid { grid-template-columns: 1fr; } 
-            .about-img { height: 300px; }
+            .about-img { height: 350px; }
         }
 
         /* --- HOW IT WORKS --- */
-        .how-it-works { background-color: var(--white); }
-        .steps-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; }
+        .how-it-works { background-color: var(--bg-light); }
+        .steps-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 50px; }
         .step-item { flex: 1; min-width: 200px; text-align: center; max-width: 250px; }
         .step-number {
-            background-color: var(--primary-blue);
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-dark));
             color: white;
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
+            font-size: 1.75rem;
             font-weight: 700;
-            margin: 0 auto 20px;
+            margin: 0 auto 25px;
+            box-shadow: 0 10px 20px rgba(0, 102, 204, 0.2);
         }
 
         /* --- FAQ SECTION --- */
         .faq-item {
             background: white;
-            border-radius: 8px;
+            border-radius: 12px;
             margin-bottom: 15px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
             overflow: hidden;
+            border: 1px solid #f1f5f9;
         }
         .faq-question {
-            padding: 20px;
+            padding: 24px;
             cursor: pointer;
             font-weight: 600;
             display: flex;
             justify-content: space-between;
             align-items: center;
             background: #fff;
+            transition: background 0.3s;
         }
         .faq-answer {
-            padding: 0 20px 20px;
-            color: var(--text-light);
+            padding: 0 24px 24px;
+            color: var(--text-gray);
             display: none; 
         }
         .faq-item.active .faq-answer { display: block; }
-        .faq-item.active .faq-question { background-color: #f0f7ff; color: var(--primary-blue); }
-        .faq-toggle { font-size: 1.5rem; line-height: 1; }
+        .faq-item.active .faq-question { background-color: var(--primary-light); color: var(--primary-blue); }
+        .faq-toggle { font-size: 1.5rem; line-height: 1; color: var(--text-gray); }
+
+        /* --- TESTIMONIALS STATS (NEW) --- */
+        .stats-section {
+            background-color: var(--primary-light);
+            padding: 60px 0;
+            margin-bottom: 60px;
+            border-radius: var(--border-radius);
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+        .stat-label {
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-gray);
+        }
 
         /* --- TESTIMONIALS --- */
         .testimonials-grid {
@@ -424,56 +491,59 @@
         }
         .testimonial-card {
             background: white;
-            padding: 30px;
+            padding: 35px;
             border-radius: var(--border-radius);
-            box-shadow: var(--shadow-subtle);
+            box-shadow: var(--shadow-soft);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            border: 1px solid #f0f0f0;
+            border: 1px solid #f1f5f9;
         }
-        .stars { color: #FFD700; margin-bottom: 15px; }
-        .testimonial-text { font-style: italic; margin-bottom: 20px; color: var(--text-dark); flex-grow: 1; }
-        .customer-name { font-weight: 700; color: var(--primary-blue); margin-bottom: 10px; }
+        .stars { color: #FFD700; margin-bottom: 15px; font-size: 1.2rem; }
+        .testimonial-text { font-style: italic; margin-bottom: 20px; color: var(--text-dark); flex-grow: 1; font-size: 1rem; }
+        .customer-name { font-weight: 700; color: var(--primary-blue); margin-bottom: 15px; font-size: 1.1rem; }
         .review-link {
             display: inline-block;
-            margin-top: 15px;
             font-size: 0.85rem;
-            color: var(--text-light);
+            color: var(--text-gray);
             text-decoration: none;
-            border: 1px solid #ddd;
-            padding: 5px 10px;
-            border-radius: 4px;
+            border: 1px solid #e2e8f0;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: all 0.3s;
         }
-        .review-link:hover { background-color: #f9f9f9; color: var(--primary-blue); }
+        .review-link:hover { background-color: var(--bg-light); color: var(--primary-blue); border-color: var(--primary-blue); }
 
         /* --- CONTACT --- */
-        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px; }
-        .contact-info-box { background: var(--bg-light); padding: 30px; border-radius: var(--border-radius); }
-        .info-row { display: flex; align-items: flex-start; margin-bottom: 20px; gap: 15px; }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; margin-top: 50px; }
+        .contact-info-box { background: var(--bg-light); padding: 40px; border-radius: var(--border-radius); }
+        .info-row { display: flex; align-items: flex-start; margin-bottom: 25px; gap: 20px; }
         .info-icon { font-size: 1.5rem; color: var(--primary-blue); }
         .map-container {
             height: 100%;
-            min-height: 350px;
+            min-height: 400px;
             background-color: #ddd;
             border-radius: var(--border-radius);
             overflow: hidden;
             position: relative;
+            box-shadow: var(--shadow-soft);
         }
 
         /* --- FOOTER & MODALS --- */
         footer {
-            background-color: var(--primary-dark);
+            background-color: #0f172a;
             color: white;
-            padding: 40px 0 20px;
+            padding: 60px 0 30px;
             text-align: center;
         }
         .footer-links a {
-            color: rgba(255, 255, 255, 0.7);
+            color: rgba(255, 255, 255, 0.6);
             text-decoration: none;
-            margin: 0 10px;
+            margin: 0 12px;
             font-size: 0.9rem;
             cursor: pointer;
+            transition: color 0.3s;
         }
         .footer-links a:hover { color: white; }
 
@@ -490,45 +560,47 @@
         }
         .modal-content {
             background-color: #fefefe;
-            margin: 10% auto; 
-            padding: 40px; 
+            margin: 8% auto; 
+            padding: 50px; 
             border: 1px solid #888;
             width: 80%;
             max-width: 800px;
             border-radius: var(--border-radius);
             position: relative;
-            max-height: 80vh;
+            max-height: 85vh;
             overflow-y: auto;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
         }
         .close-modal {
             position: absolute;
-            right: 20px;
-            top: 15px;
+            right: 25px;
+            top: 20px;
             color: #aaa;
-            font-size: 28px;
+            font-size: 32px;
             font-weight: bold;
             cursor: pointer;
+            transition: color 0.3s;
         }
         .close-modal:hover { color: black; }
-        .modal h2 { margin-bottom: 20px; color: var(--primary-blue); }
-        .modal h4 { margin-top: 15px; margin-bottom: 5px; }
-        .modal p, .modal ul { font-size: 0.95rem; color: var(--text-light); margin-bottom: 10px; }
+        .modal h2 { margin-bottom: 25px; color: var(--primary-blue); font-size: 2rem; }
+        .modal h4 { margin-top: 20px; margin-bottom: 8px; color: var(--text-dark); }
+        .modal p, .modal ul { font-size: 1rem; color: var(--text-gray); margin-bottom: 12px; }
 
         /* --- FLOATING WHATSAPP --- */
         .floating-wa {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
+            bottom: 35px;
+            right: 35px;
             background-color: var(--accent-green);
             color: white;
-            width: 60px;
-            height: 60px;
+            width: 65px;
+            height: 65px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 2rem;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
             z-index: 1001;
             transition: var(--transition);
             text-decoration: none;
@@ -536,22 +608,18 @@
         .floating-wa:hover { transform: scale(1.1); background-color: var(--accent-green-dark); }
 
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
+            .hero h1 { font-size: 2.2rem; }
+            .hero { padding: 100px 0 80px; }
             .hero-buttons { flex-direction: column; width: 100%; }
             .hero-buttons .btn { width: 100%; }
             .contact-grid { grid-template-columns: 1fr; }
             .pricing-grid { grid-template-columns: 1fr; }
-            .trust-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
+            .trust-grid { grid-template-columns: 1fr 1fr; }
             .map-container { min-height: 300px; }
-            .nav-menu {
-                display: none; 
-                width: 100%;
-                flex-direction: column;
-                margin-top: 10px;
-                background: white;
-            }
-            .nav-wrapper { flex-direction: column; }
-            .nav-menu.active { display: flex; }
+            .nav-menu { display: none; }
+            .stats-section { padding: 40px 0; }
+            .stat-number { font-size: 2.5rem; }
+            .nav-wrapper { flex-direction: column; gap: 15px; }
         }
     </style>
 </head>
@@ -565,7 +633,7 @@
     <header>
         <div class="container nav-wrapper">
             <a href="#home" class="logo">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>
                 Bali<span>Express</span>
             </a>
             
@@ -598,7 +666,7 @@
                     <p>Fast, clean, and reliable laundry service with free pickup & delivery. Perfect for tourists, villas, and busy guests.</p>
                     <div class="hero-buttons">
                         <a href="https://wa.me/6285198504914" class="btn btn-whatsapp">Order via WhatsApp</a>
-                        <a href="#pricing" class="btn btn-secondary">Free Pickup Now</a>
+                        <a href="#pricing" class="btn btn-secondary">Check Pricing</a>
                     </div>
                 </div>
                 <div class="lang-id-content hidden">
@@ -606,13 +674,13 @@
                     <p>Layanan laundry cepat, bersih, dan terpercaya dengan antar jemput gratis.</p>
                     <div class="hero-buttons">
                         <a href="https://wa.me/6285198504914" class="btn btn-whatsapp">Pesan via WhatsApp</a>
-                        <a href="#pricing" class="btn btn-secondary">Jemput Gratis Sekarang</a>
+                        <a href="#pricing" class="btn btn-secondary">Lihat Harga</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- TRUST INDICATORS (REDESIGNED) -->
+        <!-- TRUST INDICATORS -->
         <section class="trust-section">
             <div class="container">
                 <div class="trust-grid lang-en-content">
@@ -711,8 +779,8 @@
         <!-- PAYMENT METHODS -->
         <section class="payment-section">
             <div class="container text-center">
-                <h3 class="lang-en-content mb-20">Accepted Payment Methods</h3>
-                <h3 class="lang-id-content hidden mb-20">Metode Pembayaran</h3>
+                <h3 class="lang-en-content mb-20" style="font-weight: 700; color: var(--text-dark);">Accepted Payment Methods</h3>
+                <h3 class="lang-id-content hidden mb-20" style="font-weight: 700; color: var(--text-dark);">Metode Pembayaran</h3>
                 <div class="payment-grid">
                     <div class="payment-item"><span class="payment-icon">💵</span> Cash (Tunai)</div>
                     <div class="payment-item"><span class="payment-icon">🏦</span> Transfer BCA</div>
@@ -722,27 +790,27 @@
             </div>
         </section>
 
-        <!-- ABOUT US (WITH UPDATED IMAGE) -->
+        <!-- ABOUT US (UPDATED IMAGE) -->
         <section id="about" class="section-padding" style="background-color: var(--white);">
             <div class="container">
                 <div class="about-grid">
-                    <!-- GAMBAR ABOUT US DIUPDATE - PAKAIAN YANG RAPI -->
+                    <!-- GAMBAR ABOUT US - KERANJANG LAUNDRY PUTIH BERSIH -->
                     <div>
-                        <img src="https://images.unsplash.com/photo-1583947215259-38e31be8751f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Clean Laundry Stacks" class="about-img">
+                        <img src="https://images.unsplash.com/photo-1523987543654-765f054b5f27?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Clean White Laundry" class="about-img">
                     </div>
                     <div>
-                        <h2 class="lang-en-content">About Us</h2>
-                        <h2 class="lang-id-content hidden">Tentang Kami</h2>
-                        <p class="lang-en-content mt-20">
+                        <h2 class="lang-en-content" style="font-size: 2.5rem; color: var(--primary-blue); font-weight: 700;">About Us</h2>
+                        <h2 class="lang-id-content hidden" style="font-size: 2.5rem; color: var(--primary-blue); font-weight: 700;">Tentang Kami</h2>
+                        <p class="lang-en-content mt-20" style="color: var(--text-gray);">
                             Bali Express Laundry is a 24-hour professional laundry service in Bali, serving both local residents and international travelers. We specialize in express premium laundry with free pickup and delivery, ensuring your clothes are cleaned quickly, safely, and with great care.
                         </p>
-                        <p class="lang-en-content">
+                        <p class="lang-en-content mt-20" style="color: var(--text-gray);">
                             Our service areas include Seminyak, Canggu, Umalas, Denpasar, Sanur, and Kuta, making us a trusted choice for fast, reliable, and high-quality laundry services in Bali.
                         </p>
-                        <p class="lang-id-content hidden mt-20">
+                        <p class="lang-id-content hidden mt-20" style="color: var(--text-gray);">
                             Bali Express Laundry adalah layanan laundry profesional 24 jam di Bali, melayani penduduk lokal dan wisatawan internasional. Kami mengkhususkan diri pada laundry premium express dengan antar jemput gratis, memastikan pakaian Anda dibersihkan dengan cepat, aman, dan penuh perhatian.
                         </p>
-                        <p class="lang-id-content hidden">
+                        <p class="lang-id-content hidden mt-20" style="color: var(--text-gray);">
                             Area layanan kami meliputi Seminyak, Canggu, Umalas, Denpasar, Sanur, dan Kuta, menjadikan kami pilihan terpercaya untuk layanan laundry cepat, andal, dan berkualitas tinggi di Bali.
                         </p>
                     </div>
@@ -754,10 +822,10 @@
         <section class="section-padding how-it-works">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="lang-en-content">How It Works</h2>
-                    <h2 class="lang-id-content hidden">Cara Pemesanan</h2>
+                    <h2 class="lang-en-content" style="font-size: 2.2rem; font-weight: 700;">How It Works</h2>
+                    <h2 class="lang-id-content hidden" style="font-size: 2.2rem; font-weight: 700;">Cara Pemesanan</h2>
                 </div>
-                <div class="steps-container" style="margin-top: 40px;">
+                <div class="steps-container" style="margin-top: 50px;">
                     <div class="step-item">
                         <div class="step-number">1</div>
                         <h4 class="lang-en-content">Contact us via WhatsApp</h4>
@@ -786,8 +854,8 @@
         <section class="section-padding">
             <div class="container" style="max-width: 800px;">
                 <div class="text-center">
-                    <h2 class="lang-en-content">Frequently Asked Questions</h2>
-                    <h2 class="lang-id-content hidden">Pertanyaan Umum (FAQ)</h2>
+                    <h2 class="lang-en-content" style="font-size: 2.2rem; font-weight: 700;">Frequently Asked Questions</h2>
+                    <h2 class="lang-id-content hidden" style="font-size: 2.2rem; font-weight: 700;">Pertanyaan Umum (FAQ)</h2>
                 </div>
                 
                 <!-- FAQ 1 -->
@@ -831,14 +899,36 @@
             </div>
         </section>
 
-        <!-- TESTIMONIALS -->
+        <!-- TESTIMONIALS (WITH STATS) -->
         <section class="section-padding">
             <div class="container">
-                <div class="text-center">
-                    <h2 class="lang-en-content">Google Reviews</h2>
-                    <h2 class="lang-id-content hidden">Ulasan Google</h2>
+                <div class="text-center mb-20">
+                    <h2 class="lang-en-content" style="font-size: 2.2rem; font-weight: 700;">Google Reviews</h2>
+                    <h2 class="lang-id-content hidden" style="font-size: 2.2rem; font-weight: 700;">Ulasan Google</h2>
                 </div>
-                <div class="testimonials-grid" style="margin-top: 40px;">
+
+                <!-- NEW STATS SECTION -->
+                <div class="stats-section">
+                    <div class="stats-grid">
+                        <div>
+                            <div class="stat-number">5,000+</div>
+                            <div class="stat-label lang-en-content">Happy Customers</div>
+                            <div class="stat-label lang-id-content hidden">Pelanggan Puas</div>
+                        </div>
+                        <div>
+                            <div class="stat-number">4.9/5</div>
+                            <div class="stat-label lang-en-content">Star Rating</div>
+                            <div class="stat-label lang-id-content hidden">Rating Bintang</div>
+                        </div>
+                        <div>
+                            <div class="stat-number">6+</div>
+                            <div class="stat-label lang-en-content">Service Areas</div>
+                            <div class="stat-label lang-id-content hidden">Area Layanan</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonials-grid">
                     <!-- Review 1 -->
                     <div class="testimonial-card">
                         <div class="stars">★★★★★</div>
@@ -868,14 +958,14 @@
         </section>
 
         <!-- CLOSING CTA -->
-        <section class="section-padding text-center" style="background-color: var(--primary-blue); color: white;">
+        <section class="section-padding text-center" style="background: linear-gradient(135deg, var(--primary-blue), var(--primary-dark)); color: white;">
             <div class="container">
-                <h2 class="lang-en-content" style="margin-bottom: 15px;">Need clean clothes fast?</h2>
-                <p class="lang-en-content" style="font-size: 1.2rem; margin-bottom: 30px;">We deliver fresh laundry in just hours.</p>
+                <h2 class="lang-en-content" style="margin-bottom: 15px; font-size: 2rem;">Need clean clothes fast?</h2>
+                <p class="lang-en-content" style="font-size: 1.2rem; margin-bottom: 30px; opacity: 0.9;">We deliver fresh laundry in just hours.</p>
                 <a href="https://wa.me/6285198504914" class="btn btn-whatsapp lang-en-content">Order Now via WhatsApp</a>
 
-                <h2 class="lang-id-content hidden" style="margin-bottom: 15px;">Butuh laundry cepat hari ini?</h2>
-                <p class="lang-id-content hidden" style="font-size: 1.2rem; margin-bottom: 30px;">Kami siap antar dalam hitungan jam.</p>
+                <h2 class="lang-id-content hidden" style="margin-bottom: 15px; font-size: 2rem;">Butuh laundry cepat hari ini?</h2>
+                <p class="lang-id-content hidden" style="font-size: 1.2rem; margin-bottom: 30px; opacity: 0.9;">Kami siap antar dalam hitungan jam.</p>
                 <a href="https://wa.me/6285198504914" class="btn btn-whatsapp lang-id-content hidden">Pesan Sekarang</a>
             </div>
         </section>
@@ -884,8 +974,8 @@
         <section class="section-padding" id="contact">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="lang-en-content">Contact Us</h2>
-                    <h2 class="lang-id-content hidden">Hubungi Kami</h2>
+                    <h2 class="lang-en-content" style="font-size: 2.2rem; font-weight: 700;">Contact Us</h2>
+                    <h2 class="lang-id-content hidden" style="font-size: 2.2rem; font-weight: 700;">Hubungi Kami</h2>
                 </div>
 
                 <div class="contact-grid">
@@ -895,7 +985,7 @@
                             <div>
                                 <h4 class="lang-en-content">Address</h4>
                                 <h4 class="lang-id-content hidden">Alamat</h4>
-                                <p>Jl. Mertanadi No.92X, Kerobokan Kelod,<br>Kec. Kuta Utara, Kabupaten Badung, Bali 80361</p>
+                                <p style="color: var(--text-gray);">Jl. Mertanadi No.92X, Kerobokan Kelod,<br>Kec. Kuta Utara, Kabupaten Badung, Bali 80361</p>
                             </div>
                         </div>
                         <div class="info-row">
@@ -903,7 +993,7 @@
                             <div>
                                 <h4 class="lang-en-content">WhatsApp (24 Hours)</h4>
                                 <h4 class="lang-id-content hidden">WhatsApp (24 Jam)</h4>
-                                <p><a href="https://wa.me/6285198504914" style="color: var(--primary-blue); text-decoration: none; font-weight: bold;">+62 851-9850-4914</a></p>
+                                <p><a href="https://wa.me/6285198504914" style="color: var(--primary-blue); text-decoration: none; font-weight: 700; font-size: 1.1rem;">+62 851-9850-4914</a></p>
                             </div>
                         </div>
                         <div class="info-row">
@@ -920,7 +1010,7 @@
                             <div>
                                 <h4 class="lang-en-content">Service Areas</h4>
                                 <h4 class="lang-id-content hidden">Area Layanan</h4>
-                                <p>Seminyak, Canggu, Umalas, Denpasar, Sanur, Kuta</p>
+                                <p style="color: var(--text-gray);">Seminyak, Canggu, Umalas, Denpasar, Sanur, Kuta</p>
                             </div>
                         </div>
                     </div>
@@ -942,8 +1032,8 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2023 Bali Express Laundry. All rights reserved.</p>
-            <div class="footer-links" style="margin-top: 10px;">
+            <p style="font-weight: 500;">&copy; 2023 Bali Express Laundry. All rights reserved.</p>
+            <div class="footer-links" style="margin-top: 15px;">
                 <a href="#home" class="lang-en-content">Home</a>
                 <a href="#pricing" class="lang-en-content">Pricing</a>
                 <a href="#contact" class="lang-en-content">Contact</a>
